@@ -1,0 +1,71 @@
+{% set active_page = "account" %}
+{% extends "base.html" %}
+{% block content %}
+
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="well bs-component">
+      <form class="form-horizontal" method="post" action="/admin/command">
+        <fieldset>
+          <legend>Add User</legend>
+            <div class="form-group">
+              <input type="hidden" name="command" value="add">
+              <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+              <div class="col-lg-10">
+                <input type="text" class="form-control" name="inputEmail" placeholder="Email@ncb-bank.vn" autocomplete="off" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAkCAYAAADo6zjiAAAAAXNSR0IArs4c6QAAAbNJREFUWAntV8FqwkAQnaymUkpChB7tKSfxWCie/Yb+gbdeCqGf0YsQ+hU95QNyDoWCF/HkqdeiIaEUqyZ1ArvodrOHxanQOiCzO28y781skKwFW3scPV1/febP69XqarNeNTB2KGs07U3Ttt/Ozp3bh/u7V7muheQf6ftLUWyYDB5yz1ijuPAub2QRDDunJsdGkAO55KYYjl0OUu1VXOzQZ64Tr+IiPXedGI79bQHdbheCIAD0dUY6gV6vB67rAvo6IxVgWVbFy71KBKkAFaEc2xPQarXA931ot9tyHphiPwpJgSbfe54Hw+EQHMfZ/msVEEURjMfjCjbFeG2dFxPo9/sVOSYzxmAwGIjnTDFRQLMQAjQ5pJAQkCQJ5HlekeERxHEsiE0xUUCzEO9AmqYQhiF0Oh2Yz+ewWCzEY6aYKKBZCAGYs1wuYTabKdNNMWWxnaA4gp3Yry5JBZRlWTXDvaozUgGTyQSyLAP0dbb3DtQlmcan0yngT2ekE9ARc+z4AvC7nauh9iouhpcGamJeX8XF8MaClwaeROWRA7nk+tUnyzGvZrKg0/40gdME/t8EvgG0/NOS6v9NHQAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; cursor: pointer;">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="select" class="col-lg-2 control-label">Role</label>
+              <div class="col-lg-10">
+                <select class="form-control" name="role">
+                  <option value="admin">Admin</option>
+                  <option value="fanboy">Fanboy</option>
+                </select>
+              </div>
+            </div>
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+              <button type="reset" class="btn btn-default">Cancel</button>
+              <button type="submit" class="btn btn-primary">Add</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="well bs-component">
+      <form class="form-horizontal" method="post" action="/admin/command">
+        <fieldset>
+          <legend>Manage User</legend>
+          <input type="hidden" name="command" value="del">
+          <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Select Users</label>
+            <div class="col-lg-10">
+              <select multiple="" class="form-control" name="users">
+                {% for acc in list_accounts %}
+                    <option value="{{acc[2]}}">{{acc[0]}} as {{acc[1]}}</option>
+                {% endfor %}
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+              <button type="reset" class="btn btn-default">Cancel</button>
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="jumbotron">
+      <h2>Today Log</h2>
+      <pre>{{rawLog}}
+      </pre>
+      <!-- <p><a class="btn btn-primary btn-lg">Learn more</a></p> -->
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

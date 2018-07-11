@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="well bs-component">
+                <form class="form-horizontal" method="post" action="">
+                  <fieldset>
+                    <legend>Add new service</legend>
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-lg-2 control-label">Service name</label>
+                      <div class="col-lg-10">
+                        {{ form.serviceName (class="form-control input-lg", placeholder="PAM An Ninh Bao Mat ") }}
+                
+                        {% for error in form.errors.serviceName %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputHostname" class="col-lg-2 control-label">IP Address</label>
+                      <div class="col-lg-10">
+                        {{ form.ipAddress (class="form-control",placeholder="10.1.248.11") }}
+                        
+                        {% for error in form.errors.ipAddress %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputHostname" class="col-lg-2 control-label">Protocol</label>
+                      <div class="col-lg-10">
+                        {{ form.proto (class="form-control",placeholder="SSH") }}
+                        
+                        {% for error in form.errors.proto %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputHostname" class="col-lg-2 control-label">Port</label>
+                      <div class="col-lg-10">
+                        {{ form.port (class="form-control",placeholder="2009") }}
+                        
+                        {% for error in form.errors.port %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <!--<div class="form-group">-->
+                    <!--  <label for="select" class="col-lg-2 control-label">Protocol</label>-->
+                    <!--  <div class="col-lg-10">-->
+                    <!--    <select class="form-control" id="select">-->
+                    <!--      <option>CentOS</option>-->
+                    <!--      <option>MS Windows Server 2008 R2</option>-->
+                    <!--      <option>MS Windows Server 2012</option>-->
+                    <!--      <option>Red Hat Enterprise Linus (RHEL)</option>-->
+                    <!--      <option>Ubuntu</option>-->
+                    <!--    </select>-->
+                    <!--  </div>-->
+                    <!--</div>-->
+                    <div class="form-group">
+                      <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+{% endblock content %}

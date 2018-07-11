@@ -1,0 +1,179 @@
+{% set active_page = "ip_table" %}
+{% extends "base.html" %}
+
+
+
+{% block style_block %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cdnless/bootstrap-datepicker3.css') }}"/>
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="well bs-component">
+                <form class="form-horizontal" method="post" action="">
+                  <fieldset>
+                    <legend>View info</legend>
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-lg-2 control-label">IP Adress</label>
+                      <div class="col-lg-10">
+                        {% if readonly %}
+                          {{ form.ipAdress (class="form-control input-lg", placeholder="IP Adress", disabled="", value=record.ipAdress)}}
+                        {% else %}
+                          {{ form.ipAdress (class="form-control input-lg", placeholder="IP Adress")}}
+                        {% endif %}
+                
+                        {% for error in form.errors.ipAdress %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputHostname" class="col-lg-2 control-label">Hostname</label>
+                      <div class="col-lg-10">
+                        {% if readonly %}
+                          {{ form.hostName (class="form-control",placeholder="Hostname", disabled="", value=record.hostname)}}
+                        {% else %}
+                          {{ form.hostName (class="form-control",placeholder="Hostname") }}
+                        {% endif %}
+                        
+                        {% for error in form.errors.hostName %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputOwner" class="col-lg-2 control-label">Owner</label>
+                      <div class="col-lg-10">
+                        {% if readonly %}
+                          {{ form.Owner (class="form-control",placeholder="Owner", disabled="", value=record.owner)}}
+                        {% else %}
+                          {{ form.Owner (class="form-control",placeholder="Owner") }}
+                        {% endif %}
+                        {% for error in form.errors.Owner %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputService" class="col-lg-2 control-label">Service</label>
+                      <div class="col-lg-10">
+                        <input type="text" class="form-control" name="inputService" disabled="" value="{{record.service}}">
+                      </div>
+                    </div>
+                    <div class="form-group image-radio-selector">
+                      <label for="div" class="col-lg-2 control-label">Operating System</label>
+                      <div class="col-lg-10">
+                        <select  class="form-control" name="oper-sys" onchange="if(this.options[this.selectedIndex].value=='OtherOS'){toggleField(this,this.nextElementSibling);}">
+                            <option value="OtherOS">[Other OS]</option>
+                          {% for oper in list_opers %}
+                            <option {{'selected' if record.opersys == oper[0]}}>{{ oper[0] }}</option>
+                          {% endfor %}
+                        </select>
+                        <input name="oper-sys" class="form-control" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousElementSibling);}">
+                          <!-- <input type="text" list="opers" name="oper-sys"/> -->
+                          <!-- <input class="form-control" list="opers" id="oper-sys" name="oper-sys" placeholder="Operating System" required="" type="text">
+                          <datalist id="opers">
+                          {% for oper in list_opers %}
+                            <option>{{ oper[0] }}</option>
+                          {% endfor %}
+                          </datalist> -->
+                          <!-- <select class="form-control" name="oper-sys">
+                          </select> -->
+                        <!-- <input id="centos" type="radio" name="oper-sys" value="CentOS" {{'checked="checked"' if record.opersys == 'CentOS'}}/>
+                        <label class="drinkcard-cc centos" for="centos"></label>
+                        <input id="ws2008r2" type="radio" name="oper-sys" value="MS Windows Server 2008 R2"  {{'checked="checked"' if '2008 R2' in record.opersys }}/>
+                        <label class="drinkcard-cc ws2008r2"for="ws2008r2"></label>
+                        <input id="ws2012" type="radio" name="oper-sys" value="MS Windows Server 2012" {{ 'checked="checked"' if 'Server 2012' in record.opersys }}/>
+                        <label class="drinkcard-cc ws2012"for="ws2012"></label>
+                        <input id="rhel" type="radio" name="oper-sys" value="Red Hat Enterprise"{{'checked="checked"' if record.opersys == 'Red Hat Enterprise'}}/>
+                        <label class="drinkcard-cc rhel" for="rhel"></label>
+                        <input id="other" type="radio" name="oper-sys" value="Other"{{'checked="checked"' if not(record.opersys) or record.opersys=='Other' }}/>
+                        <label class="drinkcard-cc other" for="other"></label> -->
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputEmail" class="col-lg-2 control-label">Date Start</label>
+                      <div class="col-lg-10">
+                        {% if readonly %}
+                          {{ form.dateStart(class='form-control dtpick', disabled="", value=record.added_time) }}
+                        {% else %}
+                          {{ form.dateStart(class='form-control dtpick') }}
+                        {% endif %}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default" id='cancelButton' onclick="backForm()">Back</button>
+                        <button type="submit" class="btn btn-primary" id='subButton' style="display:none;">Submit</button>
+                        <button type="button" class="btn btn-danger" id='editButton' onclick="editForm()">Edit</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+{% endblock content %}
+{% block tail_script %}
+  <script type="text/javascript" src="{{ url_for('static', filename='cdnless/bootstrap-datepicker.min.js') }}">
+  </script>
+  <script>
+    document.getElementsByName("oper-sys")[0].disabled=true;
+    function editForm(){
+      document.getElementsByTagName("LEGEND")[0].innerHTML = 'Edit Info';
+      document.getElementById("editButton").style.display = "none";
+      document.getElementById("subButton").style.display = "inline";
+      document.getElementById("cancelButton").innerHTML = 'Cancel';
+      document.getElementById("cancelButton").setAttribute('onclick','cancelForm()');
+      for (i = 0; i < document.getElementsByTagName("input").length; i++) { 
+        document.getElementsByTagName("input")[i].disabled=false;
+      }
+      document.getElementsByName("oper-sys")[0].disabled=false;
+    }
+    function cancelForm(){
+      document.getElementById("editButton").style.display = "inline";
+      document.getElementById("subButton").style.display = "none";
+      document.getElementById("cancelButton").innerHTML = 'Back';
+      document.getElementById("cancelButton").setAttribute('onclick','backForm()');
+      for (i = 0; i < document.getElementsByTagName("input").length; i++) { 
+        document.getElementsByTagName("input")[i].disabled=true;
+      }
+      document.getElementsByName("oper-sys")[0].disabled=true;
+    }
+
+    function toggleField(hideObj,showObj){
+      hideObj.disabled=true;   
+      hideObj.style.display='none';
+      showObj.disabled=false;  
+      showObj.style.display = "inline";
+      showObj.focus();
+    }
+
+    function backForm(){
+      window.history.go(-1); 
+      return false;
+    }
+    $(document).ready(function () {
+          $( ".dtpick" ).datepicker({
+              format: "dd/mm/yyyy",
+              autoclose: true,
+              todayHighlight: true
+          });
+      });
+  </script>
+{% endblock %}

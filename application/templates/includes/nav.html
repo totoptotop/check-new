@@ -1,0 +1,49 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">NCB Assets</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="{{ 'active' if active_page == 'ip_table' else '' }}"><a href="/ip_table"><span class="glyphicon glyphicon-globe"></span> IP Table</a></li>
+            <!--<li class="{{ 'active' if active_page == 'service' else '' }}"><a href="/service"><span class="glyphicon glyphicon-hdd"></span> Service Table</a></li>-->
+            <li class="{{ 'active' if active_page == 'report' else '' }}"><a href="/report"><span class="glyphicon glyphicon-signal"></span> Firewall Report</a></li>
+        </ul>
+        {% if session['logged_in'] %}
+          {% if active_page == 'ip_table' %}
+        <ul class="nav navbar-nav">
+            <li><a href="/{{ active_page }}/add_record"><span class="glyphicon glyphicon-plus"></span> Add record</a></li>
+        </ul>
+          {% endif %}
+          {% if active_page == 'report' %}
+        <ul class="nav navbar-nav">
+            <li><a href="/{{ active_page }}/generate"><span class="glyphicon glyphicon-asterisk"></span> Generate</a></li>
+        </ul>
+          {% endif %}
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ session['user_name'] }}<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/{{ session['role'] }}">User panel</a></li>
+                <li class="divider"></li>
+                <li><a href="/logout">Logout</a></li>
+            </li>
+        </ul>
+        {% else %}
+          {% if active_page != 'login' %}
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+          {% endif %}
+        {% endif %}
+        
+    </div>
+  </div>
+</nav>

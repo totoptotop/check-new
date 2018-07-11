@@ -1,0 +1,6685 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+		<link href='https://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
+		<link href='https://rawgit.com/IAt0ny/python/master/frs.css' rel='stylesheet' type='text/css'>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700' rel='stylesheet' type='text/css'>
+		<h1>Firewall Rule Table v1.0</h1>
+		<p><em>
+			Source : Firewall Checkpoint <br> 
+			Created by : <a href='mailto:toanpvn@ncb-bank.vn'>ToanPVN@ncb-bank.vn</a> <br> 
+			Created date : 2018-06-11 06:30</em>
+		</p>
+		<table>
+			<tr>
+			<th width=5%>Rule ID</th>
+			<th width=5%>Name</th>
+			<th width=30%>Source</th>
+			<th width=30%>Destination</th>
+			<th width=20%>Service(Port)</th>
+			<th width=5%>Action</th>
+			<th width=5%>Time</th>
+			</tr>
+
+					<tr>
+		<td>
+
+1
+</td>
+		<td>ICMP-PING
+</td>
+		<td>Net_HHT_10.50.0.0
+(10.50.0.0-10.50.255.255   ) <br> 
+Net_10.41.0.0-1
+(10.41.0.0-10.41.255.255   ) <br> 
+Net_10.52.0.0
+(10.52.0.0-10.52.255.255   ) <br> 
+</td>
+		<td>IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+</td>
+		<td>echo-reply
+(0) <br> 
+echo-request
+(8) <br> 
+icmp-requests
+(8, 13, 15, 17) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+2
+
+ Inactive (time)
+</td>
+		<td>03 MAY DUYET DIEN SWIFT 8h-20h
+</td>
+		<td>IP_PC_DUYET_DIEN
+(10.41.252.201   | 10.52.14.201-10.52.14.202   ) <br> 
+IP_LAN_Swift_User
+(None) <br> 
+</td>
+		<td>IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+</td>
+		<td>Web_Platform_Swift
+(21, 445, 1541-1640, 48200-48203) <br> 
+DC-Port_Swift
+(48009, 48100-48106, 48200-48202) <br> 
+nbsession
+(139) <br> 
+https
+(443) <br> 
+http
+(80) <br> 
+</td>
+		<td>accept</td>
+		<td>Time_hour_</td>
+		</tr>
+		<tr>
+		<td>
+
+3
+</td>
+		<td>MAY IN DIEN
+</td>
+		<td>IP_10.52.27.8
+(10.52.27.8   ) <br> 
+IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+</td>
+		<td>IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+IP_10.52.27.8
+(10.52.27.8   ) <br> 
+</td>
+		<td>TCP_9100
+(9100) <br> 
+snmp
+(161) <br> 
+snmp-read
+(<span>161</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+4
+</td>
+		<td>Qu?n l� SWIFT server
+</td>
+		<td>IP_10.1.248.212
+(10.1.248.212   ) <br> 
+</td>
+		<td>IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+</td>
+		<td>TCP_2009
+(2009) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+5
+</td>
+		<td>LAN-to-SWIFT
+</td>
+		<td>IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+IP_LAN_Swift_User
+(None) <br> 
+</td>
+		<td>IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+IP_LAN_Swift_User
+(None) <br> 
+</td>
+		<td>DC-Port_Swift
+(48009, 48100-48106, 48200-48202) <br> 
+Web_Platform_Swift
+(21, 445, 1541-1640, 48200-48203) <br> 
+nbsession
+(139) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+6
+</td>
+		<td>
+</td>
+		<td>IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+</td>
+		<td>Net_149.134.0.0_Swift
+(149.134.0.0-149.134.255.255   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+7
+</td>
+		<td>
+</td>
+		<td>IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+</td>
+		<td>T24_APP_01
+(10.1.2.86   ) <br> 
+</td>
+		<td>microsoft-ds-udp
+(445) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+8
+</td>
+		<td>
+</td>
+		<td>DC-MOR-APPMON
+(10.1.248.19   ) <br> 
+</td>
+		<td>IP_10.41.252.201
+(10.41.252.201   ) <br> 
+IP_10.52.14.201
+(10.52.14.201   ) <br> 
+IP_10.52.14.202
+(10.52.14.202   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Duyet_dien</td>
+		</tr>
+		<tr>
+		<td>
+
+9
+</td>
+		<td>
+</td>
+		<td>IP_10.41.252.201
+(10.41.252.201   ) <br> 
+IP_10.52.14.201
+(10.52.14.201   ) <br> 
+IP_10.52.14.202
+(10.52.14.202   ) <br> 
+</td>
+		<td>Any</td>
+		<td>Any</td>
+		<td>drop</td>
+		<td>Duyet_dien</td>
+		</tr>
+		<tr>
+		<td>
+
+10
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>IP_10.41.252.201
+(10.41.252.201   ) <br> 
+IP_10.52.14.201
+(10.52.14.201   ) <br> 
+IP_10.52.14.202
+(10.52.14.202   ) <br> 
+</td>
+		<td>Any</td>
+		<td>drop</td>
+		<td>Duyet_dien</td>
+		</tr>
+		<tr>
+		<td>
+
+11
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>IP_192.168.0.19_Swift_bk
+(192.168.0.19   ) <br> 
+IP_192.168.0.20_Swift
+(192.168.0.20   ) <br> 
+</td>
+		<td>Any</td>
+		<td>drop</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+12
+</td>
+		<td>
+</td>
+		<td>Khangnb_PC
+(10.50.2.23   ) <br> 
+</td>
+		<td>Swift_192.168.0.21
+(192.168.0.21   ) <br> 
+</td>
+		<td>Remote_Desktop_Protocol
+(3389) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+13
+</td>
+		<td>Allow ping
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>echo-reply
+(0) <br> 
+icmp-requests
+(8, 13, 15, 17) <br> 
+echo-request
+(8) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+14
+</td>
+		<td>Allow web service
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+Net_SVR_Previor
+(172.15.10.0-172.15.10.255   ) <br> 
+IP_Camera_ATM
+(192.168.0.0-192.168.255.255  (zone spanning) ) <br> 
+IP_172.23.1.0
+(172.23.1.0-172.23.1.255   ) <br> 
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+Net_SVR_Previor
+(172.15.10.0-172.15.10.255   ) <br> 
+IP_Camera_ATM
+(192.168.0.0-192.168.255.255  (zone spanning) ) <br> 
+</td>
+		<td>TCP_8080
+(8080) <br> 
+TCP_8443
+(8443) <br> 
+http
+(80) <br> 
+https
+(443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+15
+</td>
+		<td>
+</td>
+		<td>IP_10.1.253.68
+(10.1.253.68   ) <br> 
+</td>
+		<td>DC-MAIL-GW1
+(10.1.65.66   ) <br> 
+</td>
+		<td>TCP_10443
+(10443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+16
+</td>
+		<td>
+</td>
+		<td>IP_10.1.248.91
+(10.1.248.91   ) <br> 
+PAM_HT_02_10.1.248.92
+(10.1.248.92   ) <br> 
+</td>
+		<td>Mgmt_VCenter
+(10.1.253.21-10.1.253.22   | 10.1.253.24-10.1.253.27   | 10.1.253.31-10.1.253.32   | 10.1.253.36-10.1.253.37   | 10.1.253.40-10.1.253.43   ) <br> 
+IP_10.1.253.50_VCenter_01
+(10.1.253.50   ) <br> 
+Mgmt_VCenter_02
+(10.50.254.51   ) <br> 
+VCenter_HCM
+(10.158.1.60-10.158.1.63   | 10.158.1.200-10.158.1.205   ) <br> 
+Net_10.1.254.0
+(10.1.254.0-10.1.254.255   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+17
+</td>
+		<td>VMware
+</td>
+		<td>IP_10.1.253.50_VCenter_01
+(10.1.253.50   ) <br> 
+Mgmt_VCenter
+(10.1.253.21-10.1.253.22   | 10.1.253.24-10.1.253.27   | 10.1.253.31-10.1.253.32   | 10.1.253.36-10.1.253.37   | 10.1.253.40-10.1.253.43   ) <br> 
+Mgmt_VCenter_02
+(10.50.254.51   ) <br> 
+VCenter_HCM
+(10.158.1.60-10.158.1.63   | 10.158.1.200-10.158.1.205   ) <br> 
+Net_10.1.254.0
+(10.1.254.0-10.1.254.255   ) <br> 
+</td>
+		<td>Mgmt_VCenter
+(10.1.253.21-10.1.253.22   | 10.1.253.24-10.1.253.27   | 10.1.253.31-10.1.253.32   | 10.1.253.36-10.1.253.37   | 10.1.253.40-10.1.253.43   ) <br> 
+IP_10.1.253.50_VCenter_01
+(10.1.253.50   ) <br> 
+Mgmt_VCenter_02
+(10.50.254.51   ) <br> 
+VCenter_HCM
+(10.158.1.60-10.158.1.63   | 10.158.1.200-10.158.1.205   ) <br> 
+Net_10.1.254.0
+(10.1.254.0-10.1.254.255   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+18
+</td>
+		<td>
+</td>
+		<td>VR_10.1.250.55
+(10.1.250.55   ) <br> 
+</td>
+		<td>IP_10.1.253.50_VCenter_01
+(10.1.253.50   ) <br> 
+</td>
+		<td>TCP_7444
+(7444) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+19
+</td>
+		<td>Solarwinds
+</td>
+		<td>IP_Solarwind_MB
+(10.1.248.51   ) <br> 
+IP_Solarwind_HCM
+(10.1.248.54   ) <br> 
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>snmp-read
+(<span>161</span>) <br> 
+snmp
+(161) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+20
+</td>
+		<td>
+</td>
+		<td>DC-MOR-APPMON
+(10.1.248.19   ) <br> 
+</td>
+		<td>net_10.1.0.0_DC
+(10.1.0.0-10.1.255.255  (zone spanning) ) <br> 
+Net_10.30.0.0
+(10.30.0.0-10.30.255.255   ) <br> 
+IP_10.26.0.0
+(10.26.0.0-10.26.255.255  (zone spanning) ) <br> 
+Net_10.158.0.0
+(10.158.0.0-10.158.255.255  (zone spanning) ) <br> 
+</td>
+		<td>ssh
+(22) <br> 
+telnet
+(23) <br> 
+smtp
+(25) <br> 
+TCP_135
+(135) <br> 
+nbsession
+(139) <br> 
+snmp
+(161) <br> 
+snmp-read
+(<span>161</span>) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+TCP_1024-1030
+(1024-1030) <br> 
+TCP_1099
+(1099) <br> 
+TCP_1414
+(1414) <br> 
+MS-SQL-Server
+(1433) <br> 
+sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+TCP_1620
+(1620) <br> 
+TCP_3360
+(3360) <br> 
+TCP_4243
+(4243) <br> 
+Napster_directory_4444
+(4444) <br> 
+Yahoo_Messenger_Voice_Chat_TCP
+(5000-5001) <br> 
+PostgreSQL
+(5432) <br> 
+TCP_6969
+(6969) <br> 
+Freak2k
+(7001) <br> 
+TCP_7199-7200
+(7199-7200) <br> 
+MySQL
+(3306) <br> 
+TCP_8686
+(8686) <br> 
+TCP_8983
+(8983) <br> 
+TCP_9080
+(9080) <br> 
+Tcp_9090
+(9090) <br> 
+TCP_9999
+(9999) <br> 
+TCP_10101-10102
+(10101-10102) <br> 
+TCP_11211
+(11211) <br> 
+TCP_14147
+(14147) <br> 
+TCP_25001
+(25001) <br> 
+TCP_30015
+(30015) <br> 
+TCP_50000
+(50000) <br> 
+TCP_55672
+(55672) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+21
+</td>
+		<td>PAM HT & ANBM
+</td>
+		<td>IP_10.1.248.91
+(10.1.248.91   ) <br> 
+IP_10.1.248.26
+(10.1.248.26   ) <br> 
+PAM_HT_02_10.1.248.92
+(10.1.248.92   ) <br> 
+</td>
+		<td>net_10.1.0.0_DC
+(10.1.0.0-10.1.255.255  (zone spanning) ) <br> 
+IP_10.26.0.0
+(10.26.0.0-10.26.255.255  (zone spanning) ) <br> 
+Net_10.30.0.0
+(10.30.0.0-10.30.255.255   ) <br> 
+Net_10.158.0.0
+(10.158.0.0-10.158.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+22
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>PAM_HT_02_10.1.248.92
+(10.1.248.92   ) <br> 
+</td>
+		<td>tftp
+(69) <br> 
+ftp
+(21) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+23
+</td>
+		<td>PAM VH
+</td>
+		<td>IP_10.1.248.25
+(10.1.248.25   ) <br> 
+IP_10.1.253.68
+(10.1.253.68   ) <br> 
+IP_10.1.248.29
+(10.1.248.29   ) <br> 
+</td>
+		<td>net_10.1.0.0_DC
+(10.1.0.0-10.1.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Share_File
+(21, 139, 445, 137) <br> 
+ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+Remote_Desktop_Protocol
+(3389) <br> 
+TCP_VNC
+(5900-5903) <br> 
+telnet
+(23) <br> 
+TCP_14147
+(14147) <br> 
+Freak2k
+(7001) <br> 
+tcp_7272
+(7272) <br> 
+TCP_7273
+(7273) <br> 
+sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+TCP_137
+(137) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+24
+</td>
+		<td>Quantri
+</td>
+		<td>IP_10.1.253.68
+(10.1.253.68   ) <br> 
+IP_10.1.248.25
+(10.1.248.25   ) <br> 
+IP_10.1.248.29
+(10.1.248.29   ) <br> 
+</td>
+		<td>Net_10.30.0.0
+(10.30.0.0-10.30.255.255   ) <br> 
+Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+Net_10.1.0.0-2
+(<span>10.1.0.0-10.1.255.255  (zone spanning) </span>) <br> 
+Net_10.158.0.0
+(10.158.0.0-10.158.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+25
+</td>
+		<td>Device Expert
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.248.52
+(10.1.248.52   ) <br> 
+</td>
+		<td>TCP_6060
+(6060) <br> 
+tftp
+(69) <br> 
+TCP_69
+(<span>69</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+26
+</td>
+		<td>
+</td>
+		<td>Net_10.50.0.0
+(<span>10.50.0.0-10.50.255.255   </span>) <br> 
+IP_10.1.253.68
+(10.1.253.68   ) <br> 
+Net_IT_HCM_10.131.15.0
+(10.131.15.0-10.131.15.255   ) <br> 
+</td>
+		<td>DC-MOR-AD360
+(10.1.248.20   ) <br> 
+DC-_MOR_OP
+(10.1.248.22   ) <br> 
+DC-MOR-LOG1
+(10.1.248.23   ) <br> 
+DC-MOR-APPMON
+(10.1.248.19   ) <br> 
+IP_10.1.248.212
+(10.1.248.212   ) <br> 
+</td>
+		<td>GRP_MONITOR_DASHBOARD
+(None) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+27
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+Net_5.5.5.0
+(5.5.5.0-5.5.5.7   ) <br> 
+Net_2.2.2.0
+(2.2.2.0-2.2.2.255   ) <br> 
+</td>
+		<td>DC-_MOR_OP
+(10.1.248.22   ) <br> 
+DC-MOR-AD360
+(10.1.248.20   ) <br> 
+DC-MOR-LOG1
+(10.1.248.23   ) <br> 
+DC-MOR-APPMON
+(10.1.248.19   ) <br> 
+IP_10.1.248.212
+(10.1.248.212   ) <br> 
+</td>
+		<td>tftp
+(69) <br> 
+TCP_69
+(<span>69</span>) <br> 
+syslog
+(514) <br> 
+TCP_135
+(135) <br> 
+TCP_1399
+(1399) <br> 
+TCP_445
+(<span>445</span>) <br> 
+TCP_8400
+(8400) <br> 
+TCP_9996
+(9996) <br> 
+Napster_directory_8888_primary
+(8888) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+28
+</td>
+		<td>
+</td>
+		<td>Net_10.41.19.0
+(10.41.19.0-10.41.19.255   ) <br> 
+Net_ITHCM_10.41.15.0
+(10.41.15.0-10.41.15.255   ) <br> 
+Net_HHT_KCN_10.50.2.0
+(10.50.2.0-10.50.2.255   ) <br> 
+Net_IT_HCM_10.131.15.0
+(10.131.15.0-10.131.15.255   ) <br> 
+IP_10.52.5.6_TheLA
+(10.52.5.6   ) <br> 
+IP_10.52.5.5_Hieu
+(10.52.5.5   ) <br> 
+IP_10.52.5.18_Dung
+(10.52.5.18   ) <br> 
+HO-TTTT
+(10.52.27.41   | 10.52.27.67   | 10.52.27.78   | 10.52.27.80   | 10.52.27.82   | 10.52.27.86   ) <br> 
+</td>
+		<td>IP_10.1.248.212
+(10.1.248.212   ) <br> 
+</td>
+		<td>tcp_7272
+(7272) <br> 
+TCP_7273
+(7273) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+29
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>DC-EPO-App1
+(10.1.248.10   ) <br> 
+</td>
+		<td>TCP_8439
+(8439) <br> 
+TCP_8440
+(8440) <br> 
+TCP_8443-8444
+(8443-8444) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+30
+</td>
+		<td>
+</td>
+		<td>DC-EPO-App1
+(10.1.248.10   ) <br> 
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>TCP_8441
+(8441) <br> 
+UDP_8442
+(8442) <br> 
+TCP_8442
+(<span>8442</span>) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+31
+</td>
+		<td>Websense 
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>DC-Web-Filter-01
+(10.1.248.31   ) <br> 
+</td>
+		<td>Notification
+(15871) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+32
+</td>
+		<td>
+</td>
+		<td>Net_10.50.0.0
+(<span>10.50.0.0-10.50.255.255   </span>) <br> 
+Net_HHT_KCN_10.50.2.0
+(10.50.2.0-10.50.2.255   ) <br> 
+Net_IT_HCM_10.131.15.0
+(10.131.15.0-10.131.15.255   ) <br> 
+IP_10.1.40.14_LAN_VPN
+(10.1.40.14   ) <br> 
+LoiVD-NHDT_10.41.19.154
+(10.41.19.154   ) <br> 
+</td>
+		<td>IP_10.1.248.26
+(10.1.248.26   ) <br> 
+IP_10.1.253.68
+(10.1.253.68   ) <br> 
+PAM_HT_02_10.1.248.92
+(10.1.248.92   ) <br> 
+IP_10.1.248.91
+(10.1.248.91   ) <br> 
+IP_10.1.248.25
+(10.1.248.25   ) <br> 
+</td>
+		<td>TCP_2009
+(2009) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+33
+</td>
+		<td>
+</td>
+		<td>Net_HHT_KCN_10.50.2.0
+(10.50.2.0-10.50.2.255   ) <br> 
+</td>
+		<td>IP_10.1.248.26
+(10.1.248.26   ) <br> 
+</td>
+		<td>TCP_3780
+(3780) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+34
+</td>
+		<td>SIEM Linux Log
+</td>
+		<td>GRP_SIEM_LINUX_SRV
+(10.1.253.40   | 10.1.253.200   ) <br> 
+DC_ACI_GRP
+(10.1.254.11-10.1.254.13   | 10.1.254.101-10.1.254.102   | 10.1.254.201-10.1.254.203   ) <br> 
+</td>
+		<td>Qradar_10.1.248.230
+(10.1.248.230   ) <br> 
+</td>
+		<td>syslog
+(514) <br> 
+shell
+(<span>514</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+35
+</td>
+		<td>SIEM Windown Log
+</td>
+		<td>IP_CITAD_HN_HCM
+(10.1.70.21-10.1.70.22   ) <br> 
+IP_10.1.70.20
+(10.1.70.20   ) <br> 
+IP_10.52.2.2
+(10.52.2.2   ) <br> 
+DNS-BaTrieu
+(10.52.2.3   ) <br> 
+IP_10.52.5.84
+(10.52.5.84   ) <br> 
+IP_10.52.27.86
+(10.52.27.86   ) <br> 
+IP_PC_DUYET_DIEN
+(10.41.252.201   | 10.52.14.201-10.52.14.202   ) <br> 
+IP_LAN_Swift_User
+(None) <br> 
+TheTD_10.52.27.47
+(10.52.27.47   ) <br> 
+IP_10.52.27.82
+(10.52.27.82   ) <br> 
+IP_10.52.27.59
+(10.52.27.59   ) <br> 
+IP_10.52.27.93
+(10.52.27.93   ) <br> 
+IP_10.52.27.76
+(10.52.27.76   ) <br> 
+</td>
+		<td>Qradar_10.1.248.230
+(10.1.248.230   ) <br> 
+</td>
+		<td>TCP_8413
+(8413) <br> 
+syslog
+(514) <br> 
+shell
+(<span>514</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+36
+</td>
+		<td>
+</td>
+		<td>Qradar_10.1.248.230
+(10.1.248.230   ) <br> 
+</td>
+		<td>DC-Proxy_Web
+(10.1.65.82   ) <br> 
+DC_PC_02
+(10.1.65.10   ) <br> 
+IP_10.1.65.11
+(10.1.65.11   ) <br> 
+</td>
+		<td>ssh_version_2
+(<span>22</span>) <br> 
+ssh
+(22) <br> 
+ftp
+(21) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+37
+</td>
+		<td>
+</td>
+		<td>DC-Proxy_Web
+(10.1.65.82   ) <br> 
+DC_PC_02
+(10.1.65.10   ) <br> 
+IP_10.1.65.11
+(10.1.65.11   ) <br> 
+</td>
+		<td>Qradar_10.1.248.230
+(10.1.248.230   ) <br> 
+</td>
+		<td>ssh_version_2
+(<span>22</span>) <br> 
+ssh
+(22) <br> 
+ftp
+(21) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+38
+</td>
+		<td>
+</td>
+		<td>Qradar_10.1.248.230
+(10.1.248.230   ) <br> 
+</td>
+		<td>IP_10.1.65.80_WEB
+(10.1.65.80   ) <br> 
+</td>
+		<td>MySQL
+(3306) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+39
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Server_Core_BTS
+(10.30.10.114   ) <br> 
+Bts_host_10.30.10.214
+(10.30.10.214   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+40
+</td>
+		<td>
+</td>
+		<td>IP_10.131.15.23
+(10.131.15.23   ) <br> 
+IP_10.131.15.60
+(10.131.15.60   ) <br> 
+</td>
+		<td>Intranet_Traning_10.30.8.17
+(10.30.8.17   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+41
+</td>
+		<td>DEV-IB
+</td>
+		<td>DEV-PTNV
+(10.41.19.34   | 10.41.19.154   | 10.50.2.59   | 10.50.2.102   ) <br> 
+</td>
+		<td>IP_10.1.61.99
+(10.1.61.99   ) <br> 
+</td>
+		<td>Oracle_port
+(1521, 1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+42
+</td>
+		<td>
+</td>
+		<td>TV1_NOC
+(10.50.2.117   ) <br> 
+</td>
+		<td>IP_10.1.61.99
+(10.1.61.99   ) <br> 
+</td>
+		<td>Oracle_port
+(1521, 1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+43
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>LoiVD-NHDT_10.41.19.154
+(10.41.19.154   ) <br> 
+</td>
+		<td>IP_10.1.61.25
+(10.1.61.25   ) <br> 
+IP_10.1.61.21
+(10.1.61.21   ) <br> 
+IP_10.1.61.23
+(10.1.61.23   ) <br> 
+IP_10.1.61.22
+(10.1.61.22   ) <br> 
+IP_10.1.61.24
+(10.1.61.24   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>two-week</td>
+		</tr>
+		<tr>
+		<td>
+
+44
+</td>
+		<td>
+</td>
+		<td>Egateway_test
+(10.1.62.58   ) <br> 
+</td>
+		<td>IP_10.158.7.5_OnlineApp_Linux
+(10.158.7.5   ) <br> 
+IP_10.158.7.6_Oracle_DB_Linux
+(10.158.7.6   ) <br> 
+IP_10.158.7.4_DB_oracle_Linux
+(10.158.7.4   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+45
+</td>
+		<td>HSM test HT The
+</td>
+		<td>IP_10.41.19.246
+(10.41.19.246   ) <br> 
+Gr_Cardtest
+(10.158.7.4-10.158.7.7   ) <br> 
+</td>
+		<td>Gr_Cardtest
+(10.158.7.4-10.158.7.7   ) <br> 
+IP_10.41.19.246
+(10.41.19.246   ) <br> 
+</td>
+		<td>TCP_1500
+(1500) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+46
+</td>
+		<td>
+</td>
+		<td>DB_RMS_TEST_10.1.61.97
+(10.1.61.97   ) <br> 
+RMS_Test_02_10.1.61.96
+(10.1.61.96   ) <br> 
+</td>
+		<td>IP_TuNT_PTUD
+(10.50.2.52   ) <br> 
+</td>
+		<td>TCP_1200
+(1200) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_06_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+47
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.67_TungNT
+(10.50.2.67   ) <br> 
+</td>
+		<td>IP_10.1.36.20
+(10.1.36.20   ) <br> 
+IP_10.1.61.14
+(10.1.61.14   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+48
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.206
+(10.50.2.206   ) <br> 
+IP_10.50.2.124
+(10.50.2.124   ) <br> 
+IP_10.50.2.96
+(10.50.2.96   ) <br> 
+IP_10.50.2.108
+(10.50.2.108   ) <br> 
+IP_10.50.2.32
+(10.50.2.32   ) <br> 
+IP_10.50.2.157
+(10.50.2.157   ) <br> 
+IP_10.50.2.218
+(10.50.2.218   ) <br> 
+IP_10.50.2.180
+(10.50.2.180   ) <br> 
+IP_10.50.2.214
+(10.50.2.214   ) <br> 
+</td>
+		<td>IP_10.1.36.20
+(10.1.36.20   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+49
+</td>
+		<td>
+</td>
+		<td>Phuonght_PC
+(10.50.2.27   ) <br> 
+Khangnb_PC
+(10.50.2.23   ) <br> 
+IP_10.50.2.56_HienVT
+(10.50.2.56   ) <br> 
+Khanh_03
+(10.50.2.76   ) <br> 
+</td>
+		<td>IP_10.1.36.20
+(10.1.36.20   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_07_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+50
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>IP_10.1.61.21
+(10.1.61.21   ) <br> 
+IP_10.1.61.22
+(10.1.61.22   ) <br> 
+</td>
+		<td>Any</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+51
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.67_TungNT
+(10.50.2.67   ) <br> 
+IP_TuNT_PTUD
+(10.50.2.52   ) <br> 
+TienPM_10.50.2.70
+(10.50.2.70   ) <br> 
+ThangPM__10.50.2.150
+(10.50.2.150   ) <br> 
+</td>
+		<td>IP_10.1.61.12
+(10.1.61.12   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_06_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+52
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Server_Ghi_Am
+(10.1.65.24   ) <br> 
+</td>
+		<td>sip-tcp
+(5060) <br> 
+sip
+(<span>5060</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+53
+</td>
+		<td>
+</td>
+		<td>DC-STR-APP_10.1.70.32
+(10.1.70.32   ) <br> 
+IP_10.52.27.92
+(10.52.27.92   ) <br> 
+IP_10.41.254.202
+(10.41.254.202   ) <br> 
+IP_10.41.254.207
+(10.41.254.207   ) <br> 
+IP_10.52.27.64
+(10.52.27.64   ) <br> 
+</td>
+		<td>NHNN_SERVER_STR_192.168.92.99
+(192.168.92.99   ) <br> 
+</td>
+		<td>ftp
+(21) <br> 
+TCP_3333
+(3333) <br> 
+TCP_2017
+(2017) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+54
+</td>
+		<td>
+</td>
+		<td>IP_10.52.27.92
+(10.52.27.92   ) <br> 
+IP_10.41.254.202
+(10.41.254.202   ) <br> 
+IP_10.41.254.207
+(10.41.254.207   ) <br> 
+IP_10.52.27.64
+(10.52.27.64   ) <br> 
+</td>
+		<td>DC-STR-APP_10.1.70.32
+(10.1.70.32   ) <br> 
+</td>
+		<td>ftp
+(21) <br> 
+MySQL
+(3306) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+55
+</td>
+		<td>Tongdai GHI AM
+</td>
+		<td>Net_CMC_Record
+(172.20.66.0-172.20.66.255  (zone spanning) ) <br> 
+IP_101.99.1.1_BK
+(101.99.1.1   ) <br> 
+Net_172.20.64.0
+(172.20.64.0-172.20.64.15   ) <br> 
+IP_CMC
+(172.20.66.1-172.20.66.3   ) <br> 
+Server_Ghi_Am
+(10.1.65.24   ) <br> 
+</td>
+		<td>Server_Ghi_Am
+(10.1.65.24   ) <br> 
+Net_CMC_Record
+(172.20.66.0-172.20.66.255  (zone spanning) ) <br> 
+IP_101.99.1.1_BK
+(101.99.1.1   ) <br> 
+Net_172.20.64.0
+(172.20.64.0-172.20.64.15   ) <br> 
+IP_CMC
+(172.20.66.1-172.20.66.3   ) <br> 
+</td>
+		<td>sip-tcp
+(5060) <br> 
+sip
+(<span>5060</span>) <br> 
+TCP_10000-65000
+(10000-65000) <br> 
+UDP_10000-65000
+(<span>10000-65000</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+56
+</td>
+		<td>Tra cuu the tin dung
+</td>
+		<td>Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+</td>
+		<td>Net_VNPay
+(10.22.32.0-10.22.32.255   ) <br> 
+</td>
+		<td>ftp
+(21) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+TCP_13002
+(13002) <br> 
+TCP_8443-8444
+(8443-8444) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+57
+</td>
+		<td>TEST_VNPAY
+</td>
+		<td>IP_Test_10.22.32.147
+(10.22.32.147   ) <br> 
+Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+IP_10.158.7.9
+(10.158.7.9   ) <br> 
+</td>
+		<td>Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+IP_Test_10.22.32.147
+(10.22.32.147   ) <br> 
+</td>
+		<td>TCP_19043
+(19043) <br> 
+TCP_1234
+(1234) <br> 
+TCP_39003
+(39003) <br> 
+TCP_11061
+(11061) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+58
+</td>
+		<td>QRPay_VNSHOP
+</td>
+		<td>QRPAY_VNSHOP_01
+(10.22.32.149   ) <br> 
+DC-MB-APP1
+(10.1.35.27   ) <br> 
+</td>
+		<td>DC-MB-APP1
+(10.1.35.27   ) <br> 
+QRPAY_VNSHOP_01
+(10.22.32.149   ) <br> 
+</td>
+		<td>Mcafee_scan
+(8088) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+59
+</td>
+		<td>VNPAY
+</td>
+		<td>DC-MB-APP1
+(10.1.35.27   ) <br> 
+QRPAY_VNSHOP_02
+(10.22.32.150   ) <br> 
+</td>
+		<td>DC-MB-APP1
+(10.1.35.27   ) <br> 
+QRPAY_VNSHOP_02
+(10.22.32.150   ) <br> 
+</td>
+		<td>TCP_20200
+(20200) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+60
+</td>
+		<td>MB App Phase 2
+</td>
+		<td>OTT_Vnpay
+(10.22.32.148   ) <br> 
+IP_10.1.62.105
+(10.1.62.105   ) <br> 
+</td>
+		<td>IP_10.1.62.105
+(10.1.62.105   ) <br> 
+OTT_Vnpay
+(10.22.32.148   ) <br> 
+</td>
+		<td>TCP_1007
+(1007) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+61
+</td>
+		<td>NCB billing Napas
+</td>
+		<td>IP_10.1.62.105
+(10.1.62.105   ) <br> 
+IP_10.255.252.55_Napas
+(10.255.252.55   ) <br> 
+</td>
+		<td>IP_10.1.62.105
+(10.1.62.105   ) <br> 
+IP_10.255.252.55_Napas
+(10.255.252.55   ) <br> 
+</td>
+		<td>TCP_11061
+(11061) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+62
+</td>
+		<td>IB translate to Napas UAT
+</td>
+		<td>IP_10.1.62.105
+(10.1.62.105   ) <br> 
+IP_Napas_10.255.252.248
+(10.255.252.248   ) <br> 
+</td>
+		<td>IP_10.1.62.105
+(10.1.62.105   ) <br> 
+IP_Napas_10.255.252.248
+(10.255.252.248   ) <br> 
+</td>
+		<td>TCP_10043
+(10043) <br> 
+</td>
+		<td>accept</td>
+		<td>E0208-2018</td>
+		</tr>
+		<tr>
+		<td>
+
+63
+</td>
+		<td>Billing - Payoo
+</td>
+		<td>E_Gateway
+(10.26.2.59   ) <br> 
+NHDT-REPORT
+(10.26.2.115   ) <br> 
+</td>
+		<td>Payoo_118.69.206.9_02
+(118.69.206.9   ) <br> 
+</td>
+		<td>Web_Service
+(443, 990, 10000-10020) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+64
+</td>
+		<td>Incom
+</td>
+		<td>IP_210.211.101.107_Incom
+(210.211.101.107   ) <br> 
+IB_Host
+(10.30.10.217   ) <br> 
+</td>
+		<td>IB_Host
+(10.30.10.217   ) <br> 
+IP_210.211.101.107_Incom
+(210.211.101.107   ) <br> 
+</td>
+		<td>http
+(80) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+65
+</td>
+		<td>End-User-HO
+</td>
+		<td>HO_VCB
+(10.50.2.10-10.50.2.11   | 10.52.5.6   | 10.52.27.41-10.52.27.42   | 10.52.27.47   | 10.52.27.59   | 10.52.27.67   | 10.52.27.78   | 10.52.27.80   | 10.52.27.82-10.52.27.83   | 10.52.27.86   | 10.52.27.90   | 10.52.27.93   ) <br> 
+IP_10.1.70.20
+(10.1.70.20   ) <br> 
+</td>
+		<td>IP_10.1.70.20
+(10.1.70.20   ) <br> 
+HO_VCB
+(10.50.2.10-10.50.2.11   | 10.52.5.6   | 10.52.27.41-10.52.27.42   | 10.52.27.47   | 10.52.27.59   | 10.52.27.67   | 10.52.27.78   | 10.52.27.80   | 10.52.27.82-10.52.27.83   | 10.52.27.86   | 10.52.27.90   | 10.52.27.93   ) <br> 
+</td>
+		<td>Port_citad_user
+(21, 135, 139, 445, 138) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+66
+</td>
+		<td>End-User-HO
+</td>
+		<td>IP_10.52.27.57
+(10.52.27.57   ) <br> 
+IP_10.52.27.77
+(10.52.27.77   ) <br> 
+</td>
+		<td>IP_10.1.70.20
+(10.1.70.20   ) <br> 
+</td>
+		<td>TCP_VNC
+(5900-5903) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+67
+</td>
+		<td>Printer
+</td>
+		<td>IP_CITAD_HN_HCM
+(10.1.70.21-10.1.70.22   ) <br> 
+IP_10.52.27.71_Print
+(10.52.27.71   ) <br> 
+IP_10.52.27.14
+(10.52.27.14   ) <br> 
+</td>
+		<td>IP_CITAD_HN_HCM
+(10.1.70.21-10.1.70.22   ) <br> 
+IP_10.52.27.71_Print
+(10.52.27.71   ) <br> 
+IP_10.52.27.14
+(10.52.27.14   ) <br> 
+</td>
+		<td>TCP_9100
+(9100) <br> 
+snmp-read
+(<span>161</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+68
+</td>
+		<td>TCT UAT
+</td>
+		<td>IP_10.1.70.30_Mtax_uat
+(10.1.70.30   ) <br> 
+IP_TCT_Test
+(10.64.241.22   | 10.64.241.28-10.64.241.29   ) <br> 
+</td>
+		<td>IP_TCT_Test
+(10.64.241.22   | 10.64.241.28-10.64.241.29   ) <br> 
+IP_10.1.70.30_Mtax_uat
+(10.1.70.30   ) <br> 
+</td>
+		<td>Grp_Port_test
+(444, 1717) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+69
+</td>
+		<td>CITAD
+</td>
+		<td>IP_10.1.70.21
+(10.1.70.21   ) <br> 
+</td>
+		<td>CITAD
+(192.168.10.18   | 192.168.10.20   | 192.168.12.0-192.168.12.255   ) <br> 
+</td>
+		<td>Ctiad_all
+(20, 21, 389, 829, 8000-11000) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+70
+</td>
+		<td>
+</td>
+		<td>IP_10.1.70.22_HCM
+(10.1.70.22   ) <br> 
+</td>
+		<td>Net_192.168.10.0
+(192.168.10.0-192.168.10.255  (zone spanning) ) <br> 
+</td>
+		<td>Ctiad_all
+(20, 21, 389, 829, 8000-11000) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+71
+</td>
+		<td>
+</td>
+		<td>IP_10.1.62.104
+(10.1.62.104   ) <br> 
+IP_10.1.62.103
+(10.1.62.103   ) <br> 
+IP_10.1.61.34
+(10.1.61.34   ) <br> 
+</td>
+		<td>IP_192.168.10.18
+(192.168.10.18   ) <br> 
+IP_192.168.10.20
+(192.168.10.20   ) <br> 
+IP_192.168.12.18
+(192.168.12.18   ) <br> 
+IP_192.168.12.38
+(192.168.12.38   ) <br> 
+IP_192.168.10.11_VPN_HCM
+(192.168.10.11   ) <br> 
+</td>
+		<td>Ctiad_all
+(20, 21, 389, 829, 8000-11000) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+72
+</td>
+		<td>SVR VPN NHNN HCM
+</td>
+		<td>IP_10.1.70.22_HCM
+(10.1.70.22   ) <br> 
+</td>
+		<td>IP_192.168.10.11_VPN_HCM
+(192.168.10.11   ) <br> 
+IP_192.168.10.13_VPN_HCM
+(192.168.10.13   ) <br> 
+</td>
+		<td>IKE_NAT_TRAVERSAL
+(4500) <br> 
+IKE
+(500) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+73
+</td>
+		<td>Internal Audit Committee
+</td>
+		<td>IP_10.52.6.66_ThuanDM_KTNB
+(10.52.6.66   ) <br> 
+</td>
+		<td>NHDT_Host_Online_DB
+(10.26.2.200   ) <br> 
+IP_10.26.2.208_DB_Pri
+(10.26.2.208   ) <br> 
+</td>
+		<td>Oracle_port
+(1521, 1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+74
+</td>
+		<td>
+</td>
+		<td>AD_Root_DC01
+(10.1.33.2   ) <br> 
+AD_Root_DC02
+(10.1.33.3   ) <br> 
+AD_NCB_Bank_DC01
+(10.1.33.18   ) <br> 
+AD_NCB_Bank_DC02
+(10.1.33.19   ) <br> 
+AD_Root_DR01
+(10.158.3.2   ) <br> 
+AD_Root_DR02
+(10.158.3.3   ) <br> 
+AD_NCB_Bank_DR01
+(10.158.3.18   ) <br> 
+AD_NCB_Bank_DR02
+(10.158.3.19   ) <br> 
+AD_HamNghi
+(10.128.0.18-10.128.0.19   ) <br> 
+</td>
+		<td>AD_Root_DC01
+(10.1.33.2   ) <br> 
+AD_Root_DC02
+(10.1.33.3   ) <br> 
+AD_NCB_Bank_DC01
+(10.1.33.18   ) <br> 
+AD_NCB_Bank_DC02
+(10.1.33.19   ) <br> 
+AD_Root_DR01
+(10.158.3.2   ) <br> 
+AD_Root_DR02
+(10.158.3.3   ) <br> 
+AD_NCB_Bank_DR01
+(10.158.3.18   ) <br> 
+AD_NCB_Bank_DR02
+(10.158.3.19   ) <br> 
+AD_HamNghi
+(10.128.0.18-10.128.0.19   ) <br> 
+</td>
+		<td>TCP_135
+(135) <br> 
+Kerberos_v5_TCP
+(88) <br> 
+Kerberos_v5_UDP
+(<span>88</span>) <br> 
+ldap
+(389) <br> 
+ldap_udp
+(<span>389</span>) <br> 
+ldap-ssl
+(636) <br> 
+TCP_3268
+(3268) <br> 
+TCP_3269
+(3269) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+microsoft-ds-udp
+(445) <br> 
+domain-tcp
+(53) <br> 
+domain-udp
+(<span>53</span>) <br> 
+ntp-udp
+(123) <br> 
+nbname
+(<span>137</span>) <br> 
+nbdatagram
+(138) <br> 
+nbsession
+(139) <br> 
+TCP_5000-5002_RPC
+(5000-5002) <br> 
+DFS-Repl
+(5722) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+75
+</td>
+		<td>
+</td>
+		<td>GRP_P.BA
+(10.50.2.23   | 10.50.2.27-10.50.2.28   | 10.50.2.47   | 10.50.2.56   | 10.50.2.65   | 10.50.2.72   | 10.50.2.76   | 10.50.2.89   ) <br> 
+</td>
+		<td>IP_10.1.18.6_DB_TT35
+(10.1.18.6   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_07_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+76
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>TRS
+(10.1.33.11   ) <br> 
+</td>
+		<td>TCP_8018_8038
+(8018-8038) <br> 
+TCP_8036
+(8036) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+77
+</td>
+		<td>
+</td>
+		<td>ThangPM__10.50.2.150
+(<span>10.50.2.150   </span>) <br> 
+</td>
+		<td>TRS
+(10.1.33.11   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+78
+</td>
+		<td>Active Directory
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>AD_Root_DC01
+(10.1.33.2   ) <br> 
+AD_Root_DC02
+(10.1.33.3   ) <br> 
+AD_NCB_Bank_DC01
+(10.1.33.18   ) <br> 
+AD_NCB_Bank_DC02
+(10.1.33.19   ) <br> 
+AD_Root_DR01
+(10.158.3.2   ) <br> 
+AD_Root_DR02
+(10.158.3.3   ) <br> 
+AD_NCB_Bank_DR01
+(10.158.3.18   ) <br> 
+AD_NCB_Bank_DR02
+(10.158.3.19   ) <br> 
+AD_HamNghi
+(10.128.0.18-10.128.0.19   ) <br> 
+</td>
+		<td>TCP_135
+(135) <br> 
+Kerberos_v5_TCP
+(88) <br> 
+Kerberos_v5_UDP
+(<span>88</span>) <br> 
+ldap
+(389) <br> 
+ldap_udp
+(<span>389</span>) <br> 
+ldap-ssl
+(636) <br> 
+TCP_3268
+(3268) <br> 
+TCP_3269
+(3269) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+microsoft-ds-udp
+(445) <br> 
+domain-tcp
+(53) <br> 
+domain-udp
+(<span>53</span>) <br> 
+ntp-udp
+(123) <br> 
+nbname
+(<span>137</span>) <br> 
+nbdatagram
+(138) <br> 
+nbsession
+(139) <br> 
+TCP_5000-5002_RPC
+(5000-5002) <br> 
+TCP_464
+(464) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+79
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>DC-TIME-SRV1
+(10.1.34.253   ) <br> 
+</td>
+		<td>ntp-udp
+(123) <br> 
+ntp-tcp
+(<span>123</span>) <br> 
+ntp
+(None) <br> 
+nntp
+(119) <br> 
+UDP_119
+(<span>119</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+80
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>DC_MAIL_EX1
+(10.1.34.66   ) <br> 
+DC_mail_ex2
+(10.1.34.67   ) <br> 
+DC_mail_DAG
+(10.1.34.68   ) <br> 
+DR_Ex_01
+(10.158.3.34   ) <br> 
+</td>
+		<td>smtp
+(25) <br> 
+pop-3
+(110) <br> 
+imap
+(143) <br> 
+SMTPS
+(465) <br> 
+SMTPs
+(587) <br> 
+IMAP-SSL
+(993) <br> 
+POP3S
+(995) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+81
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Lync_Fe_10.1.34.15
+(10.1.34.15   ) <br> 
+Lync_Edge_internal
+(10.1.34.30   ) <br> 
+</td>
+		<td>TCP_135
+(135) <br> 
+CP_SSL_Network_Extender
+(444) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+TCP_448
+(448) <br> 
+TCP_5060_5080
+(5060-5080) <br> 
+TCP_49152-65335
+(49152-65335) <br> 
+UDP_49152-65335
+(<span>49152-65335</span>) <br> 
+Tcp_5060
+(<span>5060</span>) <br> 
+UDP_80
+(<span>80</span>) <br> 
+TCP_4443
+(4443) <br> 
+ssl_v3
+(<span>443</span>) <br> 
+UDP_3478
+(3478) <br> 
+TCP_8057
+(8057) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+82
+</td>
+		<td>TACACS
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.35.18
+(10.1.35.18   ) <br> 
+IP_10.1.35.45_02
+(10.1.35.45   ) <br> 
+</td>
+		<td>TACACS
+(49) <br> 
+TACACSplus
+(<span>49</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+83
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>DC-FILE-SRV1
+(10.1.35.35   ) <br> 
+</td>
+		<td>Share_File
+(21, 139, 445, 137) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+84
+</td>
+		<td>
+</td>
+		<td>Net_HHT_KCN_10.50.2.0
+(10.50.2.0-10.50.2.255   ) <br> 
+Net_10.52.0.0
+(10.52.0.0-10.52.255.255   ) <br> 
+HCM_10.41.19.121
+(10.41.19.121   ) <br> 
+LoiVD-NHDT_10.41.19.154
+(10.41.19.154   ) <br> 
+IP_Luan_10.41.19.34
+(10.41.19.34   ) <br> 
+IP_10.26.2.102
+(10.26.2.102   ) <br> 
+Net_10.50.4.0
+(10.50.4.0-10.50.4.255   ) <br> 
+Net_10.50.5.0
+(10.50.5.0-10.50.5.255   ) <br> 
+Khoa_NHDT
+(10.41.19.55   ) <br> 
+</td>
+		<td>MBServices_test_10.1.62.57
+(10.1.62.57   ) <br> 
+IP_10.1.62.56
+(10.1.62.56   ) <br> 
+</td>
+		<td>Tcp_9090
+(9090) <br> 
+TCP_8086
+(8086) <br> 
+TCP_8089
+(8089) <br> 
+TCP_6996
+(6996) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+85
+</td>
+		<td>ATM Controller
+</td>
+		<td>ATM_Controller_10.26.2.124
+(10.26.2.124   ) <br> 
+ATM_CN_PGD
+(None) <br> 
+</td>
+		<td>ATM_CN_PGD
+(None) <br> 
+ATM_Controller_10.26.2.124
+(10.26.2.124   ) <br> 
+</td>
+		<td>ATM_Port_Grp
+(None) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+86
+</td>
+		<td>
+</td>
+		<td>Net_10.50.7.0
+(10.50.7.0-10.50.7.255   ) <br> 
+</td>
+		<td>NHDT_Host_Online_DB
+(10.26.2.200   ) <br> 
+</td>
+		<td>Oracle_port
+(1521, 1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+87
+</td>
+		<td>
+</td>
+		<td>PC_share_file_01_10.50.2.22
+(10.50.2.22   ) <br> 
+TRS
+(10.1.33.11   ) <br> 
+</td>
+		<td>TRS
+(10.1.33.11   ) <br> 
+PC_share_file_01_10.50.2.22
+(10.50.2.22   ) <br> 
+</td>
+		<td>MS-SQL-Server
+(1433) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+88
+</td>
+		<td>
+</td>
+		<td>Net_HHT_KCN_10.50.2.0
+(10.50.2.0-10.50.2.255   ) <br> 
+IP_Luan_10.41.19.34
+(10.41.19.34   ) <br> 
+</td>
+		<td>T24_Test_01
+(10.1.30.10   ) <br> 
+T24_Test_02
+(10.1.30.11   ) <br> 
+T24_Test_VIP01
+(10.1.30.12   ) <br> 
+T24_Test_VIP02
+(10.1.30.14   ) <br> 
+T24_Test_ScanIP01
+(10.1.30.15   ) <br> 
+T24_Test_ScanIP02
+(10.1.30.16   ) <br> 
+T24_Test_ScanIP03
+(10.1.30.17   ) <br> 
+</td>
+		<td>TCP_1158
+(1158) <br> 
+TCP_2301
+(2301) <br> 
+sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+TCP_2381
+(2381) <br> 
+TCP_177
+(177) <br> 
+TCP_1099
+(1099) <br> 
+TCP_1399
+(1399) <br> 
+TCP_8083
+(8083) <br> 
+TCP_1098
+(1098) <br> 
+CrackDown
+(<span>4444</span>) <br> 
+TCP_4445
+(4445) <br> 
+TCP_8009
+(8009) <br> 
+TCP_8093
+(8093) <br> 
+TCP_8380
+(8380) <br> 
+ftp
+(21) <br> 
+ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+telnet
+(23) <br> 
+TCP__25623
+(25623) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+89
+</td>
+		<td>HSM
+</td>
+		<td>Net_10.41.19.0
+(10.41.19.0-10.41.19.255   ) <br> 
+Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+</td>
+		<td>Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+Net_10.41.19.0
+(10.41.19.0-10.41.19.255   ) <br> 
+</td>
+		<td>TCP_1500
+(1500) <br> 
+Napster_directory_5555
+(5555) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+90
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>NHDT-REPORT
+(10.26.2.115   ) <br> 
+</td>
+		<td>TCP_99
+(99) <br> 
+TCP_8081-8083
+(8081-8083) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+91
+</td>
+		<td>DB-TEST
+</td>
+		<td>IP_10.50.2.67_TungNT
+(10.50.2.67   ) <br> 
+IP_10.50.2.241
+(10.50.2.241   ) <br> 
+</td>
+		<td>IP_10.1.34.85_bkup_34.14
+(10.1.34.85   ) <br> 
+</td>
+		<td>TCP_1158
+(1158) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+92
+</td>
+		<td>Connect DB pre-live
+</td>
+		<td>Khangnb_PC
+(10.50.2.23   ) <br> 
+DungLTT_pc
+(10.50.2.28   ) <br> 
+HienTT_PC
+(10.50.2.47   ) <br> 
+IP_10.50.2.188
+(10.50.2.188   ) <br> 
+IP_10.131.15.60
+(10.131.15.60   ) <br> 
+IP_10.131.15.23
+(10.131.15.23   ) <br> 
+IP_10.131.15.58
+(10.131.15.58   ) <br> 
+IP_10.50.2.26
+(10.50.2.26   ) <br> 
+IP_10.50.2.43_Thu
+(10.50.2.43   ) <br> 
+DangNVH_10.50.2.65
+(10.50.2.65   ) <br> 
+IP_10.50.2.72
+(10.50.2.72   ) <br> 
+Khanh_03
+(10.50.2.76   ) <br> 
+IP_10.50.2.89_Anh
+(10.50.2.89   ) <br> 
+IP_10.50.2.193
+(10.50.2.193   ) <br> 
+Ms_HieuHT_PC
+(10.52.6.18   ) <br> 
+IP_10.52.6.66_ThuanDM_KTNB
+(10.52.6.66   ) <br> 
+ThaoTP1_10.50.2.50
+(10.50.2.50   ) <br> 
+</td>
+		<td>IP_10.1.34.85_bkup_34.14
+(10.1.34.85   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+93
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.218
+(10.50.2.218   ) <br> 
+IP_10.50.2.133
+(10.50.2.133   ) <br> 
+IP_10.50.2.214
+(10.50.2.214   ) <br> 
+IP_10.50.2.180
+(10.50.2.180   ) <br> 
+</td>
+		<td>IP_10.1.34.85_bkup_34.14
+(10.1.34.85   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+94
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>IP_TuNT_PTUD
+(10.50.2.52   ) <br> 
+</td>
+		<td>IP_10.1.34.85_bkup_34.14
+(10.1.34.85   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E08_06_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+95
+</td>
+		<td>
+</td>
+		<td>GRP_TTTN_BT
+(10.52.27.41   | 10.52.27.47   | 10.52.27.59   | 10.52.27.67   | 10.52.27.80   | 10.52.27.82   | 10.52.27.86   | 10.52.27.93   ) <br> 
+</td>
+		<td>IP_10.1.70.23
+(10.1.70.23   ) <br> 
+</td>
+		<td>TCP_VNC
+(5900-5903) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+96
+</td>
+		<td>Quattro - VPN
+</td>
+		<td>Net_HHT_10.50.0.0
+(10.50.0.0-10.50.255.255   ) <br> 
+Net_10.44.0.0
+(10.44.0.0-10.44.255.255   ) <br> 
+Net_10.0.45.0
+(10.0.45.0-10.0.45.255   ) <br> 
+NCB_Kiengiang
+(10.0.0.0-10.0.255.255  (zone spanning) ) <br> 
+Net_10.30.0.0
+(10.30.0.0-10.30.255.255   ) <br> 
+Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+IP_10.105.2.54
+(10.105.2.54   ) <br> 
+IP_10.105.2.39
+(10.105.2.39   ) <br> 
+IP_10.105.2.38
+(10.105.2.38   ) <br> 
+IP_10.105.1.137
+(10.105.1.137   ) <br> 
+IP_10.105.1.136
+(10.105.1.136   ) <br> 
+Net_10.41.0.0
+(<span>10.41.0.0-10.41.255.255   </span>) <br> 
+Net_10.52.0.0
+(10.52.0.0-10.52.255.255   ) <br> 
+Net_10.18.0.0
+(10.18.0.0-10.18.255.255   ) <br> 
+CN_PGD_MN
+(10.0.36.0-10.0.36.255   | 10.0.54.0-10.0.55.255   | 10.0.57.0-10.0.58.255   | 10.0.66.0-10.0.66.255   | 10.43.0.0-10.43.255.255  (zone spanning) | 10.45.0.0-10.45.255.255  (zone spanning) | 10.62.0.0-10.62.255.255   | 10.65.0.0-10.68.255.255  (zone spanning) ) <br> 
+IP_172.23.1.7
+(172.23.1.7   ) <br> 
+</td>
+		<td>IP_10.105.1.137
+(10.105.1.137   ) <br> 
+IP_10.105.2.38
+(10.105.2.38   ) <br> 
+IP_10.105.2.39
+(10.105.2.39   ) <br> 
+IP_10.105.2.54
+(10.105.2.54   ) <br> 
+Net_HHT_10.50.0.0
+(10.50.0.0-10.50.255.255   ) <br> 
+Net_10.41.0.0
+(<span>10.41.0.0-10.41.255.255   </span>) <br> 
+Net_10.52.0.0
+(10.52.0.0-10.52.255.255   ) <br> 
+Net_10.18.0.0
+(10.18.0.0-10.18.255.255   ) <br> 
+Net_10.44.0.0
+(10.44.0.0-10.44.255.255   ) <br> 
+Net_10.0.45.0
+(10.0.45.0-10.0.45.255   ) <br> 
+NCB_Kiengiang
+(10.0.0.0-10.0.255.255  (zone spanning) ) <br> 
+Net_10.30.0.0
+(10.30.0.0-10.30.255.255   ) <br> 
+Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+IP_10.105.1.136
+(10.105.1.136   ) <br> 
+CN_PGD_MN
+(10.0.36.0-10.0.36.255   | 10.0.54.0-10.0.55.255   | 10.0.57.0-10.0.58.255   | 10.0.66.0-10.0.66.255   | 10.43.0.0-10.43.255.255  (zone spanning) | 10.45.0.0-10.45.255.255  (zone spanning) | 10.62.0.0-10.62.255.255   | 10.65.0.0-10.68.255.255  (zone spanning) ) <br> 
+IP_172.23.1.7
+(172.23.1.7   ) <br> 
+</td>
+		<td>Quattro
+(None) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+97
+</td>
+		<td>
+</td>
+		<td>TienHP_10.50.9.20
+(10.50.9.20   ) <br> 
+IP_10.50.2.194_DaiNV
+(10.50.2.194   ) <br> 
+</td>
+		<td>IP_10.2.100.0
+(10.2.100.0-10.2.100.255   ) <br> 
+IP_10.2.250.0
+(10.2.250.0-10.2.250.255   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>E30_06_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+98
+</td>
+		<td>
+</td>
+		<td>IP_10.2.100.0
+(10.2.100.0-10.2.100.255   ) <br> 
+IP_10.2.250.0
+(10.2.250.0-10.2.250.255   ) <br> 
+</td>
+		<td>TienHP_10.50.9.20
+(10.50.9.20   ) <br> 
+IP_10.50.2.194_DaiNV
+(10.50.2.194   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>E30_06_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+99
+</td>
+		<td>
+</td>
+		<td>IP_10.1.40.14_LAN_VPN
+(10.1.40.14   ) <br> 
+</td>
+		<td>IP_10.50.2.111
+(10.50.2.111   ) <br> 
+</td>
+		<td>Remote_Desktop_Protocol
+(3389) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+100
+</td>
+		<td>
+</td>
+		<td>DR-Web-Filter-01
+(10.128.1.100   ) <br> 
+</td>
+		<td>Qradar_10.1.248.230
+(10.1.248.230   ) <br> 
+</td>
+		<td>syslog
+(514) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+101
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>IP_10.1.65.220
+(10.1.65.220   ) <br> 
+</td>
+		<td>TCP_2009
+(2009) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+102
+</td>
+		<td>OnePay-ALL
+</td>
+		<td>Net_10.26.2.0-0
+(<span>10.26.2.0-10.26.2.255   </span>) <br> 
+OnePay
+(10.36.71.101   | 10.36.72.6   | 10.36.72.90   | 10.36.74.92   | 192.168.72.6   ) <br> 
+</td>
+		<td>Net_10.26.2.0-0
+(<span>10.26.2.0-10.26.2.255   </span>) <br> 
+OnePay
+(10.36.71.101   | 10.36.72.6   | 10.36.72.90   | 10.36.74.92   | 192.168.72.6   ) <br> 
+</td>
+		<td>TCP_60104
+(60104) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+103
+</td>
+		<td>Viettin-Bank
+</td>
+		<td>Viettin_Bank
+(113.160.0.6   | 113.160.11.94   | 113.160.27.2   | 113.160.27.6   | 113.160.27.10   | 113.160.27.18   | 118.70.133.164   | 210.245.49.94-210.245.49.97   ) <br> 
+E_Gateway
+(10.26.2.59   ) <br> 
+</td>
+		<td>Viettin_Bank
+(113.160.0.6   | 113.160.11.94   | 113.160.27.2   | 113.160.27.6   | 113.160.27.10   | 113.160.27.18   | 118.70.133.164   | 210.245.49.94-210.245.49.97   ) <br> 
+E_Gateway
+(10.26.2.59   ) <br> 
+</td>
+		<td>TCP_9899
+(9899) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+104
+</td>
+		<td>Ca the hoa the chip - Cty MK
+</td>
+		<td>NHDT-REPORT
+(10.26.2.115   ) <br> 
+IP_10.41.19.61_
+(10.41.19.61   ) <br> 
+</td>
+		<td>MK_113.160.5.138
+(113.160.5.138   ) <br> 
+</td>
+		<td>ssh
+(22) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+105
+</td>
+		<td>SoftEther VPN
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Open_VPN_Server
+(10.1.65.25   ) <br> 
+</td>
+		<td>https
+(443) <br> 
+TCP_992
+(992) <br> 
+TCP_1194
+(1194) <br> 
+Napster_directory_5555
+(5555) <br> 
+IKE
+(500) <br> 
+IKE_NAT_TRAVERSAL
+(4500) <br> 
+UDP_1194
+(<span>1194</span>) <br> 
+L2TP
+(1701) <br> 
+nbname
+(<span>137</span>) <br> 
+udp_40000
+(40000) <br> 
+domain-udp
+(<span>53</span>) <br> 
+ntp-udp
+(123) <br> 
+TCP_7578
+(7578) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+106
+</td>
+		<td>
+</td>
+		<td>IP_10.52.27.41_Huongnt4
+(10.52.27.41   ) <br> 
+K.VH.TTTN.Mrs.Hoa_10.52.27.78
+(10.52.27.78   ) <br> 
+IP_10.52.27.86
+(10.52.27.86   ) <br> 
+IP_10.52.27.80_Cubv
+(10.52.27.80   ) <br> 
+IP_10.52.27.82
+(10.52.27.82   ) <br> 
+IP_10.52.27.67__Hangntt5
+(10.52.27.67   ) <br> 
+hungnd2
+(10.50.2.10   ) <br> 
+</td>
+		<td>IP_CITAD_HN_HCM
+(10.1.70.21-10.1.70.22   ) <br> 
+IP_10.1.70.20
+(10.1.70.20   ) <br> 
+</td>
+		<td>VNC
+(5900) <br> 
+TCP_VNC
+(5900-5903) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+107
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>DC-MAIL-GW1
+(10.1.65.66   ) <br> 
+</td>
+		<td>smtp
+(25) <br> 
+http
+(80) <br> 
+pop-3
+(110) <br> 
+imap
+(143) <br> 
+https
+(443) <br> 
+SMTPS
+(465) <br> 
+SMTPs
+(587) <br> 
+IMAP-SSL
+(993) <br> 
+POP3S
+(995) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+108
+</td>
+		<td>PAYOO-NCB-LIVE
+</td>
+		<td>Payoo_118.69.206.8_01
+(118.69.206.8   ) <br> 
+Payoo_118.69.206.9_02
+(118.69.206.9   ) <br> 
+Payoo_118.69.206.16_03
+(118.69.206.16   ) <br> 
+Service_GW
+(10.30.10.216   ) <br> 
+E_Gateway
+(10.26.2.59   ) <br> 
+</td>
+		<td>Service_GW
+(10.30.10.216   ) <br> 
+E_Gateway
+(10.26.2.59   ) <br> 
+Payoo_118.69.206.8_01
+(118.69.206.8   ) <br> 
+Payoo_118.69.206.9_02
+(118.69.206.9   ) <br> 
+Payoo_118.69.206.16_03
+(118.69.206.16   ) <br> 
+</td>
+		<td>TCP_1008
+(1008) <br> 
+TCP_8080
+(8080) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+109
+</td>
+		<td>
+</td>
+		<td>IP_10.1.62.105
+(10.1.62.105   ) <br> 
+IP_10.1.62.15_IB_UAT
+(10.1.62.15   ) <br> 
+IB_Host
+(10.30.10.217   ) <br> 
+NHDT-REPORT
+(10.26.2.115   ) <br> 
+E_Gateway
+(10.26.2.59   ) <br> 
+IP_10.1.65.220
+(10.1.65.220   ) <br> 
+Service_GW
+(10.30.10.216   ) <br> 
+IP_10.1.65.19
+(10.1.65.19   ) <br> 
+Open_VPN_Server
+(10.1.65.25   ) <br> 
+IP_10.1.65.80_WEB
+(10.1.65.80   ) <br> 
+DC-Proxy_Web
+(10.1.65.82   ) <br> 
+</td>
+		<td>Any</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+110
+</td>
+		<td>DC-Proxy_Web
+</td>
+		<td>Any</td>
+		<td>DC-Proxy_Web
+(10.1.65.82   ) <br> 
+</td>
+		<td>https
+(443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+111
+</td>
+		<td>
+</td>
+		<td>IP_10.1.65.30_DNR
+(10.1.65.30   ) <br> 
+</td>
+		<td>Any</td>
+		<td>http
+(80) <br> 
+TCP_8443
+(8443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+112
+</td>
+		<td>MailGW to Internet
+</td>
+		<td>DC-MAIL-GW1
+(10.1.65.66   ) <br> 
+</td>
+		<td>Any</td>
+		<td>smtp
+(25) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+113
+</td>
+		<td>DNS
+</td>
+		<td>AD_Root_DC01
+(10.1.33.2   ) <br> 
+AD_Root_DC02
+(10.1.33.3   ) <br> 
+AD_NCB_Bank_DC01
+(10.1.33.18   ) <br> 
+AD_NCB_Bank_DC02
+(10.1.33.19   ) <br> 
+</td>
+		<td>Any</td>
+		<td>domain-tcp
+(53) <br> 
+domain-udp
+(<span>53</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+114
+</td>
+		<td>DC-Quattro-HCM
+</td>
+		<td>Quattro-Prod-01
+(10.104.2.40-10.104.2.44   ) <br> 
+Hethongthe
+(10.26.2.59   | 10.26.2.111   | 10.26.2.115   ) <br> 
+Quattro-Prod-02
+(10.104.0.111   | 10.104.1.137   | 10.104.1.139   | 10.104.2.38   | 10.104.2.46   ) <br> 
+</td>
+		<td>Quattro-Prod-01
+(10.104.2.40-10.104.2.44   ) <br> 
+Hethongthe
+(10.26.2.59   | 10.26.2.111   | 10.26.2.115   ) <br> 
+Quattro-Prod-02
+(10.104.0.111   | 10.104.1.137   | 10.104.1.139   | 10.104.2.38   | 10.104.2.46   ) <br> 
+</td>
+		<td>Napster_directory_6666
+(6666) <br> 
+ftp
+(21) <br> 
+TCP_3333
+(3333) <br> 
+Napster_directory_4444
+(4444) <br> 
+TCP_6969
+(6969) <br> 
+TCP_6868
+(6868) <br> 
+TCP_6565
+(6565) <br> 
+https
+(443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+115
+</td>
+		<td>Proxy NCB to VNPAY
+</td>
+		<td>IP_10.1.248.57__Security_Endpoint
+(10.1.248.57   ) <br> 
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>http
+(80) <br> 
+https
+(443) <br> 
+</td>
+		<td>accept</td>
+		<td>END_2103</td>
+		</tr>
+		<tr>
+		<td>
+
+116
+</td>
+		<td>Proxy NCB to VNPAY
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.248.57__Security_Endpoint
+(10.1.248.57   ) <br> 
+</td>
+		<td>https
+(443) <br> 
+http
+(80) <br> 
+ssh
+(22) <br> 
+</td>
+		<td>accept</td>
+		<td>END_2103</td>
+		</tr>
+		<tr>
+		<td>
+
+117
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>APP_RMS_10.1.62.62
+(10.1.62.62   ) <br> 
+</td>
+		<td>http
+(80) <br> 
+https
+(443) <br> 
+</td>
+		<td>accept</td>
+		<td>E0206_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+118
+</td>
+		<td>
+</td>
+		<td>IP_10.1.31.19
+(10.1.31.19   ) <br> 
+</td>
+		<td>Any</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+119
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>Net_10.1.255.0
+(10.1.255.0-10.1.255.15   ) <br> 
+Net_10.1.255.16
+(10.1.255.16-10.1.255.31   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+120
+</td>
+		<td>
+</td>
+		<td>GP_VNC
+(10.52.27.32   | 10.52.27.47   | 10.52.27.59   | 10.52.27.85   | 10.52.27.93   ) <br> 
+</td>
+		<td>IP_10.1.70.20
+(10.1.70.20   ) <br> 
+</td>
+		<td>TCP_VNC
+(5900-5903) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+121
+</td>
+		<td>
+</td>
+		<td>IP_10.52.27.14
+(10.52.27.14   ) <br> 
+IP_10.1.70.20
+(10.1.70.20   ) <br> 
+</td>
+		<td>IP_10.1.70.20
+(10.1.70.20   ) <br> 
+IP_10.52.27.14
+(10.52.27.14   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+122
+</td>
+		<td>
+</td>
+		<td>Net_10.158.0.0
+(10.158.0.0-10.158.255.255  (zone spanning) ) <br> 
+IP_10.1.35.16
+(10.1.35.16   ) <br> 
+IP_10.1.248.26
+(10.1.248.26   ) <br> 
+Core_DB_IP01
+(10.1.1.65   ) <br> 
+Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+Net_10.30.0.0
+(10.30.0.0-10.30.255.255   ) <br> 
+IP_10.1.248.91
+(10.1.248.91   ) <br> 
+</td>
+		<td>IP_10.158.1.60
+(10.158.1.60   ) <br> 
+IP_10.158.1.68_VC_HCM
+(10.158.1.68   ) <br> 
+Net_10.158.0.0
+(10.158.0.0-10.158.255.255  (zone spanning) ) <br> 
+Net_10.30.0.0
+(10.30.0.0-10.30.255.255   ) <br> 
+Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+Net_hub_HamNghi
+(10.128.0.0-10.128.255.255   ) <br> 
+Core_DB_IP01
+(10.1.1.65   ) <br> 
+DC-SMC-CP80
+(10.1.253.200   ) <br> 
+IP_10.1.248.91
+(10.1.248.91   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+123
+</td>
+		<td>
+</td>
+		<td>IP_10.1.248.91
+(10.1.248.91   ) <br> 
+Net_10.41.0.0
+(<span>10.41.0.0-10.41.255.255   </span>) <br> 
+PAM_HT_02_10.1.248.92
+(10.1.248.92   ) <br> 
+</td>
+		<td>Net_10.41.0.0
+(<span>10.41.0.0-10.41.255.255   </span>) <br> 
+IP_10.1.248.91
+(10.1.248.91   ) <br> 
+PAM_HT_02_10.1.248.92
+(10.1.248.92   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+124
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>DC-FILE-SRV1
+(10.1.35.35   ) <br> 
+Net_10.158.0.0
+(10.158.0.0-10.158.255.255  (zone spanning) ) <br> 
+IP_Rang_UAT_ACI
+(192.168.31.100-192.168.31.103   ) <br> 
+</td>
+		<td>Net_10.158.0.0
+(10.158.0.0-10.158.255.255  (zone spanning) ) <br> 
+DC-FILE-SRV1
+(10.1.35.35   ) <br> 
+IP_Rang_UAT_ACI
+(192.168.31.100-192.168.31.103   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+125
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>IP_10.1.253.50_VCenter_01
+(10.1.253.50   ) <br> 
+DC_VCenter_01
+(10.1.253.2   ) <br> 
+DC_ESX_01
+(10.1.253.11   ) <br> 
+DC_ESX_02
+(10.1.253.12   ) <br> 
+DC_ESX_03
+(10.1.65.9   ) <br> 
+Host_10.1.250.46_VC
+(10.1.250.46   ) <br> 
+IP_10.1.253.62_VC_BK_HN
+(10.1.253.62   ) <br> 
+IP_10.1.253.52_VC_BK_HN
+(10.1.253.52   ) <br> 
+IP_10.1.250.48
+(10.1.250.48   ) <br> 
+IP_10.1.250.58
+(10.1.250.58   ) <br> 
+IP_10.1.250.151
+(10.1.250.151   ) <br> 
+VCenter_HCM
+(10.158.1.60-10.158.1.63   | 10.158.1.200-10.158.1.205   ) <br> 
+Mgmt_VCenter
+(10.1.253.21-10.1.253.22   | 10.1.253.24-10.1.253.27   | 10.1.253.31-10.1.253.32   | 10.1.253.36-10.1.253.37   | 10.1.253.40-10.1.253.43   ) <br> 
+Net_10.1.254.0
+(10.1.254.0-10.1.254.255   ) <br> 
+IP_10.1.248.91
+(10.1.248.91   ) <br> 
+PAM_HT_02_10.1.248.92
+(10.1.248.92   ) <br> 
+</td>
+		<td>IP_10.1.253.50_VCenter_01
+(10.1.253.50   ) <br> 
+DC_VCenter_01
+(10.1.253.2   ) <br> 
+DC_ESX_01
+(10.1.253.11   ) <br> 
+DC_ESX_02
+(10.1.253.12   ) <br> 
+DC_ESX_03
+(10.1.65.9   ) <br> 
+Host_10.1.250.46_VC
+(10.1.250.46   ) <br> 
+IP_10.1.253.52_VC_BK_HN
+(10.1.253.52   ) <br> 
+IP_10.1.253.62_VC_BK_HN
+(10.1.253.62   ) <br> 
+IP_10.1.250.48
+(10.1.250.48   ) <br> 
+IP_10.1.250.58
+(10.1.250.58   ) <br> 
+IP_10.1.250.151
+(10.1.250.151   ) <br> 
+VCenter_HCM
+(10.158.1.60-10.158.1.63   | 10.158.1.200-10.158.1.205   ) <br> 
+Mgmt_VCenter
+(10.1.253.21-10.1.253.22   | 10.1.253.24-10.1.253.27   | 10.1.253.31-10.1.253.32   | 10.1.253.36-10.1.253.37   | 10.1.253.40-10.1.253.43   ) <br> 
+Net_10.1.254.0
+(10.1.254.0-10.1.254.255   ) <br> 
+IP_10.1.248.91
+(10.1.248.91   ) <br> 
+</td>
+		<td>ssh
+(22) <br> 
+echo-request
+(8) <br> 
+echo-reply
+(0) <br> 
+http
+(80) <br> 
+https
+(443) <br> 
+Tcp_9443
+(9443) <br> 
+Udp_902
+(902) <br> 
+Tcp_902
+(<span>902</span>) <br> 
+TCP_6502
+(6502) <br> 
+Tcp_903
+(903) <br> 
+UDP_903
+(<span>903</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+126
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>DC_mail_DAG
+(10.1.34.68   ) <br> 
+DC_MAIL_EX1
+(10.1.34.66   ) <br> 
+DC_mail_ex2
+(10.1.34.67   ) <br> 
+</td>
+		<td>https
+(443) <br> 
+http
+(80) <br> 
+smtp
+(25) <br> 
+SMTPs
+(587) <br> 
+SMTPS
+(465) <br> 
+pop-3
+(110) <br> 
+POP3S
+(995) <br> 
+imap
+(143) <br> 
+IMAP-SSL
+(993) <br> 
+TCP_135
+(135) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+ldap
+(389) <br> 
+TCP_3268
+(3268) <br> 
+TCP_3269
+(3269) <br> 
+domain-tcp
+(53) <br> 
+domain-udp
+(<span>53</span>) <br> 
+Kerberos_v5_TCP
+(88) <br> 
+Kerberos_v5_UDP
+(<span>88</span>) <br> 
+TCP_RPC_DYN
+(49000-65000) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+127
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>IP_10.1.253.68
+(10.1.253.68   ) <br> 
+PC_TungPT
+(10.50.2.64   ) <br> 
+DC-MAIL-GW1
+(10.1.65.66   ) <br> 
+IP_10.50.254.51
+(<span>10.50.254.51   </span>) <br> 
+</td>
+		<td>DC-MAIL-GW1
+(10.1.65.66   ) <br> 
+PC_TungPT
+(10.50.2.64   ) <br> 
+IP_10.1.253.68
+(10.1.253.68   ) <br> 
+</td>
+		<td>TCP_10433
+(10433) <br> 
+TCP_10443
+(10443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+128
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.67_TungNT
+(10.50.2.67   ) <br> 
+IP_10.50.2.130
+(10.50.2.130   ) <br> 
+</td>
+		<td>TRS
+(10.1.33.11   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+129
+
+ Disabled
+</td>
+		<td>Solarwinds
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_Solarwind_MB
+(10.1.248.51   ) <br> 
+IP_Solarwind_HCM
+(10.1.248.54   ) <br> 
+</td>
+		<td>snmp
+(161) <br> 
+snmp-read
+(<span>161</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+130
+</td>
+		<td>
+</td>
+		<td>IP_Solarwind_MB
+(10.1.248.51   ) <br> 
+IP_Solarwind_HCM
+(10.1.248.54   ) <br> 
+</td>
+		<td>Any</td>
+		<td>snmp-read
+(<span>161</span>) <br> 
+snmp
+(161) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+131
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.35.16
+(10.1.35.16   ) <br> 
+</td>
+		<td>TCP_7080
+(7080) <br> 
+TCP_7443
+(7443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+132
+
+ Disabled
+</td>
+		<td>OpUtils
+</td>
+		<td>IP_10.1.35.16
+(10.1.35.16   ) <br> 
+</td>
+		<td>Any</td>
+		<td>TCP_7080
+(7080) <br> 
+TCP_7443
+(7443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+133
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>Net_10.50.0.0
+(<span>10.50.0.0-10.50.255.255   </span>) <br> 
+IP_10.1.253.68
+(10.1.253.68   ) <br> 
+Net_IT_HCM_10.131.15.0
+(10.131.15.0-10.131.15.255   ) <br> 
+</td>
+		<td>DC-MOR-AD360
+(10.1.248.20   ) <br> 
+DC-_MOR_OP
+(10.1.248.22   ) <br> 
+DC-MOR-LOG1
+(10.1.248.23   ) <br> 
+DC-MOR-APPMON
+(10.1.248.19   ) <br> 
+IP_10.1.248.212
+(10.1.248.212   ) <br> 
+</td>
+		<td>snmp-trap
+(162) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+134
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+Net_5.5.5.0
+(5.5.5.0-5.5.5.7   ) <br> 
+Net_2.2.2.0
+(2.2.2.0-2.2.2.255   ) <br> 
+</td>
+		<td>DC-_MOR_OP
+(10.1.248.22   ) <br> 
+DC-MOR-AD360
+(10.1.248.20   ) <br> 
+DC-MOR-LOG1
+(10.1.248.23   ) <br> 
+DC-MOR-APPMON
+(10.1.248.19   ) <br> 
+IP_10.1.248.212
+(10.1.248.212   ) <br> 
+</td>
+		<td>login
+(513) <br> 
+who
+(<span>513</span>) <br> 
+shell
+(<span>514</span>) <br> 
+nbsession
+(139) <br> 
+echo-reply
+(0) <br> 
+echo-request
+(8) <br> 
+UDP_9996
+(<span>9996</span>) <br> 
+snmp
+(161) <br> 
+snmp-read
+(<span>161</span>) <br> 
+TCP_8020-8021
+(8020-8021) <br> 
+TCP_8383-8384
+(8383-8384) <br> 
+TCP_8443-8444
+(8443-8444) <br> 
+TCP_8031-8032
+(8031-8032) <br> 
+TCP_8027
+(8027) <br> 
+snmp-trap
+(162) <br> 
+http
+(80) <br> 
+TCP_6060
+(6060) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+135
+</td>
+		<td>
+</td>
+		<td>DC-MOR-AD360
+(10.1.248.20   ) <br> 
+DC-_MOR_OP
+(10.1.248.22   ) <br> 
+DC-MOR-LOG1
+(10.1.248.23   ) <br> 
+DC-MOR-APPMON
+(10.1.248.19   ) <br> 
+IP_10.1.248.52
+(10.1.248.52   ) <br> 
+IP_10.1.248.212
+(10.1.248.212   ) <br> 
+</td>
+		<td>Any</td>
+		<td>http
+(80) <br> 
+snmp
+(161) <br> 
+smtp
+(25) <br> 
+TCP_5000-5002_RPC
+(5000-5002) <br> 
+TCP_135
+(135) <br> 
+ldap
+(389) <br> 
+domain-tcp
+(53) <br> 
+domain-udp
+(<span>53</span>) <br> 
+nbname
+(<span>137</span>) <br> 
+nbsession
+(139) <br> 
+TCP_6006
+(6006) <br> 
+ldap_udp
+(<span>389</span>) <br> 
+Tcp_10000-65535
+(10000-65535) <br> 
+TCP_445
+(<span>445</span>) <br> 
+https
+(443) <br> 
+echo-reply
+(0) <br> 
+echo-request
+(8) <br> 
+UDP_9996
+(<span>9996</span>) <br> 
+tftp
+(69) <br> 
+TCP_69
+(<span>69</span>) <br> 
+snmp-read
+(<span>161</span>) <br> 
+TCP_8027
+(8027) <br> 
+TCP_8020-8021
+(8020-8021) <br> 
+TCP_8383-8384
+(8383-8384) <br> 
+TCP_8443-8444
+(8443-8444) <br> 
+TCP_8031-8032
+(8031-8032) <br> 
+TCP_8021
+(8021) <br> 
+TCP_8384
+(8384) <br> 
+syslog
+(514) <br> 
+sqlnet1
+(1521) <br> 
+snmp-trap
+(162) <br> 
+telnet
+(23) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+136
+</td>
+		<td>AlgoSec
+</td>
+		<td>AlgoSec_10.1.253.90
+(0.0.0.2   ) <br> 
+</td>
+		<td>Net_10.1.255.0-0
+(10.1.255.0-10.1.255.255  (zone spanning) ) <br> 
+</td>
+		<td>telnet
+(23) <br> 
+ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+137
+</td>
+		<td>
+</td>
+		<td>DC-MOR-AD360
+(10.1.248.20   ) <br> 
+DC-_MOR_OP
+(10.1.248.22   ) <br> 
+DC-MOR-APPMON
+(10.1.248.19   ) <br> 
+</td>
+		<td>Any</td>
+		<td>RPC_Dynamic
+(1024-65534) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+138
+</td>
+		<td>
+</td>
+		<td>DC-EPO-App1
+(10.1.248.10   ) <br> 
+</td>
+		<td>Any</td>
+		<td>TCP_8441
+(8441) <br> 
+https
+(443) <br> 
+echo-request
+(8) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+TCP_8442
+(<span>8442</span>) <br> 
+UDP_8442
+(8442) <br> 
+echo-reply
+(0) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+139
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>DC-SVR-Backend
+(10.1.35.11   ) <br> 
+DC-ITSM-SRV1
+(10.1.35.10   ) <br> 
+DC-JIRA-SRV1
+(10.1.35.12   ) <br> 
+DC-TEST-TELLER
+(10.1.65.22   ) <br> 
+DC-TEST-CMR1
+(10.1.34.45   ) <br> 
+DC-TEST-CMR2
+(10.1.34.46   ) <br> 
+</td>
+		<td>TCP_8086
+(8086) <br> 
+Napster_directory_8888_primary
+(8888) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+140
+
+ Disabled
+</td>
+		<td>WEB TNTD
+</td>
+		<td>Any</td>
+		<td>IP_10.1.35.80
+(10.1.35.80   ) <br> 
+IP_10.1.35.81
+(10.1.35.81   ) <br> 
+</td>
+		<td>TCP_8080
+(8080) <br> 
+http
+(80) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+141
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>DC-EMAIL-EX1
+(10.1.34.20   ) <br> 
+DC-EMAIL-EX2
+(10.1.34.21   ) <br> 
+mail.ncb-bank.vn
+(10.1.34.22   ) <br> 
+</td>
+		<td>https
+(443) <br> 
+http
+(80) <br> 
+imap
+(143) <br> 
+IMAP-SSL
+(993) <br> 
+pop-3
+(110) <br> 
+POP3S
+(995) <br> 
+SMTPs
+(587) <br> 
+smtp
+(25) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+142
+</td>
+		<td>
+</td>
+		<td>IP_10.1.34.6
+(10.1.34.6   ) <br> 
+Temp-Srv-10.1.34.199
+(10.1.34.199   ) <br> 
+Temp-srv-10.1.34.210
+(10.1.34.210   ) <br> 
+DC-WSUS-SRV1
+(10.1.34.40   ) <br> 
+DC-TIME-SRV1
+(10.1.34.253   ) <br> 
+POC-WS-MGMT
+(10.1.34.250   ) <br> 
+POC-WS-PRY
+(10.1.34.251   ) <br> 
+DC-TEST-CMR1
+(10.1.34.45   ) <br> 
+DC-TEST-CMR2
+(10.1.34.46   ) <br> 
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+143
+</td>
+		<td>
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.35.16
+(10.1.35.16   ) <br> 
+IP_10.1.254.11
+(10.1.254.11   ) <br> 
+</td>
+		<td>https
+(443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+144
+</td>
+		<td>
+</td>
+		<td>IP_10.1.35.16
+(10.1.35.16   ) <br> 
+IP_10.1.254.11
+(10.1.254.11   ) <br> 
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>https
+(443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+145
+</td>
+		<td>
+</td>
+		<td>DC-TRITON-MGMT
+(10.1.248.30   ) <br> 
+DC-Web-Filter-01
+(10.1.248.31   ) <br> 
+DC-EPO-App1
+(10.1.248.10   ) <br> 
+Net_10.1.65.0
+(10.1.65.0-10.1.65.255   ) <br> 
+IP_10.1.35.21
+(10.1.35.21   ) <br> 
+FTP_Serer_Test
+(10.1.35.20   ) <br> 
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>TCP_5938
+(5938) <br> 
+Remote_Desktop_Protocol
+(3389) <br> 
+ssh
+(22) <br> 
+telnet
+(23) <br> 
+TCP_VNC
+(5900-5903) <br> 
+</td>
+		<td>drop</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+146
+</td>
+		<td>Permit Internet
+</td>
+		<td>DC-TRITON-MGMT
+(10.1.248.30   ) <br> 
+DC-Web-Filter-01
+(10.1.248.31   ) <br> 
+DC-EPO-App1
+(10.1.248.10   ) <br> 
+Net_10.1.65.0
+(10.1.65.0-10.1.65.255   ) <br> 
+FTP_Serer_Test
+(10.1.35.20   ) <br> 
+UAT-SYSTEM-01
+(10.1.62.30-10.1.62.31   ) <br> 
+IP_10.1.35.22_symatic
+(10.1.35.22   ) <br> 
+DC-SVR-Backend
+(10.1.35.11   ) <br> 
+Service_GW
+(10.30.10.216   ) <br> 
+IP_10.30.7.100
+(10.30.7.100   ) <br> 
+IP_10.1.62.100
+(10.1.62.100   ) <br> 
+ESX_HOST
+(10.1.250.81-10.1.250.84   ) <br> 
+IP_10.1.70.20
+(10.1.70.20   ) <br> 
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+147
+</td>
+		<td>HPE-LOG
+</td>
+		<td>IP_10.1.253.40
+(10.1.253.40   ) <br> 
+IP_10.1.250.50_fixHP
+(10.1.250.50   ) <br> 
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>https
+(443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+148
+</td>
+		<td>
+</td>
+		<td>IP_Rang_Partner
+(14.161.21.225   | 101.53.12.222   | 118.69.68.222   ) <br> 
+IP_10.1.62.15_IB_UAT
+(10.1.62.15   ) <br> 
+</td>
+		<td>IP_Rang_Partner
+(14.161.21.225   | 101.53.12.222   | 118.69.68.222   ) <br> 
+IP_10.1.62.15_IB_UAT
+(10.1.62.15   ) <br> 
+</td>
+		<td>Tcp_9090
+(9090) <br> 
+TCP_8080
+(8080) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+149
+</td>
+		<td>PAYOO-UAT-NCB
+</td>
+		<td>IP_118.69.56.194_Payoo
+(118.69.56.194   ) <br> 
+IP_118.69.56.231_Payoo
+(118.69.56.231   ) <br> 
+IP_118.69.56.245_Payoo
+(118.69.56.245   ) <br> 
+IP_10.1.62.105
+(10.1.62.105   ) <br> 
+IP_10.1.62.15_IB_UAT
+(10.1.62.15   ) <br> 
+</td>
+		<td>IP_118.69.56.194_Payoo
+(118.69.56.194   ) <br> 
+IP_118.69.56.231_Payoo
+(118.69.56.231   ) <br> 
+IP_118.69.56.245_Payoo
+(118.69.56.245   ) <br> 
+IP_10.1.62.105
+(10.1.62.105   ) <br> 
+IP_10.1.62.15_IB_UAT
+(10.1.62.15   ) <br> 
+</td>
+		<td>Tcp_9090
+(9090) <br> 
+TCP_1008
+(1008) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+150
+
+ Disabled
+</td>
+		<td>Viettin-Bank
+</td>
+		<td>Viettin_Bank
+(113.160.0.6   | 113.160.11.94   | 113.160.27.2   | 113.160.27.6   | 113.160.27.10   | 113.160.27.18   | 118.70.133.164   | 210.245.49.94-210.245.49.97   ) <br> 
+IP_10.1.62.105
+(10.1.62.105   ) <br> 
+</td>
+		<td>IP_10.1.62.105
+(10.1.62.105   ) <br> 
+Viettin_Bank
+(113.160.0.6   | 113.160.11.94   | 113.160.27.2   | 113.160.27.6   | 113.160.27.10   | 113.160.27.18   | 118.70.133.164   | 210.245.49.94-210.245.49.97   ) <br> 
+</td>
+		<td>TCP_9899
+(9899) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+151
+</td>
+		<td>
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>DC-MAIL-GW1
+(10.1.65.66   ) <br> 
+DC-MAIL-GW02
+(10.1.65.67   ) <br> 
+IP_10.1.65.19
+(10.1.65.19   ) <br> 
+</td>
+		<td>smtp
+(25) <br> 
+pop-3
+(110) <br> 
+POP3S
+(995) <br> 
+https
+(443) <br> 
+http
+(80) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+152
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>DC-MAIL-GW1
+(10.1.65.66   ) <br> 
+DC-MAIL-GW02
+(10.1.65.67   ) <br> 
+IP_10.1.65.19
+(10.1.65.19   ) <br> 
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>smtp
+(25) <br> 
+pop-3
+(110) <br> 
+POP3S
+(995) <br> 
+https
+(443) <br> 
+http
+(80) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+153
+</td>
+		<td>Intranet-Traning
+</td>
+		<td>Any</td>
+		<td>Intranet_Traning_10.30.8.17
+(10.30.8.17   ) <br> 
+</td>
+		<td>TCP_8080
+(8080) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+154
+</td>
+		<td>
+</td>
+		<td>Mgmt_Monitor
+(10.1.248.0-10.1.248.255   ) <br> 
+</td>
+		<td>Net_Mngt_10.1.253.0
+(10.1.253.0-10.1.253.255   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+155
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>T24_Test_01
+(10.1.30.10   ) <br> 
+</td>
+		<td>TCP_8083
+(8083) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+156
+</td>
+		<td>T24 Prod
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>T24_PRS_01
+(10.1.2.10   ) <br> 
+T24_PRS_02
+(10.1.2.11   ) <br> 
+T24_PRS_VIP
+(10.1.2.12   ) <br> 
+</td>
+		<td>TCP_8180
+(8180) <br> 
+TCP_8280
+(8280) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+157
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>T24_Test_02
+(10.1.30.11   ) <br> 
+T24_Test_VIP01
+(10.1.30.12   ) <br> 
+T24_Test_VIP02
+(10.1.30.14   ) <br> 
+T24_Test_ScanIP01
+(10.1.30.15   ) <br> 
+T24_Test_ScanIP02
+(10.1.30.16   ) <br> 
+T24_Test_ScanIP03
+(10.1.30.17   ) <br> 
+</td>
+		<td>TCP_8380
+(8380) <br> 
+TCP_9002
+(9002) <br> 
+TCP_7004
+(7004) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+158
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>NCB_CN
+(10.2.0.0-10.255.255.255  (zone spanning) ) <br> 
+NCB_Kiengiang
+(10.0.0.0-10.0.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Lync_Fe_10.1.34.15
+(10.1.34.15   ) <br> 
+Lync_Edge_internal
+(10.1.34.30   ) <br> 
+</td>
+		<td>http
+(80) <br> 
+TCP_135
+(135) <br> 
+CP_SSL_Network_Extender
+(444) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+TCP_448
+(448) <br> 
+TCP_5060_5080
+(5060-5080) <br> 
+TCP_49152-65335
+(49152-65335) <br> 
+UDP_49152-65335
+(<span>49152-65335</span>) <br> 
+Tcp_5060
+(<span>5060</span>) <br> 
+TCP_8080
+(8080) <br> 
+https
+(443) <br> 
+UDP_80
+(<span>80</span>) <br> 
+TCP_4443
+(4443) <br> 
+ssl_v3
+(<span>443</span>) <br> 
+UDP_3478
+(3478) <br> 
+TCP_8057
+(8057) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+159
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>DC_SLA_01
+(10.1.34.25   ) <br> 
+DC_CONF_01
+(10.1.34.10   ) <br> 
+</td>
+		<td>MySQL
+(3306) <br> 
+sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+MS-SQL-Server
+(1433) <br> 
+MS-SQL-Server_UDP
+(<span>1433</span>) <br> 
+TCP_9999
+(9999) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+160
+</td>
+		<td>TEST-CP4200
+</td>
+		<td>IP_10.1.35.16
+(10.1.35.16   ) <br> 
+</td>
+		<td>Net_10.50.254.0
+(10.50.254.0-10.50.254.255   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>E30_06_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+161
+</td>
+		<td>CN-ROUTER-NCB
+</td>
+		<td>IP_10.1.35.16
+(10.1.35.16   ) <br> 
+</td>
+		<td>Net_10.50.0.0
+(<span>10.50.0.0-10.50.255.255   </span>) <br> 
+Net_10.41.0.0
+(<span>10.41.0.0-10.41.255.255   </span>) <br> 
+Net_10.52.0.0
+(10.52.0.0-10.52.255.255   ) <br> 
+Net_10.158.0.0
+(10.158.0.0-10.158.255.255  (zone spanning) ) <br> 
+Net_10.51.0.0-0
+(10.51.0.0-10.51.255.255   ) <br> 
+Net_10.44.0.0
+(10.44.0.0-10.44.255.255   ) <br> 
+Net_10.18.0.0
+(10.18.0.0-10.18.255.255   ) <br> 
+Net_10.1.255.0-0
+(10.1.255.0-10.1.255.255  (zone spanning) ) <br> 
+Net_10.30.0.0
+(10.30.0.0-10.30.255.255   ) <br> 
+Net_10.62.0.0_Kien_Giang
+(10.62.0.0-10.62.255.255   ) <br> 
+Net_10.0.45.0
+(10.0.45.0-10.0.45.255   ) <br> 
+Net_10.1.127.116
+(10.1.127.116-10.1.127.119   ) <br> 
+</td>
+		<td>telnet
+(23) <br> 
+ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+VNC
+(5900) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+162
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>IP_10.1.34.6
+(10.1.34.6   ) <br> 
+</td>
+		<td>Any</td>
+		<td>drop</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+163
+</td>
+		<td>
+</td>
+		<td>Gr_Net_NHDT
+(<span>10.41.19.0-10.41.19.255   </span>) <br> 
+Host_WS_SML_Test
+(10.30.5.88   ) <br> 
+</td>
+		<td>Gr_Net_SML_BankNet
+(10.1.251.0-10.1.251.255   | 10.255.252.0-10.255.252.255   ) <br> 
+</td>
+		<td>Gr_Ser_SML_BankNet
+(None) <br> 
+TCP_11055
+(11055) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+164
+</td>
+		<td>
+</td>
+		<td>Net_VNPay
+(10.22.32.0-10.22.32.255   ) <br> 
+</td>
+		<td>Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+</td>
+		<td>TCP_1234
+(1234) <br> 
+TCP_13002
+(13002) <br> 
+TCP_8443-8444
+(8443-8444) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+165
+
+ Disabled
+</td>
+		<td>OnePay-ALL
+</td>
+		<td>Net_10.26.2.0-0
+(<span>10.26.2.0-10.26.2.255   </span>) <br> 
+OnePay
+(10.36.71.101   | 10.36.72.6   | 10.36.72.90   | 10.36.74.92   | 192.168.72.6   ) <br> 
+</td>
+		<td>Net_10.26.2.0-0
+(<span>10.26.2.0-10.26.2.255   </span>) <br> 
+OnePay
+(10.36.71.101   | 10.36.72.6   | 10.36.72.90   | 10.36.74.92   | 192.168.72.6   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+166
+</td>
+		<td>TCT Production
+</td>
+		<td>IP_TCT_Prod
+(10.64.241.22   | 10.64.241.24   ) <br> 
+IP_10.1.70.31_Prod
+(10.1.70.31   ) <br> 
+</td>
+		<td>IP_TCT_Prod
+(10.64.241.22   | 10.64.241.24   ) <br> 
+IP_10.1.70.31_Prod
+(10.1.70.31   ) <br> 
+</td>
+		<td>Grp_Port_Prod
+(<span>444, 1717</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+167
+</td>
+		<td>
+</td>
+		<td>DC-TRITON-MGMT
+(10.1.248.30   ) <br> 
+AD_NCB_Bank_DC01
+(10.1.33.18   ) <br> 
+AD_NCB_Bank_DC02
+(10.1.33.19   ) <br> 
+DC-Web-Filter-01
+(10.1.248.31   ) <br> 
+DR-Web-Filter-01
+(10.128.1.100   ) <br> 
+</td>
+		<td>AD_NCB_Bank_DC01
+(10.1.33.18   ) <br> 
+AD_NCB_Bank_DC02
+(10.1.33.19   ) <br> 
+DC-TRITON-MGMT
+(10.1.248.30   ) <br> 
+DC-Web-Filter-01
+(10.1.248.31   ) <br> 
+DR-Web-Filter-01
+(10.128.1.100   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+168
+</td>
+		<td>Open VPN
+</td>
+		<td>All_Internet
+(0.0.0.0-255.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Open_VPN_Server
+(10.1.65.25   ) <br> 
+</td>
+		<td>https
+(443) <br> 
+TCP_992
+(992) <br> 
+TCP_1194
+(1194) <br> 
+Napster_directory_5555
+(5555) <br> 
+IKE
+(500) <br> 
+IKE_NAT_TRAVERSAL
+(4500) <br> 
+UDP_1194
+(<span>1194</span>) <br> 
+L2TP
+(1701) <br> 
+nbname
+(<span>137</span>) <br> 
+udp_40000
+(40000) <br> 
+domain-udp
+(<span>53</span>) <br> 
+ntp-udp
+(123) <br> 
+TCP_7578
+(7578) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+169
+
+ Disabled
+</td>
+		<td>DC-Quattro-HCM
+</td>
+		<td>Quattro-Prod-01
+(10.104.2.40-10.104.2.44   ) <br> 
+Hethongthe
+(10.26.2.59   | 10.26.2.111   | 10.26.2.115   ) <br> 
+Quattro-Prod-02
+(10.104.0.111   | 10.104.1.137   | 10.104.1.139   | 10.104.2.38   | 10.104.2.46   ) <br> 
+</td>
+		<td>Quattro-Prod-01
+(10.104.2.40-10.104.2.44   ) <br> 
+Hethongthe
+(10.26.2.59   | 10.26.2.111   | 10.26.2.115   ) <br> 
+Quattro-Prod-02
+(10.104.0.111   | 10.104.1.137   | 10.104.1.139   | 10.104.2.38   | 10.104.2.46   ) <br> 
+</td>
+		<td>Napster_directory_6666
+(6666) <br> 
+ftp
+(21) <br> 
+TCP_3333
+(3333) <br> 
+Napster_directory_4444
+(4444) <br> 
+TCP_6969
+(6969) <br> 
+TCP_6868
+(6868) <br> 
+TCP_6565
+(6565) <br> 
+https
+(443) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+170
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>Net_10.30.0.0
+(10.30.0.0-10.30.255.255   ) <br> 
+Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+BTS_HCM
+(10.30.10.213   ) <br> 
+Bts_host_10.30.10.214
+(10.30.10.214   ) <br> 
+</td>
+		<td>Service_ATM
+(None) <br> 
+TCP_8089
+(8089) <br> 
+Service_Banking_SG
+(21, 10000, 10100, 10101, 20101, 20909, 61280) <br> 
+TCP_9080
+(9080) <br> 
+domain-tcp
+(53) <br> 
+domain-udp
+(<span>53</span>) <br> 
+BTS_OLD
+(None) <br> 
+BTS_214
+(None) <br> 
+TCP_10400_10418
+(10400-10418) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+171
+</td>
+		<td>HSM
+</td>
+		<td>Net_10.41.19.0
+(10.41.19.0-10.41.19.255   ) <br> 
+Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+</td>
+		<td>Net_10.26.2.0
+(10.26.2.0-10.26.2.255   ) <br> 
+Net_10.41.19.0
+(10.41.19.0-10.41.19.255   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+172
+</td>
+		<td>
+</td>
+		<td>IP_10.1.248.25
+(10.1.248.25   ) <br> 
+IP_10.1.248.29
+(10.1.248.29   ) <br> 
+IP_10.1.253.68
+(10.1.253.68   ) <br> 
+IP_10.1.248.26
+(10.1.248.26   ) <br> 
+IP_10.1.248.91
+(10.1.248.91   ) <br> 
+IP_10.1.248.212
+(10.1.248.212   ) <br> 
+PAM_HT_02_10.1.248.92
+(10.1.248.92   ) <br> 
+</td>
+		<td>Any</td>
+		<td>nbsession
+(139) <br> 
+ftp
+(21) <br> 
+Share_File
+(21, 139, 445, 137) <br> 
+ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+Remote_Desktop_Protocol
+(3389) <br> 
+TCP_VNC
+(5900-5903) <br> 
+telnet
+(23) <br> 
+TCP_14147
+(14147) <br> 
+Freak2k
+(7001) <br> 
+tcp_7272
+(7272) <br> 
+TCP_7273
+(7273) <br> 
+sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+http
+(80) <br> 
+TCP_9447
+(9447) <br> 
+Websense-proxy
+(8081) <br> 
+TCP_8082
+(8082) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+173
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>IP_10.1.248.29
+(10.1.248.29   ) <br> 
+</td>
+		<td>Any</td>
+		<td>TCP_6036
+(6036) <br> 
+TCP_25001
+(25001) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+174
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.35.16
+(10.1.35.16   ) <br> 
+</td>
+		<td>TCP_5000-5002_RPC
+(5000-5002) <br> 
+UDP_5000
+(5000) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+175
+
+ Disabled
+</td>
+		<td>Printer
+</td>
+		<td>IP_CITAD_HN_HCM
+(10.1.70.21-10.1.70.22   ) <br> 
+IP_10.52.27.71_Print
+(10.52.27.71   ) <br> 
+</td>
+		<td>IP_CITAD_HN_HCM
+(10.1.70.21-10.1.70.22   ) <br> 
+IP_10.52.27.71_Print
+(10.52.27.71   ) <br> 
+</td>
+		<td>TCP_9100
+(9100) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+176
+</td>
+		<td>DEV-IB
+</td>
+		<td>DEV-PTNV
+(10.41.19.34   | 10.41.19.154   | 10.50.2.59   | 10.50.2.102   ) <br> 
+LoiVD-NHDT_10.41.19.154
+(10.41.19.154   ) <br> 
+Hunglh_pc
+(10.50.2.29   ) <br> 
+HienTT_PC
+(10.50.2.47   ) <br> 
+IP_10.50.2.56_HienVT
+(10.50.2.56   ) <br> 
+IP_10.50.2.241
+(10.50.2.241   ) <br> 
+IP_10.1.62.14
+(10.1.62.14   ) <br> 
+</td>
+		<td>IP_10.1.61.99
+(10.1.61.99   ) <br> 
+</td>
+		<td>Oracle_port
+(1521, 1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+177
+</td>
+		<td>NHDT
+</td>
+		<td>IP_10.41.19.81
+(10.41.19.81   ) <br> 
+IP_10.41.19.61_
+(10.41.19.61   ) <br> 
+IP_10.41.19.144_Nhuy_HCM
+(10.41.19.144   ) <br> 
+</td>
+		<td>IP_Range_Card_01
+(<span>10.158.7.4-10.158.7.7   </span>) <br> 
+</td>
+		<td>ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+ftp
+(21) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+178
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>Egateway_test
+(10.1.62.58   ) <br> 
+</td>
+		<td>Any</td>
+		<td>drop</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+179
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>IP_10.1.35.50_SBV
+(10.1.35.50   ) <br> 
+</td>
+		<td>Any</td>
+		<td>drop</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+180
+</td>
+		<td>
+</td>
+		<td>Net_10.50.0.0-0
+(<span>10.50.0.0-10.50.255.255   </span>) <br> 
+IP_10.1.253.68
+(10.1.253.68   ) <br> 
+</td>
+		<td>IP_10.1.62.20_UAT
+(10.1.62.20   ) <br> 
+</td>
+		<td>Remote_Desktop_Protocol
+(3389) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+181
+</td>
+		<td>Phat trien CreditScoring_XHTD
+</td>
+		<td>PTNV_GRP_DEV
+(10.50.2.27-10.50.2.28   | 10.50.2.52   | 10.50.2.67   | 10.50.2.70   | 10.50.2.130   | 10.50.2.150   | 10.50.2.241   ) <br> 
+IP_10.50.2.33_TuVD
+(10.50.2.33   ) <br> 
+IP_10.52.5.122
+(10.52.5.122   ) <br> 
+IP_10.52.5.89
+(10.52.5.89   ) <br> 
+AnhNH_10.50.2.144
+(10.50.2.144   ) <br> 
+LanBTN_10.50.2.97
+(10.50.2.97   ) <br> 
+DangNVH_10.50.2.65
+(10.50.2.65   ) <br> 
+ToanPVN_10.50.2.170
+(10.50.2.170   ) <br> 
+IP_10.50.2.43_Thu
+(10.50.2.43   ) <br> 
+IP_10.50.2.133
+(10.50.2.133   ) <br> 
+</td>
+		<td>IP_10.1.62.20_UAT
+(10.1.62.20   ) <br> 
+</td>
+		<td>TCP_8081-8083
+(8081-8083) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+182
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>IP_10.1.62.20_UAT
+(10.1.62.20   ) <br> 
+</td>
+		<td>Any</td>
+		<td>drop</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+183
+</td>
+		<td>
+</td>
+		<td>K.QLTC
+(10.52.6.16   | 10.52.6.18   | 10.52.6.24   | 10.52.6.85   ) <br> 
+</td>
+		<td>IP_10.1.34.85_bkup_34.14
+(10.1.34.85   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_07_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+184
+</td>
+		<td>
+</td>
+		<td>Phuonght_PC
+(10.50.2.27   ) <br> 
+IP_10.50.2.56_HienVT
+(10.50.2.56   ) <br> 
+IP_10.50.2.67_TungNT
+(10.50.2.67   ) <br> 
+</td>
+		<td>IP_10.1.34.85_bkup_34.14
+(10.1.34.85   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+185
+</td>
+		<td>
+</td>
+		<td>HienTT_PC
+(10.50.2.47   ) <br> 
+IP_10.50.2.56_HienVT
+(10.50.2.56   ) <br> 
+</td>
+		<td>IP_10.26.2.208_DB_Pri
+(10.26.2.208   ) <br> 
+NHDT-REPORT
+(10.26.2.115   ) <br> 
+IP_10.26.2.245
+(10.26.2.245   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+186
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.56_HienVT
+(10.50.2.56   ) <br> 
+</td>
+		<td>NHDT_Host_Online_DB
+(10.26.2.200   ) <br> 
+IP_10.158.7.6_Oracle_DB_Linux
+(10.158.7.6   ) <br> 
+IP_10.158.7.4_DB_oracle_Linux
+(10.158.7.4   ) <br> 
+</td>
+		<td>Oracle_port
+(1521, 1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+187
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>hungnd2
+(10.50.2.10   ) <br> 
+HungND3
+(10.50.2.11   ) <br> 
+IP_10.50.2.247
+(10.50.2.247   ) <br> 
+</td>
+		<td>IP_10.1.31.10_Koha
+(10.1.31.10   ) <br> 
+</td>
+		<td>Grp_Koha_22_80_8080
+(<span>22</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+188
+</td>
+		<td>Ma Nguon GIT
+</td>
+		<td>TEAM-GIT
+(10.41.19.34   | 10.50.2.29   | 10.50.2.52   | 10.50.2.59   | 10.50.2.67   | 10.50.2.74   | 10.50.2.102   | 10.50.2.112   | 10.50.2.122   | 10.50.2.150   | 10.50.2.197   | 10.50.2.241   ) <br> 
+IP_10.50.2.127
+(10.50.2.127   ) <br> 
+</td>
+		<td>IP_10.1.62.21
+(10.1.62.21   ) <br> 
+</td>
+		<td>ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+189
+
+ Disabled
+</td>
+		<td>Quartro - UAT
+</td>
+		<td>IP_10.1.62.105
+(10.1.62.105   ) <br> 
+IP_10.104.1.137
+(10.104.1.137   ) <br> 
+</td>
+		<td>IP_10.104.1.137
+(10.104.1.137   ) <br> 
+IP_10.1.62.105
+(10.1.62.105   ) <br> 
+</td>
+		<td>Napster_directory_4444
+(4444) <br> 
+TCP_3333
+(3333) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+190
+</td>
+		<td>
+</td>
+		<td>GRP_P.BA
+(10.50.2.23   | 10.50.2.27-10.50.2.28   | 10.50.2.47   | 10.50.2.56   | 10.50.2.65   | 10.50.2.72   | 10.50.2.76   | 10.50.2.89   ) <br> 
+</td>
+		<td>IP_10.1.61.12
+(10.1.61.12   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+191
+
+ Inactive (time)
+</td>
+		<td>Du an accecpt DB
+</td>
+		<td>IP_10.50.7.27
+(10.50.7.27   ) <br> 
+IP_10.50.2.32
+(10.50.2.32   ) <br> 
+IP_10.50.7.31
+(10.50.7.31   ) <br> 
+IP_10.50.2.206
+(10.50.2.206   ) <br> 
+IP_10.50.2.96
+(10.50.2.96   ) <br> 
+IP_10.50.2.108
+(10.50.2.108   ) <br> 
+IP_10.50.2.124
+(10.50.2.124   ) <br> 
+IP_10.50.2.157
+(10.50.2.157   ) <br> 
+IP_10.50.2.130
+(10.50.2.130   ) <br> 
+</td>
+		<td>DB_RMS_TEST_10.1.61.97
+(10.1.61.97   ) <br> 
+RMS_Test_02_10.1.61.96
+(10.1.61.96   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+192
+
+ Inactive (time)
+</td>
+		<td>Du an accecpt DB
+</td>
+		<td>IP_10.50.2.32
+(10.50.2.32   ) <br> 
+IP_10.50.7.31
+(10.50.7.31   ) <br> 
+IP_10.50.2.206
+(10.50.2.206   ) <br> 
+IP_10.50.2.96
+(10.50.2.96   ) <br> 
+IP_10.50.2.108
+(10.50.2.108   ) <br> 
+IP_10.50.2.124
+(10.50.2.124   ) <br> 
+IP_10.50.2.157
+(10.50.2.157   ) <br> 
+IP_10.50.2.180
+(10.50.2.180   ) <br> 
+</td>
+		<td>IP_10.1.62.17
+(10.1.62.17   ) <br> 
+IP_10.1.62.18
+(10.1.62.18   ) <br> 
+</td>
+		<td>Remote_Desktop_Protocol
+(3389) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+193
+
+ Inactive (time)
+</td>
+		<td>Du an accecpt DB
+</td>
+		<td>Phuonght_PC
+(10.50.2.27   ) <br> 
+IP_10.50.2.209
+(10.50.2.209   ) <br> 
+IP_10.50.2.214
+(10.50.2.214   ) <br> 
+IP_10.50.2.218
+(10.50.2.218   ) <br> 
+IP_10.50.2.180
+(10.50.2.180   ) <br> 
+IP_10.50.2.133
+(10.50.2.133   ) <br> 
+IP_10.50.2.30
+(10.50.2.30   ) <br> 
+Khangnb_PC
+(10.50.2.23   ) <br> 
+XuyenPN2_10.50.2.131
+(10.50.2.131   ) <br> 
+</td>
+		<td>DB_RMS_TEST_10.1.61.97
+(10.1.61.97   ) <br> 
+RMS_Test_02_10.1.61.96
+(10.1.61.96   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+194
+</td>
+		<td>Du an accecpt DB
+</td>
+		<td>PC_Tiep
+(10.50.2.102   ) <br> 
+IP_10.50.2.33_TuVD
+(10.50.2.33   ) <br> 
+</td>
+		<td>DB_RMS_TEST_10.1.61.97
+(10.1.61.97   ) <br> 
+RMS_Test_02_10.1.61.96
+(10.1.61.96   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+195
+</td>
+		<td>
+</td>
+		<td>ThangPM__10.50.2.150
+(<span>10.50.2.150   </span>) <br> 
+</td>
+		<td>DB_RMS_TEST_10.1.61.97
+(10.1.61.97   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+196
+</td>
+		<td>
+</td>
+		<td>TienPM_10.50.2.70
+(10.50.2.70   ) <br> 
+</td>
+		<td>DB_RMS_TEST_10.1.61.97
+(10.1.61.97   ) <br> 
+RMS_Test_02_10.1.61.96
+(10.1.61.96   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+197
+</td>
+		<td>RMS-UAT
+</td>
+		<td>Grp_RMS_DEVTEST
+(10.50.2.26   | 10.50.2.28   | 10.50.2.43   | 10.50.2.47   | 10.50.2.52   | 10.50.2.65   | 10.50.2.67   | 10.50.2.72   | 10.50.2.76   | 10.50.2.89   | 10.50.2.127   | 10.50.2.182   | 10.50.2.188   | 10.50.2.193   | 10.50.2.233   | 10.131.15.23   | 10.131.15.58   | 10.131.15.60   ) <br> 
+IP_10.50.2.56_HienVT
+(10.50.2.56   ) <br> 
+IP_10.1.62.20_UAT
+(10.1.62.20   ) <br> 
+IP_10.1.62.23
+(10.1.62.23   ) <br> 
+</td>
+		<td>DB_RMS_TEST_10.1.61.97
+(10.1.61.97   ) <br> 
+RMS_Test_02_10.1.61.96
+(10.1.61.96   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+198
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>ATM_CN_PGD
+(None) <br> 
+</td>
+		<td>IP_10.1.248.212
+(10.1.248.212   ) <br> 
+</td>
+		<td>TCP_8020-8021
+(8020-8021) <br> 
+TCP_8027
+(8027) <br> 
+TCP_8031-8032
+(8031-8032) <br> 
+TCP_8383-8384
+(8383-8384) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+199
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>IP_10.50.7.27
+(10.50.7.27   ) <br> 
+IP_10.50.2.32
+(10.50.2.32   ) <br> 
+IP_10.50.7.31
+(10.50.7.31   ) <br> 
+IP_10.50.2.206
+(10.50.2.206   ) <br> 
+IP_10.50.2.96
+(10.50.2.96   ) <br> 
+IP_10.50.2.209
+(10.50.2.209   ) <br> 
+IP_10.50.2.180
+(10.50.2.180   ) <br> 
+IP_10.50.2.218
+(10.50.2.218   ) <br> 
+IP_10.50.2.214
+(10.50.2.214   ) <br> 
+hungnd2
+(10.50.2.10   ) <br> 
+IP_10.1.248.25
+(10.1.248.25   ) <br> 
+Net_HHT_KCN_10.50.2.0
+(10.50.2.0-10.50.2.255   ) <br> 
+IP_10.50.2.124
+(10.50.2.124   ) <br> 
+IP_10.50.2.108
+(10.50.2.108   ) <br> 
+IP_10.50.2.157
+(10.50.2.157   ) <br> 
+</td>
+		<td>IP_10.1.62.50
+(10.1.62.50   ) <br> 
+</td>
+		<td>TCP_8089
+(8089) <br> 
+Remote_Desktop_Protocol
+(3389) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+200
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.32
+(10.50.2.32   ) <br> 
+IP_10.50.7.31
+(10.50.7.31   ) <br> 
+IP_10.50.2.108
+(10.50.2.108   ) <br> 
+IP_10.50.2.124
+(10.50.2.124   ) <br> 
+IP_10.50.2.157
+(10.50.2.157   ) <br> 
+IP_10.50.2.206
+(10.50.2.206   ) <br> 
+IP_10.50.2.96
+(10.50.2.96   ) <br> 
+</td>
+		<td>IP_10.1.62.27
+(10.1.62.27   ) <br> 
+</td>
+		<td>TCP_8089
+(8089) <br> 
+Remote_Desktop_Protocol
+(3389) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+201
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.32
+(10.50.2.32   ) <br> 
+IP_10.50.7.31
+(10.50.7.31   ) <br> 
+IP_10.50.2.108
+(10.50.2.108   ) <br> 
+IP_10.50.2.124
+(10.50.2.124   ) <br> 
+IP_10.50.2.157
+(10.50.2.157   ) <br> 
+IP_10.50.2.206
+(10.50.2.206   ) <br> 
+IP_10.50.2.96
+(10.50.2.96   ) <br> 
+</td>
+		<td>IP_10.1.62.27
+(10.1.62.27   ) <br> 
+IP_10.1.62.52
+(10.1.62.52   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+ssh
+(22) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+202
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>IP_10.50.7.27
+(10.50.7.27   ) <br> 
+IP_10.50.2.32
+(10.50.2.32   ) <br> 
+IP_10.50.7.31
+(10.50.7.31   ) <br> 
+IP_10.50.2.206
+(10.50.2.206   ) <br> 
+IP_10.50.2.96
+(10.50.2.96   ) <br> 
+IP_10.50.2.209
+(10.50.2.209   ) <br> 
+IP_10.50.2.180
+(10.50.2.180   ) <br> 
+IP_10.50.2.218
+(10.50.2.218   ) <br> 
+IP_10.50.2.214
+(10.50.2.214   ) <br> 
+IP_10.50.2.124
+(10.50.2.124   ) <br> 
+hungnd2
+(10.50.2.10   ) <br> 
+IP_10.50.2.108
+(10.50.2.108   ) <br> 
+IP_10.50.2.157
+(10.50.2.157   ) <br> 
+</td>
+		<td>IP_10.1.62.51
+(10.1.62.51   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+203
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>Khanh_03
+(10.50.2.76   ) <br> 
+</td>
+		<td>IP_10.1.62.51
+(10.1.62.51   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+204
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.52
+(<span>10.50.2.52   </span>) <br> 
+PC_Tiep
+(10.50.2.102   ) <br> 
+IP_10.50.2.67_TungNT
+(10.50.2.67   ) <br> 
+TungPT_PC
+(10.50.2.112   ) <br> 
+IP_10.50.2.241
+(10.50.2.241   ) <br> 
+ThangPM__10.50.2.150
+(<span>10.50.2.150   </span>) <br> 
+Bachlx_PC
+(10.50.2.197   ) <br> 
+</td>
+		<td>IP_10.1.62.20_UAT
+(10.1.62.20   ) <br> 
+IP_10.1.62.23
+(10.1.62.23   ) <br> 
+IP_10.1.62.25
+(10.1.62.25   ) <br> 
+</td>
+		<td>Remote_Desktop_Protocol
+(3389) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+205
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.60_GiangVT
+(10.50.2.60   ) <br> 
+</td>
+		<td>IP_10.1.62.25
+(10.1.62.25   ) <br> 
+</td>
+		<td>Remote_Desktop_Protocol
+(3389) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+206
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.127
+(10.50.2.127   ) <br> 
+</td>
+		<td>IP_10.1.62.25
+(10.1.62.25   ) <br> 
+IP_10.1.34.85_bkup_34.14
+(10.1.34.85   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+207
+
+ Inactive (time)
+</td>
+		<td>Ph�t tri?n app iBPM
+</td>
+		<td>IP_10.50.2.67_TungNT
+(10.50.2.67   ) <br> 
+IP_10.50.2.130
+(10.50.2.130   ) <br> 
+</td>
+		<td>IP_10.1.62.25
+(10.1.62.25   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+208
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.52
+(<span>10.50.2.52   </span>) <br> 
+</td>
+		<td>IP_10.1.62.25
+(10.1.62.25   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+209
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.33_TuVD
+(10.50.2.33   ) <br> 
+IP_10.50.2.60_GiangVT
+(10.50.2.60   ) <br> 
+Phuonght_PC
+(10.50.2.27   ) <br> 
+DungLTT_pc
+(10.50.2.28   ) <br> 
+DangNVH_10.50.2.65
+(10.50.2.65   ) <br> 
+IP_10.50.2.67_TungNT
+(10.50.2.67   ) <br> 
+</td>
+		<td>IP_10.1.62.25
+(10.1.62.25   ) <br> 
+</td>
+		<td>sqlnet2-1521
+(<span>1521</span>) <br> 
+sqlnet1
+(1521) <br> 
+</td>
+		<td>accept</td>
+		<td>E30_08_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+210
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.35.105
+(10.1.35.105   ) <br> 
+</td>
+		<td>ftp
+(21) <br> 
+TCP_445
+(<span>445</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+211
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.248.21
+(10.1.248.21   ) <br> 
+</td>
+		<td>nbsession
+(139) <br> 
+snmp
+(161) <br> 
+snmp-read
+(<span>161</span>) <br> 
+TCP_8020-8021
+(8020-8021) <br> 
+TCP_8383-8384
+(8383-8384) <br> 
+TCP_8443-8444
+(8443-8444) <br> 
+TCP_8031-8032
+(8031-8032) <br> 
+TCP_8027
+(8027) <br> 
+snmp-trap
+(162) <br> 
+microsoft-ds
+(<span>445</span>) <br> 
+microsoft-ds-udp
+(445) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+212
+</td>
+		<td>
+</td>
+		<td>IP_10.1.248.21
+(10.1.248.21   ) <br> 
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>nbsession
+(139) <br> 
+Share_File
+(21, 139, 445, 137) <br> 
+Websense-proxy
+(8081) <br> 
+TCP_8082
+(8082) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+213
+</td>
+		<td>
+</td>
+		<td>IP_10.52.27.77
+(10.52.27.77   ) <br> 
+</td>
+		<td>IP_10.1.70.20
+(10.1.70.20   ) <br> 
+</td>
+		<td>ftp
+(21) <br> 
+TCP_445
+(<span>445</span>) <br> 
+TCP_135
+(135) <br> 
+nbdatagram
+(138) <br> 
+nbsession
+(139) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+214
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>DC-MOR-APPMON
+(10.1.248.19   ) <br> 
+</td>
+		<td>GoToMyPC
+(8200) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+215
+</td>
+		<td>
+</td>
+		<td>GRP_Accept_NHNN
+(None) <br> 
+</td>
+		<td>IP_202.58.245.6
+(202.58.245.6   ) <br> 
+IP_202.58.245.14
+(202.58.245.14   ) <br> 
+IP_192.168.13.22-23
+(192.168.13.22-192.168.13.23   ) <br> 
+IP_192.168.92.18
+(192.168.92.18   ) <br> 
+IP_202.58.245.170-173
+(202.58.245.170-202.58.245.173   ) <br> 
+IP_202.58.245.136
+(202.58.245.136   ) <br> 
+IP_192.168.10.18
+(192.168.10.18   ) <br> 
+IP_192.168.10.20
+(192.168.10.20   ) <br> 
+IP_192.168.12.18
+(192.168.12.18   ) <br> 
+IP_192.168.12.38
+(192.168.12.38   ) <br> 
+IP_192.168.12.15
+(192.168.12.15   ) <br> 
+IP_192.168.12.46
+(192.168.12.46   ) <br> 
+IP_192.168.12.47
+(192.168.12.47   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+216
+</td>
+		<td>
+</td>
+		<td>GRP_Accept_NHNN
+(None) <br> 
+</td>
+		<td>IP_202.58.245.50
+(202.58.245.50   ) <br> 
+</td>
+		<td>TCP_829
+(829) <br> 
+echo-reply
+(0) <br> 
+icmp-requests
+(8, 13, 15, 17) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+217
+</td>
+		<td>
+</td>
+		<td>GRP_Accept_NHNN
+(None) <br> 
+</td>
+		<td>IP_202.58.245.51
+(202.58.245.51   ) <br> 
+</td>
+		<td>ldap
+(389) <br> 
+ldap_udp
+(<span>389</span>) <br> 
+echo-reply
+(0) <br> 
+icmp-requests
+(8, 13, 15, 17) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+218
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.35.200
+(10.1.35.200   ) <br> 
+</td>
+		<td>TCP_8005
+(8005) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+219
+
+ Disabled
+</td>
+		<td>OPM-UAT
+</td>
+		<td>IP_10.41.255.89_OPM
+(10.41.255.89   ) <br> 
+DC-FW-GRP
+(10.158.1.2-10.158.1.3   ) <br> 
+IP_10.1.62.33
+(10.1.62.33   ) <br> 
+</td>
+		<td>DC-FW-GRP
+(10.158.1.2-10.158.1.3   ) <br> 
+IP_10.41.255.89_OPM
+(10.41.255.89   ) <br> 
+IP_10.1.62.33
+(10.1.62.33   ) <br> 
+</td>
+		<td>snmp
+(161) <br> 
+snmp-read
+(<span>161</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+220
+</td>
+		<td>
+</td>
+		<td>IP_10.50.2.43_Thu
+(10.50.2.43   ) <br> 
+</td>
+		<td>IP_10.1.18.6_DB_TT35
+(10.1.18.6   ) <br> 
+</td>
+		<td>sqlnet1
+(1521) <br> 
+sqlnet2-1521
+(<span>1521</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+221
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.62.105
+(10.1.62.105   ) <br> 
+</td>
+		<td>Napster_directory_8888_primary
+(8888) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+222
+
+ Inactive (time)
+</td>
+		<td>
+</td>
+		<td>NET_10.50.9.0
+(10.50.9.0-10.50.9.255   ) <br> 
+</td>
+		<td>IP_10.1.248.231
+(10.1.248.231   ) <br> 
+IP_10.1.248.233
+(10.1.248.233   ) <br> 
+Qradar_10.1.248.230
+(10.1.248.230   ) <br> 
+IP_10.1.248.232
+(10.1.248.232   ) <br> 
+IP_10.2.248.232
+(10.2.248.232   ) <br> 
+IP_10.1.254.231
+(10.1.254.231   ) <br> 
+IP_10.1.254.232
+(10.1.254.232   ) <br> 
+</td>
+		<td>ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+TCP_17990
+(17990) <br> 
+TCP_17988
+(17988) <br> 
+snmp
+(161) <br> 
+snmp-trap
+(162) <br> 
+TCP_623
+(623) <br> 
+UDP_17990
+(<span>17990</span>) <br> 
+shell
+(<span>514</span>) <br> 
+syslog
+(514) <br> 
+TCP_8413
+(8413) <br> 
+</td>
+		<td>accept</td>
+		<td>E31_05_2018</td>
+		</tr>
+		<tr>
+		<td>
+
+223
+</td>
+		<td>
+</td>
+		<td>Net_NCB_Toan_Hang
+(10.0.0.0-10.255.255.255  (zone spanning) ) <br> 
+</td>
+		<td>IP_10.1.248.57__Security_Endpoint
+(10.1.248.57   ) <br> 
+</td>
+		<td>ssh
+(22) <br> 
+ssh_version_2
+(<span>22</span>) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+224
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>Host_10.1.62.16
+(10.1.62.16   ) <br> 
+</td>
+		<td>IP_10.50.2.241
+(10.50.2.241   ) <br> 
+</td>
+		<td>Websense-proxy
+(8081) <br> 
+</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+225
+
+ Disabled
+</td>
+		<td>
+</td>
+		<td>PfSencen_HCM_10.128.250.17
+(10.128.250.17   ) <br> 
+</td>
+		<td>DC-_MOR_OP
+(10.1.248.22   ) <br> 
+</td>
+		<td>Any</td>
+		<td>accept</td>
+		<td>Any</td>
+		</tr>
+		<tr>
+		<td>
+
+226
+</td>
+		<td>
+</td>
+		<td>Any</td>
+		<td>Any</td>
+		<td>Any</td>
+		<td>drop</td>
+		<td>Any</td>
+		</tr>
+
+		</table>
+		<br>
+		<br>
+		<br><h3>Time objects</h3>
+<TABLE border=0 cellpadding=3 cellspacing="1" width="99%" ><tr valign=top>
+<th class="FFsearch" >Name </th><th> Activate on </th><th>  Expire on </th><th> Time of day </th><th> Days specification </th><th> Month </th><th> Days </th><th> Comments</th></tr>
+<tr valign=top CLASS="time_obj_ANBM">
+<td><A NAME="time_obj_ANBM"></A> ANBM </td><td nowrap> 6/Sep/2017 8:0 </td><td nowrap> 23/Sep/2017 23:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_DB-TEST">
+<td><A NAME="time_obj_DB-TEST"></A> DB-TEST </td><td nowrap> 10/Apr/2017 15:51 </td><td nowrap> 10/Apr/2018 15:51 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> 1 Years</td></tr>
+<tr valign=top CLASS="time_obj_Duyet_dien">
+<td><A NAME="time_obj_Duyet_dien"></A> Duyet_dien </td><td nowrap> 16/Nov/2017 17:49 </td><td nowrap>  </td><td nowrap> 20:00 - 23:59<br>00:00 - 07:00 </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> Time ngoai gio</td></tr>
+<tr valign=top CLASS="time_obj_E0206_2018">
+<td><A NAME="time_obj_E0206_2018"></A> E0206_2018 </td><td nowrap> 3/May/2018 10:13 </td><td nowrap> 2/Jun/2018 18:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> Expire 02062018</td></tr>
+<tr valign=top CLASS="time_obj_E0208-2018">
+<td><A NAME="time_obj_E0208-2018"></A> E0208-2018 </td><td nowrap> 3/May/2018 15:10 </td><td nowrap> 2/Aug/2018 18:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> End 02-08-2018</td></tr>
+<tr valign=top CLASS="time_obj_E03_03_2018">
+<td><A NAME="time_obj_E03_03_2018"></A> E03_03_2018 </td><td nowrap> 21/Feb/2018 9:43 </td><td nowrap> 3/Mar/2018 23:43 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> END_03_03_2018</td></tr>
+<tr valign=top CLASS="time_obj_E04_12_2017">
+<td><A NAME="time_obj_E04_12_2017"></A> E04_12_2017 </td><td nowrap> 23/Nov/2017 14:11 </td><td nowrap> 4/Dec/2017 23:11 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_26/11/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E05_02_18">
+<td><A NAME="time_obj_E05_02_18"></A> E05_02_18 </td><td nowrap> 22/Jan/2018 14:6 </td><td nowrap> 5/Feb/2018 23:6 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_05/02/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E08-03-2018">
+<td><A NAME="time_obj_E08-03-2018"></A> E08-03-2018 </td><td nowrap> 22/Feb/2018 13:10 </td><td nowrap> 8/Mar/2018 18:10 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> A Huy</td></tr>
+<tr valign=top CLASS="time_obj_E08_06_2018">
+<td><A NAME="time_obj_E08_06_2018"></A> E08_06_2018 </td><td nowrap> 5/Jun/2018 14:1 </td><td nowrap> 8/Jun/2018 23:1 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_08/06/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E12_10_2017">
+<td><A NAME="time_obj_E12_10_2017"></A> E12_10_2017 </td><td nowrap> 6/Oct/2017 9:53 </td><td nowrap> 12/Oct/2017 23:53 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_12/10/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E13_03_2018">
+<td><A NAME="time_obj_E13_03_2018"></A> E13_03_2018 </td><td nowrap> 9/Mar/2018 17:4 </td><td nowrap> 13/Mar/2018 23:4 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_13/03/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E15_10_2017">
+<td><A NAME="time_obj_E15_10_2017"></A> E15_10_2017 </td><td nowrap> 2/Oct/2017 0:0 </td><td nowrap> 15/Oct/2017 23:43 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_15/10/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E15_11_201">
+<td><A NAME="time_obj_E15_11_201"></A> E15_11_201 </td><td nowrap> 19/Oct/2017 11:37 </td><td nowrap> 15/Nov/2017 23:37 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_15/11/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E15_12_2017">
+<td><A NAME="time_obj_E15_12_2017"></A> E15_12_2017 </td><td nowrap> 16/Nov/2017 9:52 </td><td nowrap> 15/Dec/2017 23:52 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_15/12/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E18_11_2017">
+<td><A NAME="time_obj_E18_11_2017"></A> E18_11_2017 </td><td nowrap> 13/Nov/2017 8:55 </td><td nowrap> 18/Nov/2017 23:55 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_18/11/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E20_10_2017">
+<td><A NAME="time_obj_E20_10_2017"></A> E20_10_2017 </td><td nowrap> 18/Oct/2017 15:40 </td><td nowrap> 20/Oct/2017 23:40 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_20/10/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E21_04_2018">
+<td><A NAME="time_obj_E21_04_2018"></A> E21_04_2018 </td><td nowrap> 19/Apr/2018 17:51 </td><td nowrap> 21/Apr/2018 23:51 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_21/04/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E21_12_2017">
+<td><A NAME="time_obj_E21_12_2017"></A> E21_12_2017 </td><td nowrap> 19/Dec/2017 0:8 </td><td nowrap> 21/Dec/2017 23:8 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_21/12/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E28_02_2018">
+<td><A NAME="time_obj_E28_02_2018"></A> E28_02_2018 </td><td nowrap> 8/Sep/2017 0:0 </td><td nowrap> 28/Feb/2018 23:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_28/02/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E30_01_2018">
+<td><A NAME="time_obj_E30_01_2018"></A> E30_01_2018 </td><td nowrap> 31/Oct/2017 15:32 </td><td nowrap> 30/Jan/2018 23:32 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/01/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E30_03_2018">
+<td><A NAME="time_obj_E30_03_2018"></A> E30_03_2018 </td><td nowrap> 15/Sep/2017 8:0 </td><td nowrap> 30/Mar/2018 23:59 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/03/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E30_04_2018">
+<td><A NAME="time_obj_E30_04_2018"></A> E30_04_2018 </td><td nowrap> 16/Oct/2017 16:44 </td><td nowrap> 30/Apr/2018 23:44 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/04/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E30_06_2018">
+<td><A NAME="time_obj_E30_06_2018"></A> E30_06_2018 </td><td nowrap> 13/Apr/2018 10:43 </td><td nowrap> 30/Jun/2018 23:43 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/06/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E30_07_2018">
+<td><A NAME="time_obj_E30_07_2018"></A> E30_07_2018 </td><td nowrap> 13/Mar/2018 10:7 </td><td nowrap> 30/Jul/2018 10:7 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/07/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E30_08_2018">
+<td><A NAME="time_obj_E30_08_2018"></A> E30_08_2018 </td><td nowrap> 26/Feb/2018 13:42 </td><td nowrap> 30/Aug/2018 23:42 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/08/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E30_09_2017">
+<td><A NAME="time_obj_E30_09_2017"></A> E30_09_2017 </td><td nowrap> 18/Sep/2017 0:0 </td><td nowrap> 30/Sep/2017 23:59 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/09/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E30_10_2017">
+<td><A NAME="time_obj_E30_10_2017"></A> E30_10_2017 </td><td nowrap> 22/Sep/2017 0:0 </td><td nowrap> 30/Oct/2017 23:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/10/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E30_11_2017">
+<td><A NAME="time_obj_E30_11_2017"></A> E30_11_2017 </td><td nowrap> 28/Sep/2017 8:41 </td><td nowrap> 30/Nov/2017 23:59 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/11/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E30_12_2017">
+<td><A NAME="time_obj_E30_12_2017"></A> E30_12_2017 </td><td nowrap> 13/Oct/2017 10:27 </td><td nowrap> 30/Dec/2017 23:27 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_30/12/2017"</td></tr>
+<tr valign=top CLASS="time_obj_E31_05_2018">
+<td><A NAME="time_obj_E31_05_2018"></A> E31_05_2018 </td><td nowrap> 4/Dec/2017 10:37 </td><td nowrap> 31/May/2018 23:37 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_31/05/2018"</td></tr>
+<tr valign=top CLASS="time_obj_E31_12_2017">
+<td><A NAME="time_obj_E31_12_2017"></A> E31_12_2017 </td><td nowrap> 29/Nov/2017 13:46 </td><td nowrap> 31/Dec/2017 23:46 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> "END_31/12/2017"</td></tr>
+<tr valign=top CLASS="time_obj_END0706">
+<td><A NAME="time_obj_END0706"></A> END0706 </td><td nowrap> 7/Mar/2018 10:48 </td><td nowrap> 8/Jun/2018 18:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> End of 0706</td></tr>
+<tr valign=top CLASS="time_obj_END_042017">
+<td><A NAME="time_obj_END_042017"></A> END_042017 </td><td nowrap> 14/Feb/2017 13:41 </td><td nowrap> 30/Apr/2017 13:41 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_END_2103">
+<td><A NAME="time_obj_END_2103"></A> END_2103 </td><td nowrap> 1/Mar/2018 14:58 </td><td nowrap> 15/Jun/2018 19:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> Proxy to VNPAY</td></tr>
+<tr valign=top CLASS="time_obj_End12042017">
+<td><A NAME="time_obj_End12042017"></A> End12042017 </td><td nowrap> 12/Jan/2017 17:19 </td><td nowrap> 12/Apr/2017 17:19 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> Anh Tung Pham</td></tr>
+<tr valign=top CLASS="time_obj_End_300417">
+<td><A NAME="time_obj_End_300417"></A> End_300417 </td><td nowrap> 20/Jun/2017 18:1 </td><td nowrap> 6/Jul/2017 23:1 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_End_TRS">
+<td><A NAME="time_obj_End_TRS"></A> End_TRS </td><td nowrap> 15/Aug/2017 11:18 </td><td nowrap> 15/Nov/2017 18:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_Every_Day">
+<td><A NAME="time_obj_Every_Day"></A> Every_Day </td><td nowrap>  </td><td nowrap>  </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_Exprie_time">
+<td><A NAME="time_obj_Exprie_time"></A> Exprie_time </td><td nowrap> 10/Aug/2017 9:6 </td><td nowrap> 15/Sep/2017 18:6 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_IB_TEST">
+<td><A NAME="time_obj_IB_TEST"></A> IB_TEST </td><td nowrap> 7/Jun/2017 14:29 </td><td nowrap> 14/Jun/2017 14:29 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_Koha_3008">
+<td><A NAME="time_obj_Koha_3008"></A> Koha_3008 </td><td nowrap> 15/Aug/2017 15:0 </td><td nowrap> 30/Aug/2017 18:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_ODS_End">
+<td><A NAME="time_obj_ODS_End"></A> ODS_End </td><td nowrap> 14/Mar/2017 13:49 </td><td nowrap> 14/Apr/2017 13:49 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_Off_Work">
+<td><A NAME="time_obj_Off_Work"></A> Off_Work </td><td nowrap>  </td><td nowrap>  </td><td nowrap> 00:00 - 07:00<br>20:00 - 23:59 </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_RMS-Ebank">
+<td><A NAME="time_obj_RMS-Ebank"></A> RMS-Ebank </td><td nowrap> 31/Jul/2017 10:51 </td><td nowrap> 30/Sep/2017 18:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_Restore">
+<td><A NAME="time_obj_Restore"></A> Restore </td><td nowrap> 28/Dec/2016 17:43 </td><td nowrap> 12/Jan/2017 17:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_TCT_OneMth">
+<td><A NAME="time_obj_TCT_OneMth"></A> TCT_OneMth </td><td nowrap> 21/Jul/2017 8:57 </td><td nowrap> 21/Aug/2017 18:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_Time_10day">
+<td><A NAME="time_obj_Time_10day"></A> Time_10day </td><td nowrap> 24/Mar/2017 14:36 </td><td nowrap> 4/Apr/2017 14:36 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> Tien VHDV</td></tr>
+<tr valign=top CLASS="time_obj_Time_hour_">
+<td><A NAME="time_obj_Time_hour_"></A> Time_hour_ </td><td nowrap>  </td><td nowrap>  </td><td nowrap> 08:00 - 20:00 </td><td nowrap> Day in week </td><td nowrap>  </td><td nowrap> Mon,Tue,Wed,Thu,Fri,Sat </td><td nowrap> Thoi gian hanh chinh</td></tr>
+<tr valign=top CLASS="time_obj_Weekend">
+<td><A NAME="time_obj_Weekend"></A> Weekend </td><td nowrap>  </td><td nowrap>  </td><td nowrap>  </td><td nowrap> Day in week </td><td nowrap>  </td><td nowrap> Sun,Sat </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_citad-01">
+<td><A NAME="time_obj_citad-01"></A> citad-01 </td><td nowrap> 1/Jul/2017 10:1 </td><td nowrap> 1/Jul/2017 20:1 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_end20062706">
+<td><A NAME="time_obj_end20062706"></A> end20062706 </td><td nowrap> 20/Jun/2017 15:15 </td><td nowrap> 5/Jul/2017 15:15 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_ib-mb">
+<td><A NAME="time_obj_ib-mb"></A> ib-mb </td><td nowrap> 24/Jul/2017 18:6 </td><td nowrap> 30/Sep/2017 23:6 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_mtax">
+<td><A NAME="time_obj_mtax"></A> mtax </td><td nowrap> 31/Aug/2017 18:13 </td><td nowrap> 1/Sep/2017 7:59 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_one_month">
+<td><A NAME="time_obj_one_month"></A> one_month </td><td nowrap> 5/Jan/2017 9:46 </td><td nowrap> 5/Feb/2017 9:46 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_rangre-srco">
+<td><A NAME="time_obj_rangre-srco"></A> rangre-srco </td><td nowrap> 11/Apr/2017 11:27 </td><td nowrap> 11/May/2017 11:27 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_test-ib">
+<td><A NAME="time_obj_test-ib"></A> test-ib </td><td nowrap> 18/Jul/2017 9:42 </td><td nowrap> 25/Jul/2017 18:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_testODS">
+<td><A NAME="time_obj_testODS"></A> testODS </td><td nowrap> 9/Mar/2017 10:34 </td><td nowrap> 3/Oct/2017 23:34 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> 4 thang</td></tr>
+<tr valign=top CLASS="time_obj_test_1_week">
+<td><A NAME="time_obj_test_1_week"></A> test_1_week </td><td nowrap> 4/May/2018 11:41 </td><td nowrap> 11/May/2018 23:41 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_testweb">
+<td><A NAME="time_obj_testweb"></A> testweb </td><td nowrap> 10/Mar/2017 17:13 </td><td nowrap> 18/May/2017 17:13 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_two-week">
+<td><A NAME="time_obj_two-week"></A> two-week </td><td nowrap> 20/Apr/2018 16:46 </td><td nowrap> 18/May/2018 23:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> Loi NHDT</td></tr>
+<tr valign=top CLASS="time_obj_uat-login">
+<td><A NAME="time_obj_uat-login"></A> uat-login </td><td nowrap> 7/Sep/2017 9:50 </td><td nowrap> 13/Sep/2017 21:0 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> He thong UAT</td></tr>
+<tr valign=top CLASS="time_obj_uat-t24">
+<td><A NAME="time_obj_uat-t24"></A> uat-t24 </td><td nowrap> 11/Apr/2017 15:30 </td><td nowrap> 29/Apr/2017 15:30 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+<tr valign=top CLASS="time_obj_uat-web">
+<td><A NAME="time_obj_uat-web"></A> uat-web </td><td nowrap> 17/Mar/2017 15:57 </td><td nowrap> 17/Apr/2017 15:57 </td><td nowrap>  </td><td nowrap> Every day </td><td nowrap>  </td><td nowrap>  </td><td nowrap> </td></tr>
+</table>
+
+	</body>
+	</html>

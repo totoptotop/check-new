@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+<!--{% block title %} Add IP | NCB{% endblock %}-->
+{% block style_block %}
+<link rel="stylesheet" href="{{ url_for('static', filename='cdnless/bootstrap-datepicker3.css') }}"/>
+{% endblock %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well bs-component">
+                <form class="form-horizontal" method="post" action="/ip_table/add_record">
+                  <fieldset>
+                    <legend>Add new IP</legend>
+                    <div class="form-group {{ 'has-error' if form.errors.ipAdress|length > 0 }}">
+                      <label for="ipAdress" class="col-lg-2 control-label">IP Adress</label>
+                      <div class="col-lg-10">
+                        {{ form.ipAdress (class="form-control input-lg", placeholder="IP Adress") }}
+                
+                        {% for error in form.errors.ipAdress %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group {{ 'has-error' if form.errors.hostName|length > 0 }}">
+                      <label for="hostName" class="col-lg-2 control-label">Hostname</label>
+                      <div class="col-lg-10">
+                        {{ form.hostName (class="form-control",placeholder="Hostname") }}
+                        
+                        {% for error in form.errors.hostName %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group {{ 'has-error' if form.errors.Owner|length > 0 }}">
+                      <label for="Owner" class="col-lg-2 control-label">Owner</label>
+                      <div class="col-lg-10">
+                        {{ form.Owner (class="form-control",placeholder="Owner") }}
+                        {% for error in form.errors.Owner %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputService" class="col-lg-2 control-label">Service</label>
+                      <div class="col-lg-10">
+                        <input type="text" class="form-control" name="inputService" placeholder="SIEM - Virtual IP">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="div" class="col-lg-2 control-label">Operating System</label>
+                      <div class="col-lg-10">
+                        <select  class="form-control" name="oper-sys" onchange="if(this.options[this.selectedIndex].value=='OtherOS'){toggleField(this,this.nextElementSibling);this.selectedIndex='0';}">
+                            <option value="OtherOS">[Other OS]</option>
+                            <option selected></option>
+                          <!-- {% for oper in list_opers %}
+                            <option {{'selected' if record.opersys == oper[0]}}>{{ oper[0] }}</option>
+                          {% endfor %} -->
+                        </select>
+                        <input name="oper-sys" class="form-control" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousElementSibling);}">
+                      </div>
+                    </div>
+                    <div class="form-group {{ 'has-error' if form.errors.dateStart|length > 0 }}">
+                      <label for="dateStart" class="col-lg-2 control-label">Date Start</label>
+                      <div class="col-lg-10">
+                        {{ form.dateStart (class='form-control dtpick') }}
+
+                        {% for error in form.errors.dateStart %} <br/>
+                            <div class="alert alert-danger" style="display: inline-block">
+                                {{ error }}
+                            </div>
+                        {% endfor %}
+                      </div>
+                    </div>
+
+                    <!--<div class="form-group">-->
+                    <!--  
+                    <!--  <div class="col-lg-10">-->
+                    <!--    <select class="form-control" id="select">-->
+                    <!--      <option>CentOS</option>-->
+                    <!--      <option>MS Windows Server 2008 R2</option>-->
+                    <!--      <option>MS Windows Server 2012</option>-->
+                    <!--      <option>Red Hat Enterprise Linus (RHEL)</option>-->
+                    <!--      <option>Ubuntu</option>-->
+                    <!--    </select>-->
+                    <!--  </div>-->
+                    <!--</div>-->
+                    <div class="form-group">
+                      <div class="col-lg-10 col-lg-offset-2">
+                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+
+    </div>
+
+
+{% endblock content %}
+{% block tail_script %}
+    <script type="text/javascript" src="{{ url_for('static', filename='cdnless/bootstrap-datepicker.min.js') }}">
+    </script>
+    <script>
+      $(document).ready(function () {
+          $( ".dtpick" ).datepicker({
+              format: "dd/mm/yyyy",
+              autoclose: true,
+              todayHighlight: true,
+              endDate: "today",
+              maxDate: "today"
+          });
+      });
+
+    function toggleField(hideObj,showObj){
+      hideObj.disabled=true;   
+      hideObj.style.display='none';
+      showObj.disabled=false;  
+      showObj.style.display = "inline";
+      showObj.focus();
+    }
+    </script>
+    
+{% endblock %}

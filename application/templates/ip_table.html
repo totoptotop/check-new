@@ -1,0 +1,118 @@
+{% set active_page = "ip_table" %}
+{% extends "base.html" %}
+<!-- 
+{% block head_script %}
+{% endblock %} -->
+
+{% block style_block %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='cdnless/dataTables.bootstrap.min.css') }}"/>
+{% endblock %}
+
+{% block content %}
+
+    <h2>IP Table</h2>
+    <hr/>
+    <table width="100%">
+        <td width="70%" valign="center"><h3>Vlan Categories</h3></td>
+        <td width="30%" valign="center" align="right"><button type="button" id="butVlan" class="btn btn-default btn-sm" onclick="togVlan()">-</button></td>
+    </table>
+    <div id="vlanDiv">
+    {% for vlan in list_vlans %}
+        <button type="button" class="btn btn-default btn-sm" onclick="searchVlan('{{vlan[0]}}')">{{vlan[0].replace('Vlan','')}}</button>
+    {% endfor %}
+    <button type="button" class="btn btn-default btn-sm" onclick="searchVlan('')">All/Clear</button>
+
+    </div> 
+    <br><br>
+    <!--<table id='example' class="table table-striped table-bordered table-hover">-->
+    <table id='example' class="table table-hover table-bordered">
+        <col width="3%"> <!-- 0 -->
+        <col width="15%"><!-- 1 -->
+        <col width="15%"><!-- 2 -->
+        <col width="10%"><!-- 3 -->
+        <col width="4%"><!-- 4 -->
+        <col width="7%"><!-- 5 -->
+        <col width="1%"><!-- 6 -->
+        <col width="2%"><!-- 7 -->
+        <col width="2%"><!-- 8 -->
+        <thead>
+        <tr>
+            <th>IP Address</th>
+            <th>Hostname</th>
+            <th>Service</th>
+            <th>Owner</th>
+            <th>Operating System</th>
+            <th>Vlan</th>
+            <th>Date Start</th>
+            <th>IntIP</th>
+            {% if session['logged_in'] %}<th>Action</th>{% endif %}
+        </tr>
+        </thead>
+        {% for record in list_records %}
+            <tr>
+                <td>{{ record.ipAdress }}</td>
+                <td>{{ record.hostname }}</td>
+                <td>{{ record.service }}</td>
+                <td>{{ record.owner }}</td>
+                <td>{{ record.opersys }}</td>
+                <td>{{ record.vlan }}</td>
+                <td>{{ record.added_time.strftime('%d-%m-%Y') }}</td>
+                <td>{{ record.intIP }}</td>
+                {% if session['logged_in'] %}
+                <td>
+                    <a href="/ip_table/view/{{record.id}}" class="btn btn-warning btn-xs" role="button">
+                      <i class="glyphicon glyphicon-edit"></i>
+                    </a>
+                    <a href="/ip_table/delete/{{record.id}}" class="btn btn-danger btn-xs" role="button">
+                      <i class="glyphicon glyphicon-trash"></i>
+                    </a>
+                </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+
+
+{% endblock content %}
+{% block tail_script %}
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='cdnless/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='cdnless/dataTables.bootstrap.min.js') }}"></script>
+    <script>
+      $(document).ready(function() {
+          $('#example').DataTable({
+            "order": [[ 7, "asc" ]],
+            "columnDefs": [
+                {
+                    "targets": [ 7 ],
+                    "visible": false,
+                    "searchable": true
+                }
+            ]
+          });
+      } );
+      function togVlan() {
+            var x = document.getElementById("vlanDiv");
+            var y = document.getElementById("butVlan");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+                y.innerHTML = '-'
+            } else {
+                x.style.display = "none";
+                y.innerHTML = '+'
+            }
+        }
+
+      function searchVlan(vlanTag) {
+            var table = $('#example').DataTable();
+            if (vlanTag == ''){
+                table.state.clear();
+                window.location.reload();
+            }
+            else{
+                table.search(vlanTag).draw();
+                table.column(5).search("^" + vlanTag + "$", true, false, true).draw();
+            }
+        }
+    </script>
+{% endblock %}

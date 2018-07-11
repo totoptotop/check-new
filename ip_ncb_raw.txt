@@ -1,0 +1,328 @@
+10.1.1.1	DC - CORE - FW - CLUSTER
+10.1.1.2	DC-CORE-FW-01
+10.1.1.3	DC-CORE-FW-02
+10.1.1.60	
+10.1.1.61	
+10.1.1.62	
+10.1.1.65 	
+10.1.1.66	
+10.1.1.67 	
+10.1.1.68	
+10.1.1.70 	
+10.1.1.86 	
+10.1.1.88 	
+10.1.2.10 	
+10.1.2.11 	
+10.1.2.12 	
+10.1.2.86 	
+10.1.2.88 	
+10.1.2.1	DC - CORE - FW - CLUSTER
+10.1.2.2	DC-CORE-FW-01
+10.1.2.3	DC-CORE-FW-02
+10.1.18.6 	
+10.1.18.1	DC - CORE - FW - CLUSTER
+10.1.18.2	DC-CORE-FW-01
+10.1.18.3	DC-CORE-FW-02
+10.1.30.10	
+10.1.30.11	
+10.1.30.200	
+10.1.30.1	FW - UAT - ASA
+10.1.31.10		
+10.1.31.105		
+10.1.31.11	DC-TRS-FE	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.31.12	DC-WEB-RMS	Microsoft Windows Server 2012 (64-bit)
+10.1.31.13	App RMS ODS Import	Microsoft Windows Server 2012 (64-bit)
+10.1.31.14	Log Central	Microsoft Windows Server 2012 (64-bit)
+10.1.31.15	DC-iBPM-APP&DB	Microsoft Windows Server 2012 (64-bit)
+10.1.31.16	DC-TDTS-Report	Microsoft Windows Server 2012 (64-bit)
+10.1.31.20	DC-T24-QLTS	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.31.21	DC_BaoVon	Microsoft Windows Server 2012 (64-bit)
+10.1.31.22	DC-MEGA-WEB-SRV-NEW	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.31.1	DC - CORE - FW - CLUSTER	
+10.1.31.2	DC-CORE-FW-01	
+10.1.31.3	DC-CORE-FW-02	
+10.1.33.11	DC-TRS-FE1	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.33.18	DC-NCBBANK-DC1	Microsoft Windows Server 2012 (64-bit)
+10.1.33.19	DC-NCBBANK-DC2	Microsoft Windows Server 2012 (64-bit)
+10.1.33.2 	ROOT-DC1	Microsoft Windows Server 2012 (64-bit)
+10.1.33.3 	ROOT-DC2	Microsoft Windows Server 2012 (64-bit)
+10.1.33.253	DC-CORE-FW-01	
+10.1.33.254	DC-CORE-FW-02	
+10.1.33.1	DC - CORE - FW - CLUSTER	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.33.14	DC-REPORT	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.33.15	DC-APP-TEST	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.34.10	DC-PM-iPortal	Microsoft Windows Server 2012 (64-bit)
+10.1.34.11	DC-SC-SQL1	Microsoft Windows Server 2012 (64-bit)
+10.1.34.15	DC-LYNC-FE1	Microsoft Windows Server 2012 (64-bit)
+10.1.34.16	DC-LYNC-OWA1	Microsoft Windows Server 2012 (64-bit)
+10.1.34.253		
+10.1.34.30	DC-LYNC-EDGE1	Microsoft Windows Server 2012 (64-bit)
+10.1.34.6 	DC-INTRANET-SP1	Microsoft Windows Server 2012 (64-bit)
+10.1.34.66	DC-MAIL-EX1	Microsoft Windows Server 2012 (64-bit)
+10.1.34.67	DC-MAIL-EX2	Microsoft Windows Server 2012 (64-bit)
+10.1.34.80	TT35-App	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.34.85		
+10.1.34.68		
+10.1.34.1	DC - CORE - FW - CLUSTER	
+10.1.34.2	DC-CORE-FW-01	
+10.1.34.3	DC-CORE-FW-02	
+10.1.35.10	DC-ITSM-SRV1	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.105	DC-File Server TNTD	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.11	DC-APP-TEST	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.12	DC-JIRA-SRV1	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.15	DC-TEST-IBMB-T24	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.16	DC-ACS-MONITOR	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.18	DC-ACS2-MONITOR	Microsoft Windows Server 2008 (32-bit)
+10.1.35.20		
+10.1.35.200	DC-JIRA-TTQT 	Microsoft Windows Server 2012 (64-bit)
+10.1.35.24		
+10.1.35.27		
+10.1.35.30	DC-MB-BLA1	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.35	DC-File-SRV	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.41	DC-SVN OPS	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.42		
+10.1.35.43	DC-Sync-In for EB	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.45	ACS-02-MB 	Microsoft Windows Server 2008 (32-bit)
+10.1.35.57	DC-NPS_VPN	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.60		
+10.1.35.80	DC-TNTD Support	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.81	DC-HR Support	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.84	DC-GA Manage	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.35.90		
+10.1.35.1	DC - CORE - FW - CLUSTER	
+10.1.35.2	DC-CORE-FW-01	
+10.1.35.3	DC-CORE-FW-02	
+10.1.36.18				
+10.1.36.30				
+10.1.36.31				
+10.1.36.32	DC-TDTS-DB	Microsoft Windows Server 2012 (64-bit)		
+10.1.36.40	DC-SQL-Shared	Microsoft Windows Server 2012 (64-bit)		
+10.1.36.1	DC - CORE - FW - CLUSTER			
+10.1.36.2	DC-CORE-FW-01			
+10.1.36.3	DC-CORE-FW-02			
+10.1.36.214				
+10.1.36.21	DC-CITAD-DB		HungND1	1/30/18
+10.1.36.22	DC-KNDV-DB		HuyLQ4	1/31/18
+10.1.36.19	DC-CITAD-DB-HCM		HungND1	
+10.1.36.20	DC-CITAD-DB-HO		HungND1	
+10.1.40.1	FW - UAT - ASA	
+10.1.40.12		
+10.1.40.14	DC-SoftEther-VPN 	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.61.1	FW- UAT - ASA
+10.1.61.11	
+10.1.61.12	
+10.1.61.13	
+10.1.61.14	
+10.1.61.33	
+10.1.61.34	
+10.1.61.97	
+10.1.62.1	FW - UAT - ASA			
+10.1.62.101				
+10.1.62.102				
+10.1.62.103				
+10.1.62.104				
+10.1.62.105	DC-Card-eGateway-UAT-Thick	Microsoft Windows Server 2012 (64-bit)		
+10.1.62.106				
+10.1.62.107	DC-UAT-POCLERA	Microsoft Windows Server 2008 R2 (64-bit)	Tiến tùng	2/1/18
+10.1.62.14 				
+10.1.62.15 				
+10.1.62.15 				
+10.1.62.17 	DC-UAT-FTP-APP01	Microsoft Windows Server 2008 R2 (64-bit)		
+10.1.62.18 	DC-UAT-FTP-REPORT01			
+10.1.62.19 				
+10.1.62.20 	RMS_Web_TEST	Microsoft Windows Server 2008 R2 (64-bit)		
+10.1.62.200	CP-Client-UAT			
+10.1.62.201				
+10.1.62.202	CP-Client-UAT	Microsoft Windows Server 2008 R2 (64-bit)		
+10.1.62.21 				
+10.1.62.23 	DC-RMS-Dev	Microsoft Windows Server 2008 R2 (64-bit)		
+10.1.62.24 	SBV-T24-new	Microsoft Windows Server 2012 (64-bit)		
+10.1.62.25 	DC-BPM	Microsoft Windows Server 2012 (64-bit)		
+10.1.62.26 	DC-UAT-MEGA-WEB-SRV	Microsoft Windows Server 2008 R2 (64-bit)		
+10.1.62.27 	DC-UAT-FTP-REPORT	Microsoft Windows Server 2012 (64-bit)		
+10.1.62.29 	DC-UAT-TT35-APP	Microsoft Windows Server 2008 R2 (64-bit)		
+10.1.62.50	FTP-App-Test	Microsoft Windows Server 2008 R2 (64-bit)		
+10.1.62.51 				
+10.1.62.52 				
+10.1.62.54 	TDTS Report-Test	Microsoft Windows Server 2012 (64-bit)		
+10.1.70.20	DC-VCBMoney	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.70.21		
+10.1.70.22		
+10.1.70.30	DC-TAX-APP	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.70.31	DC-eTaxApp	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.70.32	DC-STR-APP	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.70.1	DC - CORE - FW - CLUSTER	
+10.1.70.2	DC-CORE-FW-01	
+10.1.70.3	DC-CORE-FW-02	
+10.1.65.1	FW - CP - WAN - CLUSTER	
+10.1.65.2	FW-CP-WAN 01	
+10.1.65.3	FW-CP-WAN 02	
+10.1.65.21		
+10.1.65.220		
+10.1.65.10		
+10.1.65.82		
+10.1.65.100		
+10.1.65.12		
+10.1.65.66		
+10.1.65.24		
+10.1.65.19	DC-PROXY-TMG1	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.65.20		
+10.1.65.90		
+10.1.65.90		
+10.1.65.30		
+10.1.65.25		
+10.1.65.80		
+10.1.75.11		
+10.1.75.2	DC-CORE-FW-01	
+10.1.75.3	DC-CORE-FW-02	
+10.1.75.1	DC - CORE - CLUSTER 01 	
+10.1.248.10	DC-EPO-APP1	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.11	DC-EPO-DB1	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.19	DC-MOR-APP1	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.20	DC-MOR-AD360	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.21	DC-MOR-DCM	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.212	DC-PAM-VHDV	Microsoft Windows Server 2012 (64-bit)
+10.1.248.22	DC-MONITOR-NFW	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.230		
+10.1.248.232		
+10.1.248.25	DC-RDS-Local 	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.26	DC-RDS-Vendor	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.29	DC-RDS-Local2	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.30	DC-TRITON-MGMT	Microsoft Windows Server 2012 (64-bit)
+10.1.248.31		
+10.1.248.51	DC-Solarwind	Microsoft Windows Server 2003 (32-bit)
+10.1.248.52	DC-OPMANAGER	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.248.54	DC-Solarwind-02	Microsoft Windows Server 2003 (32-bit)
+10.1.248.57		
+10.1.248.90		
+10.1.248.91	DC-PAM-P.HT	Microsoft Windows Server 2008 (32-bit)
+10.1.248.92	DC-PAM-Infra-Dept	Microsoft Windows Server 2012 (64-bit)
+10.1.248.231		
+10.1.248.1	FW - CP - WAN - CLUSTER	
+10.1.248.2	FW-CP-WAN 01	
+10.1.248.3	FW-CP-WAN 02	
+10.1.250.10  		
+10.1.250.150 	DC-IRS Hosting 	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.250.171 		
+10.1.250.181 		
+10.1.250.20  		
+10.1.250.35  		
+10.1.250.41  		
+10.1.250.42  		
+10.1.250.43  		
+10.1.250.45  		
+10.1.250.50  		
+10.1.250.56  		
+10.1.250.81  		
+10.1.250.82                                 		
+10.1.250.83  		
+10.1.250.84  		
+10.1.250.94  		
+10.1.250.95  		
+10.1.250.96  		
+10.1.250.97  		
+10.1.250.1	DC - CORE - CLUSTER 01 	
+10.1.250.2	DC - CORE - FW - 01	
+10.1.250.3	DC - CORE - FW - 02	
+10.1.253.200 	DC - SMC - CP 80	
+10.1.253.201	DC - CORE - FW - 01	
+10.1.253.202	DC - CORE - FW - 02	
+10.1.253.203	DC - CORE - CLUSTER 01 	
+10.1.253.6	WAN - FW - CLUSTER	
+10.1.253.7	WAN - SMC - CP 77.20	
+10.1.253.8	WAN - FW - 01	
+10.1.253.9	WAN - FW - 02	
+10.1.253.68	DC-COB 	Microsoft Windows Server 2008 R2 (64-bit)
+10.1.253.70	DC-eGateWay_UAT_01	Microsoft Windows Server 2012 (64-bit)
+10.1.254.1		
+10.1.254.2		
+10.1.254.3		
+10.1.255.2   	FW - UAT - ASA
+10.1.255.37  	
+10.1.255.38  	
+10.1.255.53  	
+10.1.255.49	DC - CORE - CLUSTER 01 
+10.1.255.50	DC - CORE - FW - 01
+10.1.255.51	DC - CORE - FW - 02
+10.1.255.33	DC - CORE - CLUSTER 01 
+10.1.255.34	DC - CORE - FW - 01
+10.1.255.35	DC - CORE - FW - 02
+10.1.255.11	DC - CORE - CLUSTER 01 
+10.1.255.12	DC - CORE - FW - 01
+10.1.255.13	DC - CORE - FW - 02
+10.30.8.17	
+10.30.8.18	
+10.30.8.19	
+10.30.8.1	DC - CORE - CLUSTER 01 
+10.30.8.2	DC-CORE-FW-01
+10.30.8.3	DC-CORE-FW-02
+10.26.2.1	DC - CORE - CLUSTER 01 	
+10.26.2.105		
+10.26.2.111	DC-EOD Application	Microsoft Windows XP Professional (32-bit)
+10.26.2.115	DC-Card-Report 	Microsoft Windows Server 2003 (32-bit)
+10.26.2.124	DC-ATM Controller	Microsoft Windows Server 2008 R2 (64-bit)
+10.26.2.2	DC-CORE-FW-01	
+10.26.2.200		
+10.26.2.205		
+10.26.2.208		
+10.26.2.244	DC-Prime-Web 	Microsoft Windows Server 2003 (64-bit)
+10.26.2.245		
+10.26.2.3	DC-CORE-FW-02	
+10.26.2.58		
+10.26.2.59		
+10.30.10.114		
+10.30.10.115		
+10.30.10.212		
+10.30.10.213		
+10.30.10.214		
+10.30.10.215	DC-Core-FTP	Microsoft Windows Server 2003 (64-bit)
+10.30.10.216		
+10.30.10.217	DC-SMS-Gateway-Core-App2-Thick	Microsoft Windows Server 2003 (64-bit)
+10.30.10.219	RMS-Server	Microsoft Windows Server 2003 (32-bit)
+10.30.10.1	DC - CORE - CLUSTER 01 	
+10.30.10.2	DC-CORE-FW-01	
+10.30.10.3	DC-CORE-FW-02	
+10.158.1.1	DC - CORE - CLUSTER 01 	
+10.158.1.2	DC-CORE-FW-01	
+10.158.1.3	DC-CORE-FW-02	
+10.158.1.60	DC-VCENTER-HCM	Microsoft Windows Server 2008 R2 (64-bit)
+10.158.1.61	HOST-ESX-HCM	
+10.158.1.62	HOST-ESX-HCM	
+10.158.1.63	HOST-ESX-HCM	
+10.158.1.90		
+10.158.1.91		
+10.158.1.201		
+10.158.1.205		
+10.158.2.80	
+10.158.2.81	
+10.158.2.1	DC - CORE - CLUSTER 01 
+10.158.2.2	DC-CORE-FW-01
+10.158.2.3	DC-CORE-FW-02
+10.158.3.2	DR-ROOTDC01	Microsoft Windows Server 2012 (64-bit)
+10.158.3.3	DR-ROOTDC02 	Microsoft Windows Server 2012 (64-bit)
+10.158.3.11	DC-CORE-FW-01	
+10.158.3.12	DC-CORE-FW-02	
+10.158.3.1	DC - CORE - CLUSTER 01 	
+10.158.3.18	DR-NCBBANK-DC1	Microsoft Windows Server 2012 (64-bit)
+10.158.3.19	DR-NCBBANK-DC2	Microsoft Windows Server 2012 (64-bit)
+10.158.3.21	DC-CORE-FW-01	
+10.158.3.22	DC-CORE-FW-02	
+10.158.3.17	DC - CORE - CLUSTER 01 	
+10.158.3.34	DR-EX01-Thick	Microsoft Windows Server 2012 (64-bit)
+10.158.3.37	DC-CORE-FW-01	
+10.158.3.38	DC-CORE-FW-02	
+10.158.3.33	DC - CORE - CLUSTER 01 	
+10.158.5.10	DC-FX-Online 	Microsoft Windows Server 2003 (32-bit)
+10.158.5.1	DC - CORE - CLUSTER 01 	
+10.158.5.2	DC-CORE-FW-01	
+10.158.5.3	DC-CORE-FW-02	
+10.158.7.4		
+10.158.7.5		
+10.158.7.6		
+10.158.7.7		
+10.158.7.1	FW - UAT - ASA	
+192.168.0.19	
+192.168.0.20	
+192.168.0.1	DC - CORE - CLUSTER 01 
+192.168.0.2	DC-CORE-FW-01
+192.168.0.3	DC-CORE-FW-02

@@ -1,0 +1,55 @@
+/* Main stylesheet */
+
+/* @section forms */
+.btn.cancel { margin-left: 0.5rem; }
+.nowrap { white-space: nowrap; }
+
+/* Your customizations here */
+.image-radio-selector input{
+    margin:0;padding:0;
+    -webkit-appearance:none;
+       -moz-appearance:none;
+            appearance:none;
+}
+
+.rhel{background-image:url(/static/img/l9yqM94.png);}
+.ws2012{background-image:url(/static/img/eN8ah8c.png);}
+.ws2008r2{background-image:url(/static/img/9OMz3rw.png);}
+.centos{background-image:url(/static/img/f0Bj4Zz.png);}
+.other{background-image:url(/static/img/question.png)}
+
+.image-radio-selector input:active +.drinkcard-cc{opacity: .9;}
+.image-radio-selector input:checked +.drinkcard-cc{
+    -webkit-filter: none;
+       -moz-filter: none;
+            filter: none;
+}
+.drinkcard-cc{
+    cursor:pointer;
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:inline-block;
+    width:100px; height:70px;
+    -webkit-transition: all 100ms ease-in;
+       -moz-transition: all 100ms ease-in;
+            transition: all 100ms ease-in;
+    -webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+       -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+            filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+.drinkcard-cc:hover{
+    -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+       -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+            filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+/* Extras */
+a:visited{color:#FFF}
+a{color:#444;text-decoration:none;}
+p{margin-bottom:.3em;}
+
+#example tbody td div{
+    height:28px;
+    overflow:hidden;
+    word-wrap:break-word; 
+}

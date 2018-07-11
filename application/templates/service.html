@@ -1,0 +1,42 @@
+{% set active_page = "service" %}
+{% extends "base.html" %}
+{% block content %}
+
+    <h3>Service Table</h3>
+    <hr/>
+
+
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>IP Range</th>
+            <th>IP</th>
+            <th>Operating System</th>
+        </tr>
+        </thead>
+        {% for record in list_records.items %}
+            <tr>
+                <td>{{ record.ipRange }}</td>
+                <td>{{ record.ipAdress }}</td>
+                <td>{{ record.added_time.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+
+            </tr>
+        {% endfor %}
+    </table>
+
+    <ul class="pagination">
+        {%- for page in list_records.iter_pages() %}
+            {% if page %}
+                {% if page != list_records.page %}
+                    <li><a href="{{ url_for('service', page = page) }}">{{ page }}</a></li>
+                {% else %}
+                    <li class="active"><a href="#"><strong>{{ page }}</strong></a></li>
+                {% endif %}
+            {% else %}
+                <li><span class=ellipsis>…</span></li>
+            {% endif %}
+        {%- endfor %}
+    </ul>
+
+
+{% endblock content %}

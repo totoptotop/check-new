@@ -1,0 +1,97 @@
+{% set active_page = "report" %}
+{% extends "base.html" %}
+{% block content %}
+
+   <div class="jumbotron">
+      <h2 class="display-2"><b>Firewall Rule Tables, right now ?!</b></h2>
+      <p class="lead">This is report on Monday recently, {{reportCreated}}
+      <br>
+      Or you can choose date <a href="#bannerformmodal" data-toggle="modal" data-target="#bannerformmodal">here</a
+      </p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <table class="table table-striped table-hover ">
+              <col width="5%">
+              <col width="70%">
+              <col width="25%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Report Name</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody>
+              {% for report in reportList %}
+                  <tr>
+                      <td>{{ reportList.index(report)+1 }}</td>
+                      <td>{{ report  }}</td>
+                      <td>
+                        <a href="{{ url_for('static', filename='FRT/'+report) }}" class="btn btn-success btn-xs" role="button" target='_blank'>
+                            <i class="glyphicon glyphicon-download-alt"></i>
+                          </a>
+                      </td>
+                  </tr>
+              {% endfor %}
+        </tbody>
+      </table> 
+      <p class="lead">
+        <!--<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>-->
+      </p>
+    </div>
+    <div class="jumbotron">
+      <h2 class="display-2"><b>Firewall Rule Tables, right now ?!</b></h2>
+      <p class="lead">This is report on Monday recently, {{reportCreated}}
+      <br>
+      Or you can choose date <a href="#bannerformmodal" data-toggle="modal" data-target="#bannerformmodal">here</a
+      </p>
+      <hr class="my-4">
+      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+      <table class="table table-striped table-hover ">
+              <col width="5%">
+              <col width="70%">
+              <col width="25%">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Report Name</th>
+            <th>Download</th>
+          </tr>
+        </thead>
+        <tbody>
+              {% for report in reportList %}
+                  <tr>
+                      <td>{{ reportList.index(report)+1 }}</td>
+                      <td>{{ report  }}</td>
+                      <td>
+                        <a href="{{ url_for('static', filename='FRT/'+report) }}" class="btn btn-success btn-xs" role="button" target='_blank'>
+                            <i class="glyphicon glyphicon-download-alt"></i>
+                          </a>
+                      </td>
+                  </tr>
+              {% endfor %}
+        </tbody>
+      </table> 
+      <p class="lead">
+        <!--<a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>-->
+      </p>
+    </div>
+<div class="modal" id="bannerformmodal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body…</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

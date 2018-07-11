@@ -1,0 +1,72 @@
+{% set active_page = "report" %}
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Firewall Rules Table</div>
+            <div class="panel-body">
+              <table class="table table-striped table-hover ">
+                    <col width="5%">
+                    <col width="70%">
+                    <col width="25%">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Report Name</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                    {% for report in reportList %}
+                        <tr>
+                            <td>{{ reportList.index(report)+1 }}</td>
+                            <td>{{ report  }}</td>
+                            <td>
+                              <a href="{{ url_for('static', filename='FRT/'+report) }}" class="btn btn-success btn-xs" role="button" target='_blank'>
+                                  <i class="glyphicon glyphicon-download-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+              </tbody>
+            </table> 
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">Firewall Rules Track Changes</div>
+            <div class="panel-body">
+              <table class="table table-striped table-hover ">
+                    <col width="5%">
+                    <col width="70%">
+                    <col width="25%">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Report Name</th>
+                  <th>Download</th>
+                </tr>
+              </thead>
+              <tbody>
+                    {% for change in changeList %}
+                        <tr>
+                            <td>{{ changeList.index(change)+1 }}</td>
+                            <td>{{ change  }}</td>
+                            <td>
+                              <a href="{{ url_for('static', filename='Changes/'+change) }}" class="btn btn-success btn-xs" role="button" target='_blank'>
+                                  <i class="glyphicon glyphicon-download-alt"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+              </tbody>
+            </table> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

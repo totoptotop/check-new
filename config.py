@@ -1,0 +1,59 @@
+import os
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+
+class Config(object):
+    ADMIN_EMAIL = "your_email@gmail.com"
+
+    DEBUG = False
+    TESTING = False
+    SQLALCHEMY_DATABASE_URI = ''
+    REPORT_FOLDER = 'application/static/FRT'
+    CHANGES_FOLDER = 'application/static/Changes'
+    APP_NAME = 'Flask Easy-Template'
+    SECRET_KEY = 'write-a-secret-string-here'
+    LISTINGS_PER_PAGE = 10
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    SECURITY_REGISTERABLE = True
+    SECURITY_RECOVERABLE = True
+    SECURITY_TRACKABLE = True
+    SECURITY_PASSWORD_HASH = 'sha512_crypt'
+    SECURITY_PASSWORD_SALT = 'add_salt_123_hard_one'
+    SECURITY_CONFIRMABLE = True
+
+
+    # SendGrid example.
+
+    MAIL_SERVER = 'mail.ncb-bank.vn'
+    MAIL_PORT = 587
+    MAIL_USE_SSL = True
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = 'toanpvn'
+    MAIL_PASSWORD = 'cGFzc0BuY2IxMjM='.decode('base64')
+    DEFAULT_MAIL_SENDER = 'toanpvn@ncb-bank.vn'
+    SECURITY_EMAIL_SENDER = 'notifications@your_website.com'
+
+    RECAPTCHA_SITE_KEY = "6Ldzx_Exxxxxxxxxxxxxxxxxxxxxxx"
+    RECAPTCHA_SECRET = "6Ldzx_ESAAAxxxxxxxxxxxxxxxxxxxxxxxx"
+
+
+
+class ProductionConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'mysql://user:pass@server_ip:server_port/db_name'
+    DEBUG = False
+
+
+class DevelopmentConfig(Config):
+    PREFERRED_URL_SCHEME = 'https'
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite')
+    SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+    DEBUG = True
+
+
+class TestingConfig(Config):
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite')
+    SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
+    TESTING = True
