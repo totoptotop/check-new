@@ -26,8 +26,23 @@ class IpTable(db.Model):
     service = db.Column(db.String(255))
     added_time = db.Column(db.DateTime)
 
-    def get_id(self, some_id):
+    def get_info_by_id(self, some_id):
         record = IpTable.query.filter(IpTable.id == some_id).first_or_404()
+        aux = dict()
+        aux['id'] = record.id
+        aux['ipAdress'] = record.ipAdress
+        aux['hostname'] = record.hostname
+        aux['owner'] = record.owner
+        aux['opersys'] = record.opersys
+        aux['status'] = record.status
+        aux['historyID'] = record.historyID
+        aux['vlan'] = record.vlan
+        aux['service'] = record.service
+        aux['added_time'] = record.added_time.strftime('%d/%m/%Y')
+        return aux
+
+    def get_info_by_ip(self, some_ip):
+        record = IpTable.query.filter(IpTable.ipAdress.like("%"+ some_ip +"%")).first()
         aux = dict()
         aux['id'] = record.id
         aux['ipAdress'] = record.ipAdress
@@ -83,8 +98,20 @@ class IpTable(db.Model):
     def get_all_oper(self):
         return IpTable.query.with_entities(IpTable.opersys).distinct().order_by(asc(IpTable.opersys)).all()
     
-    # def list_one(self, page):
-    #     return IpTable.query.filter_by(id=page).first()
+    def get_all_owner(self):
+        return IpTable.query.with_entities(IpTable.owner).distinct().order_by(asc(IpTable.owner)).all()
+
+    def replace_owner(self, oldOwner, newOwner):
+        records = IpTable.query.filter(IpTable.owner == oldOwner).all()
+        for rc in records:
+            rc.owner = newOwner
+        try:
+            # db.session.add_all()
+            db.session.commit()
+            return True
+        except:
+            db.session.rollback()
+            return False
 
 
 class UserTable(db.Model):

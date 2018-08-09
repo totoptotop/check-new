@@ -9,7 +9,7 @@ from forms import *
 from time import time
 from datetime import timedelta
 from application.FW.triggerFW import generate_docx_html, getMondayDate
-from multiprocessing import Process
+from threading import Thread
 
 loaded_excel = False
 generating = False
@@ -38,28 +38,50 @@ def index():
         return redirect(url_for('ip_table'))
 
 @app.route('/ip_table')
-@app.route('/ip_table/<string:vlan_q>')
-def ip_table(vlan_q='0'):
+@app.route('/ip_table/')
+def ip_table():
     ipDB = IpTable()
     list_vlans = ipDB.get_all_vlan()
-    if (vlan_q == '0'):
-        list_records = ipDB.list_all()
-    else:
-        list_records = ipDB.get_by_vlan(vlan_q.decode('hex'))
+    list_records = ipDB.list_all()
     return render_template("ip_table.html", list_records=list_records, list_vlans=list_vlans)
+
+@app.route('/autovlan', methods=['POST'])
+def autovlan():
+    def cut_to_vlan(ipadr):
+        if (ipadr == ''):
+            return ''
+        import re
+        research = re.search("(.*)\.",ipadr)
+        ip_vlan = research.group(1)
+        return ip_vlan
+
+    ip_to_auto = request.form['ipadr']
+    ip_to_auto = cut_to_vlan(ip_to_auto)
+    tbl_IP = IpTable()
+    vlan_detect = tbl_IP.query.with_entities(IpTable.ipAdress, IpTable.vlan).group_by(IpTable.vlan).all()
+    vlaned = ''
+    kq = False
+    for sample_ip, vlan in vlan_detect:
+        if (ip_to_auto == cut_to_vlan(sample_ip) and vlan != 'Other'):
+            vlaned = vlan
+            kq = True
+            break
+    rs = {
+        'result': kq,
+        'vlan_auto': vlaned
+    }
+    return jsonify(data=rs)
 
 
 @app.route('/ip_table/add_record', methods=['GET', 'POST'])
 def add_record():
     if not(check_login()[0]):
         return login()
-    # if (session['logged_in'] == False):
-    #     return redirect(url_for('login'))
     
+    list_opers = IpTable().get_all_oper()[1:]
     form = Form_IP_Add(request.form)
     if request.method == 'POST':
         if form.validate():
-            new_record = IpTable()
             ipAdress = form.ipAdress.data
             hostName = form.hostName.data
             Owner = form.Owner.data
@@ -69,6 +91,7 @@ def add_record():
             status = 'active'
             service = request.form['inputService']
             vlan = 'Other'
+            new_record = IpTable()
             if new_record.add_data(ipAdress, hostName, Owner, opersys, service, editor, status, vlan, added_time=dateStart):
                 writeLog(request.remote_addr + ' - ' + session['user_name'] + ' - ' + 'add ' + str((ipAdress, hostName, Owner, opersys, service, editor, status, vlan, dateStart)))
                 flash('IP ' + ipAdress + " added successfully.", category="success")
@@ -79,7 +102,7 @@ def add_record():
         # else:
         #     flash(str(form.validate()), category="danger")
 
-    return render_template("add_ip_record.html", form=form)
+    return render_template("add_ip_record.html", form=form, list_opers=list_opers)
     
 @app.route('/ip_table/view', methods=['GET', 'POST'])
 @app.route('/ip_table/view/<int:page>', methods=['GET', 'POST'])
@@ -100,8 +123,8 @@ def view_record(page=1, readonly=True):
             logger.info("Editing a record.")
             writeLog(request.remote_addr + ' - ' + session['user_name'] + ' - ' + 'edit ' + str(page) + ' with date ' + str(request.form))
             flash('IP ' + ipAdress + " editted successfully.", category="success")
-    m_tasks = IpTable()
-    record = m_tasks.get_id(page)
+    ip_tbl = IpTable()
+    record = ip_tbl.get_info_by_id(page)
     return render_template("ip_view.html", form=form, record=record, readonly=readonly, list_opers=list_opers)
     
 @app.route('/ip_table/delete', methods=['GET'])
@@ -124,7 +147,7 @@ def login():
     if (check_login()[0]):
         return index()
         
-    m_users = UserTable()
+    tbl_users = UserTable()
     
     form = Form_Login(request.form)
     if request.method == 'POST':
@@ -139,7 +162,7 @@ def login():
                 domainName = research.group(1)
                 accDomain = domainName+'@ncb-bank'
                 logger.info(accDomain)
-                rs = m_users.get_user(domainName,'HelloFromDomain')
+                rs = tbl_users.get_user(domainName,'HelloFromDomain')
                 try:
                     conn = Connection('10.1.33.18',accDomain, password=pWord,auto_bind=True)
                     if rs['ok']:
@@ -157,7 +180,7 @@ def login():
                     flash("Wrong password or username", 'danger')
             else:
                 m.update(pWord)
-                rs = m_users.get_user(uName, str(m.hexdigest()))
+                rs = tbl_users.get_user(uName, str(m.hexdigest()))
                 if rs['ok']:
                     session['logged_in'] = True
                     session['user_name'] = rs['name']
@@ -193,12 +216,13 @@ def admin():
     if (not chk_login[0]):
         return login()
     list_accounts = UserTable().get_all_user()
+    list_owners = IpTable().get_all_owner()
     import time
     try:
         f = open('log/asset-'+time.strftime("%d-%m-%Y")+'.log','r').read()
     except:
         f = 'Nothing gonna change my love for you'
-    return render_template("admin.html", list_accounts=list_accounts, rawLog = f)
+    return render_template("admin.html", list_accounts=list_accounts, list_owners=list_owners, rawLog = f)
 
 @app.route('/admin/command', methods=['POST'])
 def admin_command():
@@ -217,6 +241,7 @@ def admin_command():
             result = UserTable().add_data(domainName,domainName+'@ncb-bank.vn','HelloFromDomain', request.form['role'])
             flash('Add ok '+domainName+' as an "' + request.form['role'] +'"! <3', 'success')
             writeLog(request.remote_addr + ' - ' + session['user_name'] + ' - ' + 'add ' + email + ' as ' + str(request.form['role']))
+########################################################
     elif (request.form['command'] == 'del'):
         del_success = []
         del_error = []
@@ -231,6 +256,20 @@ def admin_command():
             flash('Deleted '+ ', '.join(del_success) + ' !', 'success')
         if (len(del_error) > 0):
             flash('Can NOT delete'+ ', '.join(del_success) + ' !', 'danger')
+##########################################################
+    elif (request.form['command'] == 'replaceOwner'):
+        oldOwner = request.form['oldOwner']
+        newOwner = request.form['newOwner']
+        tbl_IP = IpTable()
+        rs = tbl_IP.replace_owner(oldOwner,newOwner)
+        if (rs == True):
+            logline = request.remote_addr + ' - ' + session['user_name'] + ' - ' + '[Success] replace ' + oldOwner + ' by ' + newOwner + '.'
+            writeLog(logline)
+            flash('Replace ' + oldOwner + ' by ' + newOwner + ' successfully!', 'success')
+        else:
+            logline = request.remote_addr + ' - ' + session['user_name'] + ' - ' + '[Failed] replace ' + oldOwner + ' by ' + newOwner + '.'
+            writeLog(logline)
+            flash('Replace ' + oldOwner + ' by ' + newOwner + ' error!', 'danger')
     return redirect(url_for('admin'))
     
 
@@ -263,8 +302,8 @@ def generate_():
             flash('I have done report for this week, What the fuck do you want? >"<', 'warning')
         else:
             generating = True
-            p = Process(target=doReport, args=())
-            p.start()
+            t = Thread(target=doReport, args=())
+            t.start()
             return render_template('force.html')
 
     return redirect(url_for('report'))
@@ -276,7 +315,7 @@ def before_first_request():
     global loaded_excel
     loaded_excel = False
     session.permanent = True
-    app.permanent_session_lifetime = timedelta(minutes=5)
+    app.permanent_session_lifetime = timedelta(minutes=30)
     logger.info("-------------------- initializing everything ---------------------")
     db.create_all()
 

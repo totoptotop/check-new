@@ -1,3 +1,11 @@
 00:44:14 - 127.0.0.1 - toanpho - logged
 00:45:15 - 127.0.0.1 - toanpho - logged
 00:46:12 - 127.0.0.1 - toanpho - logged
+15:12:48 - 127.0.0.1 - toanpho - logged
+15:25:58 - 127.0.0.1 - toanpho - logged
+15:50:21 - 127.0.0.1 - ToanPVN - add (u'10.2.250.22', u'check out', u'dainv', u'ESXi - 60', u'demo 2', u'ToanPVN', 'active', 'Other', datetime.date(2018, 7, 7))
+15:50:37 - 127.0.0.1 - ToanPVN - edit 545 with date ImmutableMultiDict([('oper-sys', u'ESXi - 60'), ('oper-sys', u''), ('dateStart', u'07/07/2018'), ('inputService', u'demo 2'), ('Owner', u'dainv'), ('hostName', u'check out'), ('ipAdress', u'10.2.250.20')])
+16:04:31 - 127.0.0.1 - toanpho - logged
+21:53:17 - 127.0.0.1 - toanpho - logged
+21:59:08 - 127.0.0.1 - toanpho - logged
+22:05:34 - 127.0.0.1 - toanpho - logged

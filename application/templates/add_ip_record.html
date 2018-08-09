@@ -47,22 +47,29 @@
                       </div>
                     </div>
                     <div class="form-group">
+                      <label for="inputVlan" class="col-lg-2 control-label">Vlan</label>
+                      <div class="col-lg-10">
+                        <input type="text" class="form-control" id="inputVlan" name="inputVlan" placeholder="Some Vlan" autocomplete="off">
+                        <label><input type="checkbox" onclick="checkboxVlan(this)">Auto Vlan</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
                       <label for="inputService" class="col-lg-2 control-label">Service</label>
                       <div class="col-lg-10">
                         <input type="text" class="form-control" name="inputService" placeholder="SIEM - Virtual IP">
                       </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group image-radio-selector">
                       <label for="div" class="col-lg-2 control-label">Operating System</label>
                       <div class="col-lg-10">
-                        <select  class="form-control" name="oper-sys" onchange="if(this.options[this.selectedIndex].value=='OtherOS'){toggleField(this,this.nextElementSibling);this.selectedIndex='0';}">
+                        <select  class="form-control" name="oper-sys" onchange="if(this.options[this.selectedIndex].value=='OtherOS'){toggleField(this,this.nextElementSibling);}">
+                          <option></option>
                             <option value="OtherOS">[Other OS]</option>
-                            <option selected></option>
-                          <!-- {% for oper in list_opers %}
-                            <option {{'selected' if record.opersys == oper[0]}}>{{ oper[0] }}</option>
-                          {% endfor %} -->
+                          {% for oper in list_opers %}
+                            <option>{{ oper[0] }}</option>
+                          {% endfor %}
                         </select>
-                        <input name="oper-sys" class="form-control" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousElementSibling);}">
+                        <input name="oper-sys" class="form-control" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousElementSibling); this.previousElementSibling.selectedIndex=0}">
                       </div>
                     </div>
                     <div class="form-group {{ 'has-error' if form.errors.dateStart|length > 0 }}">
@@ -77,19 +84,6 @@
                         {% endfor %}
                       </div>
                     </div>
-
-                    <!--<div class="form-group">-->
-                    <!--  
-                    <!--  <div class="col-lg-10">-->
-                    <!--    <select class="form-control" id="select">-->
-                    <!--      <option>CentOS</option>-->
-                    <!--      <option>MS Windows Server 2008 R2</option>-->
-                    <!--      <option>MS Windows Server 2012</option>-->
-                    <!--      <option>Red Hat Enterprise Linus (RHEL)</option>-->
-                    <!--      <option>Ubuntu</option>-->
-                    <!--    </select>-->
-                    <!--  </div>-->
-                    <!--</div>-->
                     <div class="form-group">
                       <div class="col-lg-10 col-lg-offset-2">
                         <button type="reset" class="btn btn-default">Cancel</button>
@@ -100,10 +94,26 @@
                 </form>
             </div>
         </div>
-
-    </div>
-
-
+        {{ oldRecord|default('') }}
+        {% if oldRecord is defined %}
+        <div class="col-md-4">
+            <div class="well bs-component">
+                <form class="form-horizontal">
+                  <fieldset>
+                    <legend>IP Duplicate Info</legend>
+                    <p>
+                      This IP({{oldRecord.ipAdress}}) has been in Assets with theese attributes:<br>
+                      <b>Hostname</b>: {{oldRecord.hostname}}<br>
+                      <b>Owner</b>: {{oldRecord.owner}}<br>
+                      <b>Service</b>: {{oldRecord.service}}<br>
+                      <b>OS</b>: {{oldRecord.opersys}}<br>
+                      <b>Used from</b>: {{oldRecord.added_time}}<br>
+                    </p>
+                  </fieldset>
+                </form>
+            </div>
+        </div>
+        {% endif %}
     </div>
 
 
@@ -121,7 +131,20 @@
               maxDate: "today"
           });
       });
-
+    function checkboxVlan(obj){
+      document.getElementById('inputVlan').disabled=obj.checked;
+      if (obj.checked){
+        // document.getElementById('inputVlan').placeholder = 'Auto Vlan'
+        $.post("/autovlan", {ipadr: document.getElementById('ipAdress').value}, function(result){
+            if (result.data.result == false){
+              alert('Can NOT find any Vlan suitable with IP' + document.getElementById('ipAdress').value + '. Fill it by yourself !')
+            }
+            document.getElementById('inputVlan').value = result.data.vlan_auto;
+        });
+      } else {
+        document.getElementById('inputVlan').placeholder = 'Some Vlan'
+      }
+    }
     function toggleField(hideObj,showObj){
       hideObj.disabled=true;   
       hideObj.style.display='none';

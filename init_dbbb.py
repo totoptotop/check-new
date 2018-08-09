@@ -40,8 +40,7 @@ def load_excel():
             service = df.at[i,'Service']
             print (ipAdress, hostname, own, oper, service, editor, status, vlan)
             print IpTable().add_data(ipAdress, hostname, own, oper, service, editor, status, vlan)
+            
 
-
-
-if __name__ == '__main__':
-	load_excel()
+# if __name__ == '__main__':
+# 	load_excel()

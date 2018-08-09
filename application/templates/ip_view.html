@@ -73,6 +73,7 @@
                       <label for="div" class="col-lg-2 control-label">Operating System</label>
                       <div class="col-lg-10">
                         <select  class="form-control" name="oper-sys" onchange="if(this.options[this.selectedIndex].value=='OtherOS'){toggleField(this,this.nextElementSibling);}">
+                          <option></option>
                             <option value="OtherOS">[Other OS]</option>
                           {% for oper in list_opers %}
                             <option {{'selected' if record.opersys == oper[0]}}>{{ oper[0] }}</option>
@@ -81,10 +82,6 @@
                         <input name="oper-sys" class="form-control" style="display:none;" disabled="disabled" onblur="if(this.value==''){toggleField(this,this.previousElementSibling);}">
                           <!-- <input type="text" list="opers" name="oper-sys"/> -->
                           <!-- <input class="form-control" list="opers" id="oper-sys" name="oper-sys" placeholder="Operating System" required="" type="text">
-                          <datalist id="opers">
-                          {% for oper in list_opers %}
-                            <option>{{ oper[0] }}</option>
-                          {% endfor %}
                           </datalist> -->
                           <!-- <select class="form-control" name="oper-sys">
                           </select> -->

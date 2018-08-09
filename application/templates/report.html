@@ -24,9 +24,12 @@
                             <td>{{ reportList.index(report)+1 }}</td>
                             <td>{{ report  }}</td>
                             <td>
-                              <a href="{{ url_for('static', filename='FRT/'+report) }}" class="btn btn-success btn-xs" role="button" target='_blank'>
+                              <a href="{{ url_for('static', filename='FRT/'+report) }}" class="btn btn-default btn-xs" role="button" target='_blank'>
+                                  <i class="glyphicon glyphicon-new-window"></i>
+                              </a>
+                              <a href="{{ url_for('static', filename='FRT/'+report) }}" class="btn btn-primary btn-xs" role="button" download>
                                   <i class="glyphicon glyphicon-download-alt"></i>
-                                </a>
+                              </a>
                             </td>
                         </tr>
                     {% endfor %}
@@ -58,7 +61,10 @@
                             <td>
                               <a href="{{ url_for('static', filename='Changes/'+change) }}" class="btn btn-success btn-xs" role="button" target='_blank'>
                                   <i class="glyphicon glyphicon-download-alt"></i>
-                                </a>
+                              </a>
+                              <a href="http://docs.google.com/gview?url={{ url_for('static', filename='Changes/'+change) }}&embedded=true" class="btn btn-success btn-xs" role="button" target='_blank'>
+                                  <i class="glyphicon glyphicon-new-window"></i>
+                              </a>
                             </td>
                         </tr>
                     {% endfor %}
